@@ -137,6 +137,25 @@ morekeywords=[1]{,as,assert,nonlocal,with,yield,self,True,False,None,} % Python 
 	moredelim=[is][\textcolor{javagrey}]{\%\%}{\%\%}
 }
 
+% C-sharp style
+\definecolor{sharpbluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{sharpgreencomments}{rgb}{0,0.5,0}
+\definecolor{sharpredstrings}{rgb}{0.9,0,0}
+
+\lstdefinestyle{csharp}{
+    language=[Sharp]C,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    escapeinside={(*@}{@*)},
+    commentstyle=\color{sharpgreencomments},
+    keywordstyle=\color{sharpbluekeywords},
+    stringstyle=\color{sharpredstrings},
+    basicstyle=\ttfamily
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Code for creating empty pages                 %
