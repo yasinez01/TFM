@@ -1,36 +1,21 @@
 \chapter[Estructura del proyecto]{Estructura del proyecto}
 \label{Chap3}
 
+El proyecto se estructura siguiendo una arquitectura por capas, lo que permite organizar el código y separar las responsabilidades de forma clara y eficiente. Cada capa cumple un papel distinto. La presentación se encarga de la interfaz y la interacción con el usuario, la aplicación contiene la lógica de negocio, la infraestructura gestiona el acceso a recursos externos como la base de datos y la capa de dominio define las reglas y entidades principales del modelo.
 \section{Presentación}
-La capa de presentación constituye el nivel superior de la arquitectura y se encarga de gestionar la interacción directa con el usuario. En esta capa se encuentra el proyecto Interfaz de Usuario Web (WebUI), que corresponde a la aplicación web visible para los usuarios finales. Dentro de WebUI se definen las vistas, es decir, los elementos visuales que conforman la interfaz, junto con los estilos CSS que determinan su apariencia.
+La capa de presentación constituye el nivel superior de la arquitectura y se encarga de gestionar la interacción directa con el usuario. En esta capa se encuentra el proyecto Interfaz de Usuario Web (\textit{WebUI}), que corresponde a la aplicación web visible para los usuarios finales. Dentro de \textit{WebUI} se definen las vistas, es decir, los elementos visuales que conforman la interfaz, junto con los estilos \textit{CSS} que determinan su apariencia.
 
-Asimismo, en esta capa se desarrollan las clases TypeScript, responsables de manejar los distintos eventos del usuario y de definir las acciones que se ejecutan como respuesta a dichos eventos. Los controladores también forman parte de esta capa y su función principal es invocar a las clases de niveles inferiores para realizar operaciones sobre la base de datos. Estas clases, situadas en capas más profundas, se explicarán más adelante. Se incluyen también los ViewModels, que son modelos diseñados específicamente para las vistas. Estos modelos facilitan la organización y presentación de los datos de forma estructurada y coherente, permitiendo que la información se muestre correctamente en la interfaz web. En esencia, actúan como una plantilla que define tanto la apariencia como el comportamiento de los datos dentro de la interfaz de usuario.
+Asimismo, en esta capa se desarrollan las clases \textit{TypeScript}, responsables de manejar los distintos eventos del usuario y de definir las acciones que se ejecutan como respuesta a dichos eventos. Los controladores también forman parte de esta capa y su función principal es invocar a las clases de niveles inferiores para realizar operaciones sobre la base de datos. Estas clases, situadas en capas más profundas, se explicarán más adelante. Se incluyen también los ViewModels, que son modelos diseñados específicamente para las vistas. Estos modelos facilitan la organización y presentación de los datos de forma estructurada y coherente, permitiendo que la información se muestre correctamente en la interfaz web. En esencia, actúan como una plantilla que define tanto la apariencia como el comportamiento de los datos dentro de la interfaz de usuario.
 
-Un ejemplo ilustrativo puede observarse en el Listado \ref{code:ej1}, donde se presentan varios métodos pertenecientes al controlador de la clase Formación. El primer método, que se invoca mediante una petición POST, devuelve un conjunto de formaciones almacenadas en la base de datos, permitiendo además aplicar filtros de búsqueda a través de la variable filtros que se construye a partir de los parámetros (filtroTexto, filtroArea, filtroTipo, etc), en caso de que ocurra algún error y no se devuelven las formaciones se muestra un mensaje al usuario en pantalla. En cambio, el segundo método se ejecuta mediante una petición GET, que solicita un recurso específico del servidor y recupera una formación concreta identificada por su ID pasado como parámetro en la línea 38 (FormacionID), aquí también se hace una validación para comprobar el tipo de respuesta ya sea un error para informar al usuario, un aviso de que esa persona no está autorizada a ver los detalles de esa formación ó hay éxito que en ese caso se genera el ViewModel correspondiente y se le pasa los datos de la formación para poder mostrarlos por pantalla al usuario. 
+Un ejemplo ilustrativo puede observarse en el código \ref{code:ej1}, donde se presentan varios métodos pertenecientes al controlador de la clase \texttt{Formación}. El primer método, que se invoca mediante una petición \textit{POST}, devuelve un conjunto de formaciones almacenadas en la base de datos, permitiendo además aplicar filtros de búsqueda a través del parámetro \texttt{filtros}, en caso de que ocurra algún error y no se devuelven las formaciones se muestra un mensaje al usuario en pantalla. En cambio, el segundo método se ejecuta mediante una petición \textit{GET}, que solicita un recurso específico del servidor y recupera una formación concreta identificada por su \texttt{ID} pasado como parámetro en la línea 27 (\texttt{FormacionID}), aquí también se hace una validación para comprobar el tipo de respuesta ya sea un error para informar al usuario, un aviso de que esa persona no está autorizada a ver los detalles de esa formación ó hay éxito que en ese caso se genera el \textit{ViewModel} correspondiente y se le pasa los datos de la formación para poder mostrarlos por pantalla al usuario. 
 
-Además de los métodos de consulta, el controlador incluye también operaciones para crear, modificar y eliminar registros de formaciones. Otra nota importante aquí es cuando ponemos a los métodos [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)], esto nos valida el rol del usuario el cual llama al método. En este caso definimos que solamente aquellos que mínimo el rol de Solicitante podrán acceder a esté método, aunque más tarde explicaremos con más detalle el tema de los roles y como funciona la validación de permisos.
-\begin{lstlisting}[style=R, caption=Controlador del proyecto WebUI con métodos de selección de formaciones almacenados en base de datos,label=code:ej1]
+Además de los métodos de consulta, el controlador incluye también operaciones para crear, modificar y eliminar registros de formaciones. Otra nota importante aquí es cuando ponemos a los métodos \lstinline | [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)] |, esto nos valida el rol del usuario el cual llama al método. En este caso definimos que solamente aquellos que mínimo el rol de Solicitante podrán acceder a esté método, aunque más tarde explicaremos con más detalle el tema de los roles y como funciona la validación de permisos.
+\begin{lstlisting}[style=csharp, caption={Controlador del proyecto WebUI con métodos de selección de formaciones almacenados en base de datos.},label=code:ej1]
 [HttpPost("[action]")]
 [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
-public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, string filtroTexto, string filtroArea, string filtroTipo, string filtroModalidad, string filtroAsistente, int? filtroFormacionEstado, DateTime? filtroFechaInicioDesde, DateTime? filtroFechaInicioHasta, bool? filtroBonificable, bool? filtroAccionCorrectiva, int? filtroPedido, bool? filtroPendienteFactura)
+public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, FormacionFiltrosDTO filtros)
 {
 	logger.LogInformation("Obtener el listado de formaciones filtrado");
-	
-	var filtros = new FormacionFiltrosDTO
-	{
-		FiltroTexto = filtroTexto,
-		FiltroArea = filtroArea,
-		FiltroTipo = filtroTipo,
-		FiltroModalidad = filtroModalidad,
-		FiltroAsistente = filtroAsistente,
-		FiltroFormacionEstado = filtroFormacionEstado,
-		FiltroFechaInicioDesde = filtroFechaInicioDesde,
-		FiltroFechaInicioHasta = filtroFechaInicioHasta,
-		FiltroBonificable = filtroBonificable,
-		FiltroAccionCorrectiva = filtroAccionCorrectiva,
-		FiltroPedido = filtroPedido,
-		FiltroPendienteFactura = filtroPendienteFactura
-	};
 	
 	var formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQuery(filtros));
 	
@@ -70,53 +55,23 @@ public async Task<IActionResult> Detalle(int formacionID)
 
 
 \section{Aplicación}
-La capa de aplicación representa el nivel en el que se concentra la lógica de negocio del sistema. En este nivel se implementa el principio de Command Query Responsibility Segregation (CQRS), mediante el cual cada proceso o acción empresarial se modela como un comando o una consulta independiente. Este patrón arquitectónico permite diferenciar las operaciones que modifican el estado del sistema (comandos) de aquellas que únicamente recuperan información (consultas), promoviendo así una estructura más ordenada, clara y escalable.
+La capa de aplicación representa el nivel en el que se concentra la lógica de negocio del sistema. En este nivel se implementa el principio de \textit{Command Query Responsibility Segregation} (CQRS), mediante el cual cada proceso o acción empresarial se modela como un comando o una consulta independiente. Este patrón arquitectónico permite diferenciar las operaciones que modifican el estado del sistema (comandos) de aquellas que únicamente recuperan información (consultas), promoviendo así una estructura más ordenada, clara y escalable.
 
-Dentro de esta capa también se definen las clases conocidas como Data Transfer Objects (DTO). Estas entidades sirven como vehículos de intercambio de información entre las diferentes capas, evitando que los modelos internos se expongan directamente. Su propósito es agrupar y transportar los datos necesarios para ejecutar una acción concreta, garantizando una comunicación sencilla, coherente y desacoplada entre componentes de la aplicación.
+Dentro de esta capa también se definen las clases conocidas como \textit{Data Transfer Objects} (DTO). Estas entidades sirven como vehículos de intercambio de información entre las diferentes capas, evitando que los modelos internos se expongan directamente. Su propósito es agrupar y transportar los datos necesarios para ejecutar una acción concreta, garantizando una comunicación sencilla, coherente y desacoplada entre componentes de la aplicación.
 
-Finalmente, las operaciones relacionadas con los comandos y las consultas —como se muestra en el Listado \ref{code:ej2}— se declaran mediante interfaces localizadas en esta misma capa, mientras que su implementación específica se desarrolla en la capa inferior.
+Finalmente, las operaciones relacionadas con los comandos y las consultas —como se muestra en el código \ref{code:ej2}— se declaran mediante interfaces localizadas en esta misma capa, mientras que su implementación específica se desarrolla en la capa inferior.
 
-\begin{lstlisting}[style=R, caption=Interfaz de formaciones con métodos para llevar a cabo las operaciones sobre la base de datos,label=code:ej2]
+\begin{lstlisting}[style=csharp, caption={Interfaz de formaciones con métodos para llevar a cabo las operaciones sobre la base de datos.},label=code:ej2]
 	public interface IFormacionesDataService
 	{
 		Task<List<FormacionListDTO>> SelectAll(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
-		Task<List<FormacionListDTO>> SelectAllConHorario(CancellationToken cancellationToken);
-		Task<List<ActualizarAreasFormacionesDTO>> SelectAllActualizarAreasFormaciones(DateTime filtroFecha, CancellationToken cancellationToken);
-		Task<List<FormacionModificacionHistoricoDTO>> SelectAllFormacionModificacionHistoricoToday(CancellationToken cancellationToken); 
-		Task<List<FormacionModificacionHistoricoDTO>> SelectAllFormacionModificacionBonificablesHistoricoToday(List<FormacionModificacionHistoricoDTO> formacionesModificacionHistoricoDTO, CancellationToken cancellationToken); 
-		Task<List<PedidoDTO>> SelectAllPedidos(PedidoFiltrosDTO filtros, List<EmpresaExterna>? empresasExternas ,CancellationToken cancellationToken);
-		Task<List<FacturaPedidoDTO>> SelectAllFacturasPedido(int pedidoID, List<EmpresaExterna>? empresasExternas, CancellationToken cancellationToken);
-		Task<List<int>> SelectAllTramitadas(CancellationToken cancellationToken);
-		Task<List<PedidosDrop>> SelectAllAreasPedidos(CancellationToken cancellationToken);
-		Task<List<FormacionListDTO>> SelectFormacionesArea(FormacionFiltrosDTO filtros, List<string> areas, CancellationToken cancellationToken);
-		Task<List<string>> SelectAreasFormacion(int formacionId, CancellationToken cancellationToken);
-		Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
-		Task<List<FormacionListDTO>> SelectAllOtraEmpresa(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
-		Task<List<FormacionEstadoHistoricoDTO>> SelectHistoricoEstadoFormacion(int formacionID, CancellationToken cancellationToken);
-		Task<List<FormacionModificacionHistoricoDTO>> SelectHistoricoCambiosFormacion(int formacionID, CancellationToken cancellationToken);
-		Task<List<FormacionCompleteDTO>> SelectAllComplete(FormacionFiltrosDTO? filtros, CancellationToken cancellationToken);
 		Task<List<int>> SelectAreas(List<string> areas, CancellationToken cancellationToken);
+		Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
 		Task<FormacionDTO> SelectSingle(int formacionID, CancellationToken cancellationToken);
-		Task<FormacionDTO> SelectValoradoresPendientes(FormacionDTO formacion, CancellationToken cancellationToken);
-		Task<bool> EstaEnAsistentes(int formacionID, string user, CancellationToken cancellationToken);
-		Task<List<FormacionListDTO>> DropFormacionesValidadas(List<FormacionListDTO> formaciones, CancellationToken cancellationToken);
-		Task<List<FormacionCompleteDTO>> DropFormacionesValidadas(List<FormacionCompleteDTO> formaciones, CancellationToken cancellationToken);
-		Task<int?> SelectPosicionNuevoCodigo(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<int?> SelectPosicionNuevoCodigoOtraEmpresa(FormacionDTO formacionDTO, CancellationToken cancellationToken);
 		Task<bool> ExisteCodigo(string codigo, CancellationToken cancellationToken);
-		Task<bool> ExisteCodigoOtraEmpresa(string codigo, CancellationToken cancellationToken);
-		Task<FormacionDTO> SelectSingleOtraEmpresa(int formacionID, CancellationToken cancellationToken);
 		Task<bool> ComprobarValoracionCompletada(int formacionID);
 		Task<FormacionDTO> Insert(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> InsertOtraEmpresa(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<PedidoDTO> AsignarPedidoFormacion(int formacionID, int pedidoID, CancellationToken cancellationToken);
 		Task<FormacionDTO> Update(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> UpdateSharePoint(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> UpdateConCuestionario(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> UpdateConValoracion(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<ActualizarAreasFormacionesDTO> UpdateAreasFormaciones(ActualizarAreasFormacionesDTO formacionDTO, CancellationToken cancellationToken);
-		Task<bool?> DesvincularPedido(int pedidoID, CancellationToken cancellationToken);
-		Task<List<FormacionHorarioDTO>> SelectAllHorarios(int formacionID, string compañia, CancellationToken cancellationToken);
 		Task<bool> Delete(int formacionID, CancellationToken cancellationToken);
 	}
 \end{lstlisting}

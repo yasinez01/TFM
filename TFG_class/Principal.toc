@@ -3,12 +3,17 @@
 \contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {iv}}{section*.2}%
 \contentsline {chapter}{Listings}{\es@scroman {vi}}{section*.3}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Esto es una sección}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Esto es una subsección}{2}{subsection.1.1.1}%
-\contentsline {chapter}{\numberline {2}Recogida de datos}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Algoritmo}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Evaluación}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{9}{chapter.5}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{11}{section*.6}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{13}{section*.7}%
-\contentsline {chapter}{Ap\'{e}ndice}{15}{section*.7}%
+\contentsline {chapter}{\numberline {2}Estructura del proyecto}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Presentación}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aplicación}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Infraestructura}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Dominio}{7}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Proyecto}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Acceso a plataforma de aprendizaje}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Acceso directo a la página de Tracafit}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Acceso directo a la plataforma de ciberseguridad}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Solicitar nueva acción formativa}{11}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{15}{chapter.4}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{17}{section*.10}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{19}{section*.11}%
+\contentsline {chapter}{Ap\'{e}ndice}{19}{section*.11}%
