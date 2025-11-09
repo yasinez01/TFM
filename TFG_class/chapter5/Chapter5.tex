@@ -1,7 +1,426 @@
-\chapter[Conclusiones y Trabajo Futuro]{Conclusiones y Trabajo Futuro}
+\chapter[Proyecto]{Proyecto}
 \label{Chap5}
 
+La aplicación \textit{Ecosistema de Aprendizaje} es un entorno digital que nos va a permitir, desde la organización, gestionar el aprendizaje y el desarrollo profesional de una manera más ágil y dinámica.A través de esta aplicación, se busca dar respuesta a la necesidad de disponer de un entorno digital unificado que permita a Tracasa Global y Tracasa Instrumental gestionar de forma eficiente los procesos de formación y desarrollo profesional de sus empleados. Este proyecto se enmarca en una estrategia de transformación digital más amplia, orientada a optimizar la gestión del talento y fomentar el aprendizaje continuo dentro de la organización. Desde el punto de vista funcional, la aplicación ofrecerá una interfaz intuitiva y accesible, compuesta por diferentes pantallas y formularios que permitirán a los usuarios interactuar con el sistema de manera sencilla.
+La herramienta persigue no solo digitalizar los procesos de solicitud y seguimiento de la formación, sino también mejorar la trazabilidad y la comunicación entre empleados, \textit{managers} y responsables del área de proyectos tecnológicos. De este modo, se potencia una gestión más ágil, transparente y alineada con los objetivos estratégicos de la empresa.
+
+La aplicación nos ofrece varias funcionalidades:  
+
+\begin{enumerate}
+	\item Posibilidad de cada persona pueda solicitar formación, que será validada por el \textit{manager} y \textit{PyT}.  
+	\item Posibilidad de conocer qué acciones formativas se van a hacer en la empresa y solicitar incluirse en ella. También será validado por el \textit{manager} y \textit{PyT}. 
+	\item Acceder a una plataforma de aprendizaje donde cada persona podrá desarrollase en aquellas materias que puedan resultar de interés. Aquellas acciones que sean por interés personal y no estén relacionadas con el desempeño de su puesto, se realizarán fuera de jornada laboral.
+\end{enumerate}
+
+Cuando accedemos a la aplicación, visualizamos la pantalla \textit{HOME} que sale en la Figura \ref{fig:ej1}, donde podremos elegir la acción que vayamos a realizar:  
+
+\begin{enumerate}
+	\item Acceso a la plataforma de aprendizaje \textit{GoodHabitz}.
+	\item Acceso a la plataforma de ciberseguridad.
+	\item Solicitar una nueva acción formativa.
+	\item Visualizar las acciones previo a su comienzo y solicitar unirse a ella. 
+\end{enumerate}
+\begin{figure} [h!btp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/home.png}
+	\caption[Pantalla home con los accesos directos.]{Pantalla home con los accesos directos.}
+	\label{fig:ej1}
+\end{figure}
+
+\section{Acceso a plataforma de aprendizaje}
+Para acceder a la plataforma de aprendizaje, que vemos en la Figura \ref{fig:ej2}, debemos posicionarnos en la pantalla Home y seleccionar en GoodHabitz 
+Al acceder a la plataforma, por defecto, y sólo la primera vez, aparecerá un mensaje para aceptar la política de privacidad y acuerdo de usuario. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/plataformaAprendizaje.png}
+	\caption[Pantalla plataforma de aprendizaje.]{Pantalla plataforma de aprendizaje.}
+	\label{fig:ej2}
+\end{figure}
+A continuación, encontraremos, en la parte superior de la pantalla, dos opciones a las que podremos acceder:  
+\begin{itemize}
+	\item Tus cursos: donde podremos encontrar aquellas acciones formativas que cada usuario haya realizado, esté realizando en ese momento o, también podemos encontrar aquellas formaciones que la empresa haya sugerido realizar
+	\item Todos los cursos: podremos ver el catálogo de acciones formativas a las que podemos acceder y cursar.
+\end{itemize}
+
+\section{Acceso directo a la plataforma de ciberseguridad}
+Acceso directo a contenidos para mejorar las capacidades en ciberseguridad tal y como se observa en la Figura \ref{fig:ej3} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/plataformaCiberseguridad.png}
+	\caption[Plataforma de ciberseguridad.]{Plataforma de ciberseguridad.}
+	\label{fig:ej3}
+\end{figure}
+
+\section{Solicitar nueva acción formativa}
+Se proporciona dos accesos para poder solicitar una formación. Podemos crear una formación extraordinaria o planificada. La diferencia que hay es que en el caso de la planificada debemos seleccionar una propuesta de plan de formación (que explicaremos más tarde) que asignaríamos a la formación que vamos a crear y para el caso de extraordinaria no se le asigna.
+
+Al acceder a la opción de \textit{Solicitar formación extraordinaria} encontraremos la pantalla mostrada en la Figura \ref{fig:ej4}:  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/cuestionarioIntake.png}
+	\caption[Cuestionario INTAKE para solicitar formación.]{Cuestionario INTAKE para solicitar formación.}
+	\label{fig:ej4}
+\end{figure}
+Un cuestionario de 10 preguntas para recoger información sobre la necesidad formativa u oportunidad de mejora. Este cuestionario solo aparece para el caso de formación extraordinaria.
+
+Nos encontramos con otra pestaña \textit{Datos generales} que sí aparece para ambos tipos de formación.
+que nos muestra la pantalla de la Figura \ref{fig:ej5}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaDatosGenerales.png}
+	\caption[Formulario de datos generales a rellenar.]{Formulario de datos generales a rellenar.}
+	\label{fig:ej5}
+\end{figure}
+
+Cumplimentar los datos de la segunda pantalla:
+
+\begin{description}
+	\item[Nombre:] Nombre de la acción formativa.
+	\item[Área:] Área a la que pertenece el creador de la solicitud.
+	\item[Aprobador/a:] Responsable directo del/los asistentes. En caso de asistir personal de varias áreas, identificar como aprobador al responsable del área de la que asistan más personas.
+	\item[Validador/a:] Director de departamento al que pertenecen los asistentes. En caso de asistir personal de varios departamentos, identificar como aprobador al director del departamento del que asistan más personas.
+	\item[Valorador/a:] Encargado/a de valorar la formación. Puede haber más de un/a valorador/a para cada formación. Por defecto se asigna como valorador/a el aprobador/a.
+	\item[Planificación:] Ubicarla en el trimestre en el que se imparte la acción.
+	\item[Modalidad de la formación:] Modalidad en la que se imparte (Online, Streaming, presencial, mixta…).
+	\item[Tipo de formación:] Si la formación es interna (el docente es de plantilla), externa (el docente es una empresa/persona ajena a la empresa), mixta (se combinan ambas modalidades).
+	\item[Medio pedagógico:] Comunidades en prácticas (aprendizaje en comunidad o social), aprendizaje experiencial (Learning by doing), aprendizaje tradicional (formación tradicional).
+	\item[Tipo de contenido:] Si se trata de conocimientos técnicos, Soft Skills, Idiomas, Agile…
+	\item[Lugar:] Dónde tiene lugar la acción formativa.
+	\item[Tipo de coste:] Coste (si la acción implica un coste en la matriculación) o gratuita (no supone coste en la inscripción).
+	\item[Código:] Aparece cumplimentada por defecto. No rellenable.
+	\item[Unidades:] Número de personas para asistir.
+	\item[Importe:] En caso de que suponga coste, indicar cuantía por persona sin IVA.
+	\item[Total:] Cuantía total sin IVA. No rellenable.
+	\item[Fecha Inicio:] Fecha en la que tiene lugar el inicio de la acción formativa.
+	\item[Fecha Fin:] Fecha en la que finaliza la acción formativa.
+	\item[Horas de formación:] Número de horas que dura la acción formativa.
+	\item[Sala:] La sala donde se impartirá la acción formativa.
+	\item[Días aviso valoración:] Aparece cumplimentada por defecto. No rellenable.
+	\item[Tipo de plan de formación:] Planificado o Extraordinario. Según qué tipo de solicitud hemos solicitado tendrá un valor u otro, con la posibilidad de poder cambiarlo.
+	\item[Plan de formación anual:] Plan para formar en el año actual. En el caso de solicitud extraordinaria este campo estará deshabilitado y, para el caso de planificada, tendrá como valor la propuesta del plan de formación seleccionada, también con la opción de poder cambiarla.
+	\item[Mostrar en la home:] Opción para mostrar o no en la pestaña home.
+	\item[Es bonificable:] Opción para indicar si es bonificable o no la acción formativa.
+	\item[Contenido y/o programa:] Espacio destinado a alojar el link del programa de contenidos, en caso de disponer de él, o adjuntarlo en caso de tenerlo como documento.
+	\item[Temario:] Espacio destinado a adjuntar el temario en caso de tenerlo como documento.
+	\item[Observaciones:] Observaciones opcionales para indicar en la acción formativa.
+\end{description}
 
 
+Si hemos seleccionado la opción de \textit{Solicitar formación planificada} nos aparece lo que vemos en la Figura \ref{fig:ej6}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/seleccionarPropuestaFormacion.png}
+	\caption[Ventana para seleccionar propuesta a asignar a la formación.]{Ventana para seleccionar propuesta a asignar a la formación.}
+	\label{fig:ej6}
+\end{figure}
+
+Es un listado de propuestas aceptadas de los planes de formación que estén aprobados y activos. Se selecciona una propuesta y haciendo clic en el botón \textit{Aceptar} nos carga solo la pestaña de \textit{Datos generales} con los campos \textit{Tipo de plan de formación} y \textit{Plan de formación} automáticamente rellenados.
+
+Una vez cumplimentada la pantalla de Datos generales, debemos guardar y continuar la creación de la solicitud y a continuación aparecerá más pestañas en la parte superior, tal y como se muestra en la Figura \ref{fig:ej7}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/restoPestanas.png}
+	\caption[Pestañas que cargan después de crear una formación.]{Pestañas que cargan después de crear una formación.}
+	\label{fig:ej7}
+\end{figure}
+
+La pestaña Docencia es el espacio para crear el/los docentes e introducir toda la información relativa a la docencia como vemos en la Figura \ref{fig:ej8}:  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaDocentes.png}
+	\caption[Pestaña de los docentes de la formación.]{Pestaña de los docentes de la formación.}
+	\label{fig:ej8}
+\end{figure}
+Pulsamos Crear docente y aparece una línea para introducir los datos correspondientes (Nombre, DNI, CIF, Tipo de docente, si es ajeno a la empresa o interno, entidad a la que pertenece…).
+
+Cuando la acción formativa está pendiente de tramitación se permite seleccionar asistentes y nos aparece el botón de enviar convocatoria y lo podemos ver en la Figura \ref{fig:ej9}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/asistentesEnvioConvocatoria.png}
+	\caption[Seleccionar asistentes para enviarles envío de convocatoria.]{Seleccionar asistentes para enviarles envío de convocatoria.}
+	\label{fig:ej9}
+\end{figure}
+
+Al hacer clic se envía un correo a los asistentes seleccionados. En este correo se encuentra un archivo adjunto que contiene los eventos creados en la pestaña Calendario (que veremos más adelante) para agregarlos automáticamente en el Outlook personal de cada asistente.
+
+Por otro lado, en el cuerpo del correo aparece un enlace el cual nos dirige a una página donde se muestra el nombre de la acción formativa y podemos aceptar o rechazar la asistencia con la posibilidad de agregar comentario opcional. Se puede aceptar o rechazar solo una vez, por lo que si se intenta acceder de nuevo después de contestar salta acceso denegado.
+
+Cuando la formación pasa a ser tramitada, automáticamente a todos los asistentes que están pendientes de responder o que no se les mandó correo antes se les envía el correo.
+Hay dos casos a considerar al enviar un correo a uno o varios asistentes:
+\begin{enumerate}
+	\item Si el correo se envía el mismo día de la fecha de finalización de la acción formativa, la asistencia se rechaza automáticamente y se notifica a los asistentes por correo electrónico.  
+	\item Si quedan menos de 10 días para la fecha de finalización de la acción formativa, la asistencia se acepta automáticamente y no se envía ningún correo a los asistentes.
+\end{enumerate}
+
+Cuando la formación pasa a ser pendiente de valoración, al seleccionar los asistentes aparece un nuevo botón para enviar correo para encuesta de eficacia formativa y en el correo se manda una url a la pantalla que se ve en la Figura \ref{fig:ej10} para rellenar la encuesta.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/encuestaEficacia.png}
+	\caption[Página para rellenar encuesta de eficacia formativa.]{Página para rellenar encuesta de eficacia formativa.}
+	\label{fig:ej10}
+\end{figure}
+
+No se puede rellenar más de una vez excepto si se vuelve a enviar al asistente de nuevo el correo como comentamos en convocatoria. 
+En este estado se agrega una pestaña más que es Valoraciones como vemos en la Figura \ref{fig:ej11}:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaValoraciones.png}
+	\caption[Pestaña de valoraciones de una formación.]{Pestaña de valoraciones de una formación.}
+	\label{fig:ej11}
+\end{figure}
+
+Nos indica tanto las valoraciones de la formación, que explicaremos más tarde, como las encuestas realizadas, como vemos se muestra marcado en rojo la valoración media total de todas las encuestas. Si desplegamos alguna encuesta podemos ver la respuesta del asistente y la valoración total de dicha encuesta, tal y como se ve en la Figura \ref{fig:ej12}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/detallesEncuesta.png}
+	\caption[Resultado de una encuesta realizada a una formación.]{Resultado de una encuesta realizada a una formación.}
+	\label{fig:ej12}
+\end{figure}
+
+En la pestaña Calendario, que vemos en la Figura \ref{fig:ej13}, se incluirá los datos relativos a días y horas que abarca la formación.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaCalendarios.png}
+	\caption[Pestaña de calendario de una formación.]{Pestaña de calendario de una formación.}
+	\label{fig:ej13}
+\end{figure}
+Es un sistema flexible que permite personalizar las jornadas y días. El funcionamiento es similar al de la herramienta \textit{Outlook}.
+
+En la pestaña Histórico, que vemos en la Figura \ref{fig:ej14}, se guarda un historial de cambios de los estados de la acción formativa, cambios de valores de los campos de los datos generales (importe, horas, fecha inicio, fecha fin), cuando se añade/elimina un docente y cuando se añade/elimina un asistente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaHistorico.png}
+	\caption[Pestaña con el histórico de cambios en una formación.]{Pestaña con el histórico de cambios en una formación.}
+	\label{fig:ej14}
+\end{figure}
+
+En la pestaña Gestión, que vemos en la Figura \ref{fig:ej15},se pueden enviar avisos por correo, rellenar opcionalmente el campo de cantidad bonificada y/o asignar pedidos, creando uno nuevo o asignando uno existente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaGestion.png}
+	\caption[Pestaña de gestión de una formación.]{Pestaña de gestión de una formación.}
+	\label{fig:ej15}
+\end{figure}
+
+Al querer asignar pedido nos muestra el listado de pedidos para seleccionar, tal y como nos aparece en la Figura \ref{fig:ej16}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/listadoPedidos.png}
+	\caption[Listado de pedidos para asignar a una formación.]{Listado de pedidos para asignar a una formación.}
+	\label{fig:ej16}
+\end{figure} 
+
+Se pueden filtrar y al asignar un pedido nos muestra la referencia interna y el nº del pedido vinculado con la posibilidad de tanto ver el pedido como desvincularlo.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaGestionConPedidos.png}
+	\caption[Pestaña de gestión de una formación con pedidos asignados.]{Pestaña de gestión de una formación con pedidos asignados.}
+	\label{fig:ej17}
+\end{figure} 
+Vemos en la Figura \ref{fig:ej17} que aparece también el listado de facturas del pedido vinculado. A parte de los datos de las facturas se nos proporciona el estado de cada factura (pagada o pendiente). Si una factura pendiente se ha cambiado de estado a pagada podemos actualizar las facturas de estado usando el botón \textit{Marcar Pagada} que aparece en la columna de Acción para las facturas pendientes señalado con un cuadrado rojo.
+
+En la pestaña Solicitudes, que vemos en la Figura \ref{fig:ej18}, podemos ver todas las solicitudes de inscripción pendientes de aprobar
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaSolicitudes.png}
+	\caption[Pestaña de solicitudes de inscripción pendientes de aprobar.]{Pestaña de solicitudes de inscripción pendientes de aprobar.}
+	\label{fig:ej18}
+\end{figure} 
+
+Finalizamos la solicitud de acción formativa pulsando \textit{Avisar al aprobador} y automáticamente llega un aviso a los responsables y \textit{PyT} para validar y tramitar la acción, si es el caso. En caso de que, una vez solicitada una acción formativa, surja cualquier tipo de modificación, de procederá a hacer los cambios oportunos en la aplicación y, tras guardar esos cambios, debemos volver a \textit{Avisar al aprobador}.
+
+\section{Solicitar incluirse en una acción formativa ya creada}
+
+En la pantalla Home podremos visualizar, tal y como podemos observar en la Figura \ref{fig:ej19}, las acciones formativas que han sido solicitadas, aprobadas y tramitadas pero que aún no han dado comienzo, dando la posibilidad de que otras personas, que no han sido convocadas y que pueden estar interesadas en asistir, puedan solicitar su incorporación. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pantallaHomeFormacionesCreadas.png}
+	\caption[Pantalla de HOME con las formaciones ya tramitadas sin comenzar.]{Pantalla de HOME con las formaciones ya tramitadas sin comenzar.}
+	\label{fig:ej19}
+\end{figure} 
+Pulsamos en cualquier parte de la línea de la formación en la que estamos interesados. Mostrará la información de la acción y para finalizar la solicitud de incorporación a la acción, debemos pulsar Solicitar inscripción y llegará a responsables y \textit{PyT} para validar y tramitar la solicitud, si es el caso. 
+
+\section{Clonación y valoraciones}
+Está incluida también la opción de clonar una acción formativa como se ve en la Figura \ref{fig:ej20}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/btnClonarFormacion.png}
+	\caption[Botones de clonación de la formación.]{Botones de clonación de la formación.}
+	\label{fig:ej20}
+\end{figure}
+Podemos clonar tanto en instrumental como en global. Al hacer clic se realiza un proceso similar a cuando solicitamos formación con algunos cambios:
+\begin{enumerate}
+	\item La pestaña Cuestionario INTAKE se rellena por defecto con la información que había en la acción formativa que se desea clonar.
+	\item La pestaña Datos generales se rellena por defecto con la información que había en la acción formativa que desea clonar, excepto los campos Fecha inicio y Fecha fin. En el caso de clonar en la empresa contraria los campos que son selectores se cargan con los datos de dicha empresa.
+	\item Se muestra la pestaña Docencia con los docentes que tenía la acción formativa que se va a clonar sin la posibilidad de agregar o crear nuevos docentes. 
+\end{enumerate}
+\vspace{0.5em}
+\subsection{INFORMACIÓN PARA RESPONSABLES Y DIRECTORES}\\ 
+En el momento en que un trabajador crea una acción formativa, la solicitud generada se envía automáticamente al \textbf{responsable de área} correspondiente para su revisión inicial. Este será el encargado de analizar la propuesta y valorar si la acción solicitada se ajusta a las necesidades del departamento o si, por el contrario, no resulta procedente.  
+
+\begin{itemize}
+	\item En caso de ser rechazada, el sistema genera de forma automática una notificación al creador de la solicitud, informándole tanto del estado de la misma como del motivo del rechazo, garantizando así una comunicación directa y transparente.
+	\item Si la solicitud es aprobada, esta se remite al \textbf{director del departamento} (cuando corresponda) para que realice un segundo nivel de validación y análisis antes de su tramitación definitiva.
+\end{itemize}
+El proceso se repite en este punto, siguiendo la misma dinámica de aprobación y notificación entre los distintos niveles jerárquicos.  
+
+\begin{itemize}
+	\item En caso de que el director rechace la solicitud, el sistema volverá a generar automáticamente un aviso dirigido tanto al responsable de área como al creador de la acción formativa, informando del estado actualizado y del motivo de la decisión.
+	\item Si, por el contrario, la solicitud es aprobada, se enviará un correo electrónico al área de \textit{PyT}, que será la encargada de revisar, aprobar y tramitar la formación de manera definitiva.
+\end{itemize}
+De esta forma, el flujo de aprobación garantiza que todas las solicitudes sean revisadas por los distintos niveles de responsabilidad antes de ser ejecutadas, manteniendo un control exhaustivo sobre el proceso y asegurando la coherencia entre las necesidades individuales de los empleados y los objetivos estratégicos de la empresa.  
+
+Además, los \textbf{responsables de área} y los \textbf{directores de departamento} recibirán de forma continua notificaciones sobre las solicitudes pendientes de revisión o cualquier otra tarea relacionada con su gestión. En caso de que estas notificaciones no se localicen en el buzón de correo, los usuarios podrán consultar directamente las tareas pendientes a través del menú lateral de la aplicación, donde se ha habilitado un acceso específico para este fin.  
+
+Al acceder al sistema, dispondrán de dos nuevas secciones que no están visibles para el resto de trabajadores:  
+
+\begin{itemize}
+	\item La opción \textit{Pdte. Autorizar}, que muestra el listado de solicitudes que se encuentran pendientes de aprobación. Desde este apartado los responsables y directores podrán acceder al detalle de cada acción formativa, revisar su información completa y, en función de su criterio, aprobar o rechazar la solicitud directamente desde la interfaz.
+	\item La opción \textit{Pdte. Valorar}, destinada a la gestión de las valoraciones de la eficacia de la formación. En este apartado se mostrarán las formaciones finalizadas que están pendientes de valoración, y al acceder a una de ellas aparecerá una nueva pestaña en la parte superior con el formulario correspondiente para registrar la evaluación.
+\end{itemize}
+Gracias a este sistema de comunicación y control, la aplicación centraliza todos los procesos relacionados con la validación, aprobación y valoración de las acciones formativas, reduciendo los tiempos de gestión y evitando pérdidas de información entre los distintos niveles organizativos.
+
+\begin{figure}[H]
+	\centering
+	\resizebox{0.9\textwidth}{!}{%
+		\begin{tikzpicture}[
+			node distance=1.6cm and 1.8cm,
+			every node/.style={rectangle, draw, rounded corners, align=center, font=\footnotesize, minimum width=3.5cm, minimum height=0.9cm},
+			arrow/.style={-Stealth, thick}
+			]
+			
+			\node (trabajador) {Trabajador crea la acción formativa};
+			\node (responsable) [below=of trabajador] {Responsable de área analiza \\ (Aprueba / Rechaza)};
+			\node (responsableAprueba) [below=of responsable] {Aprobada → Enviar al director de departamento};
+			\node (director) [below=of responsableAprueba] {Director de departamento analiza \\ (Aprueba / Rechaza)};
+			\node (directorAprueba) [below=of director] {Aprobada → Enviar a PyT};
+			\node (pyt) [below=of directorAprueba] {PyT revisa y tramita la formación};
+			
+			\draw[arrow] (trabajador) -- (responsable);
+			
+			\node (rechazado1) [left=1.8cm of responsable] {Rechazada \\ → Notifica al creador de la solicitud};
+			\draw[arrow] (responsable) -- (rechazado1);
+			\draw[arrow] (responsable) -- (responsableAprueba);
+			\draw[arrow] (responsableAprueba) -- (director);
+			
+			\node (rechazado2) [left=1.8cm of director] {Rechazada \\ → Notifica al responsable \\ y creador de la solicitud};
+			\draw[arrow] (director) -- (rechazado2);
+			\draw[arrow] (director) -- (directorAprueba);
+			
+			\draw[arrow] (directorAprueba) -- (pyt);
+			
+		\end{tikzpicture}
+	}
+	\caption{Flujo de aprobación y notificaciones de las acciones formativas, incluyendo rutas de rechazo.}
+	\label{fig:flujo_aprobaciones}
+\end{figure}
 
 
+\section{Planes de formación y propuestas}
+En el menú lateral tenemos una sección de planes de formación anula, si hacemos clic nos aparece la siguiente Figura \ref{fig:ej21}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/ListadoPlanes.png}
+	\caption[Pantalla con el listado de planes de formación anual.]{Pantalla con el listado de planes de formación anual.}
+	\label{fig:ej21}
+\end{figure}
+Un listado de planes con la opción de poder filtrar los activos o inactivos. Para crear un plan de formación hacemos clic en el botón \textit{Crear plan de formación anual} que nos muestra la página de la Figura \ref{fig:ej22}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/formularioPlanFormacion.png}
+	\caption[Pantalla con el formulario para crear un plan de formación anual.]{Pantalla con el formulario para crear un plan de formación anual.}
+	\label{fig:ej22}
+\end{figure}
+Al crear el plan aparecen más pestañas, tal y como podemos observar y la Figura \ref{fig:ej23} y en la parte inferior, se nos muestra el estado del plan junto al año del plan.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanasPlanFormacion.png}
+	\caption[Pantalla de edición del plan de formación anual con todas las pestañas.]{Pantalla de edición del plan de formación anual con todas las pestañas.}
+	\label{fig:ej23}
+\end{figure}
+
+En la pestaña Departamentos vemos la siguiente Figura \ref{fig:ej24}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaDepartamentosPlanFormacion.png}
+	\caption[Pantalla de departamentos del plan de formación anual.]{Pantalla de departamentos del plan de formación anual.}
+	\label{fig:ej24}
+\end{figure}
+Aquí, por cada departamento se podrá indicar que usuarios tendrán permisos para subir propuestas de formación para el departamento indicado. Para cada usuario hay una columna Enviar plan a \textit{PyT} para poder indicar a que usuario dar los permisos, tal y como vemos en la Figura \ref{fig:ej25}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/permisosUsuariosDepartamento.png}
+	\caption[Usuarios con permiso de un departamento del plan de formación anual.]{Usuarios con permiso de un departamento del plan de formación anual.}
+	\label{fig:ej25}
+\end{figure}
+
+En la pestaña de propuestas se encuentra el listado de las propuestas para el plan de formación como podemos ver en la Figura \ref{fig:ej26}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pantallaListadoPropuestasPlanFormacion.png}
+	\caption[Pantalla con el listado de las propuestas de plan de formación anual.]{Pantalla con el listado de las propuestas de plan de formación anual.}
+	\label{fig:ej26}
+\end{figure}
+
+Debajo del listado nos aparecen los estados que podría tener una propuesta y cada estado con un color diferente. En el listado al inicio de cada propuesta aparece el color que representa su estado. En el caso de la Figura \ref{fig:ej26}, hay 2 propuestas unificadas, 4 aceptadas y 1 rechazada.
+
+Si nos fijamos en la parte superior hay una serie de botones:
+\begin{description}
+	\item[Crear propuesta de formación:] haciendo clic nos dirige a la pantalla, que vemos en la Figura \ref{fig:ej27}, donde podemos crear una nueva propuesta rellenando el formulario y haciendo clic en \textit{Guardar y continuar}.
+	\item[Exportar excel:] nos permite descargar un excel con las propuestas que hay en el listado.
+	\item[Cargar excel:] nos permite cargar un excel que tengamos con propuestas y agregarlos al plan automáticamente sin tener que crearlas manualmente.
+\end{description}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/formularioCrearPropuestaFormacion.png}
+	\caption[Pantalla con el formulario para crear una propuesta del plan de formaciones.]{Pantalla con el formulario para crear una propuesta del plan de formaciones.}
+	\label{fig:ej27}
+\end{figure}
+
+El resto de los botones aparecen deshabilitados por defecto.
+\begin{description}
+	\item[Aprobar:] nos permite aprobar propuestas. Para ello se debe seleccionar una o varias propuestas y hacer clic al botón para aprobarlas como vemos en la Figura \ref{fig:ej28}.
+	\item[Rechazar:] nos permite rechazar propuestas. Para ello se debe seleccionar una o varias propuestas y hacer clic al botón para rechazarlas como vemos en la Figura \ref{fig:ej28}.
+	\item[Combinar propuestas:] A parte de poder crear una propuesta rellenando el formulario, tenemos la opción de generar una nueva propuesta combinando dos o más propuestas. Para este caso se deben seleccionar mínimo dos propuestas como vemos en la Figura \ref{fig:ej29} 
+\end{description}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/listadoPropuestas1FilaSeleccionada.png}
+	\caption[Pantalla con el listado de las propuestas de plan de formación anual con una fila seleccionada.]{Pantalla con el listado de las propuestas de plan de formación anual con una fila seleccionada.}
+	\label{fig:ej28}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/listadoPropuestas2FilasSeleccionadas.png}
+	\caption[Pantalla con el listado de las propuestas de plan de formación anual con dos filas seleccionadas.]{Pantalla con el listado de las propuestas de plan de formación anual con dos filas seleccionadas.}
+	\label{fig:ej29}
+\end{figure}
+
+
+Podemos desplegar las propuestas y nos aparecerán 3 pestañas:
+\begin{description}
+	\item[Asistentes:] podemos ver el listado de asistentes de la propuesta, lo podemos ver en la Figura \ref{fig:ej30}.
+	\item[Propuestas unificadas:] solo si la propuesta ha sido creada combinando otras, nos aparecerá el código de esas propuestas que hemos combinado, lo podemos ver en la Figura \ref{fig:ej31}. 
+	\item[Formaciones creadas:] nos aparecen las formaciones que tienen asignada esa propuesta, lo podemos ver en la Figura \ref{fig:ej32}.
+\end{description}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaAsistentesDentroDePropuestas.png}
+	\caption[Pestaña de asistentes dentro de la propuesta del plan de formaciones.]{Pestaña de asistentes dentro de la propuesta del plan de formaciones.}
+	\label{fig:ej30}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaPropuestasUnificadasDentroDePropuestas.png}
+	\caption[Pestaña de propuestas unificadas dentro de la propuesta del plan de formaciones.]{Pestaña de propuestas unificadas dentro de la propuesta del plan de formaciones.}
+	\label{fig:ej31}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fig/pestanaFormacionesDentroDePropuestas.png}
+	\caption[Pestaña de formaciones creadas que tienen asignada la propuesta del plan de formaciones.]{Pestaña de formaciones creadas que tienen asignada la propuesta del plan de formaciones.}
+	\label{fig:ej32}
+\end{figure}

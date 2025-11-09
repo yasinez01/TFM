@@ -3,19 +3,23 @@
 \contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {v}}{section*.2}%
 \contentsline {chapter}{Listings}{\es@scroman {vi}}{section*.3}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Estructura del proyecto}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Presentación}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aplicación}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Infraestructura}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Dominio}{7}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Proyecto}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Acceso a plataforma de aprendizaje}{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Acceso directo a la plataforma de ciberseguridad}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Solicitar nueva acción formativa}{11}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Solicitar incluirse en una acción formativa ya creada}{20}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Clonación y valoraciones}{21}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Planes de formación y propuestas}{22}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{27}{chapter.4}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{29}{section*.31}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{31}{section*.32}%
-\contentsline {chapter}{Ap\'{e}ndice}{31}{section*.32}%
+\contentsline {chapter}{\numberline {2}Análisis de requisitos}{3}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}Requisitos funcionales}{3}{subsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.0.2}Requisitos no funcionales}{4}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.3}Roles}{4}{subsection.2.0.3}%
+\contentsline {chapter}{\numberline {3}Estructura del proyecto}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Presentación}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Aplicación}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Infraestructura}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Dominio}{11}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Proyecto}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Acceso a plataforma de aprendizaje}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Acceso directo a la plataforma de ciberseguridad}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Solicitar nueva acción formativa}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Solicitar incluirse en una acción formativa ya creada}{24}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Clonación y valoraciones}{25}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}INFORMACIÓN PARA RESPONSABLES Y DIRECTORES}{25}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Planes de formación y propuestas}{27}{section.4.6}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{33}{section*.38}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{35}{section*.39}%
+\contentsline {chapter}{Ap\'{e}ndice}{35}{section*.39}%

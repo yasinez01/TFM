@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  2 NOV 2025 22:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  9 NOV 2025 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,15 +585,269 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 44.
 
 
 Writing index file Principal.idx
-) (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks42
+\pgfutil@tempdima=\dimen185
+\pgfutil@tempdimb=\dimen186
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box105
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks43
+\pgfkeys@temptoks=\toks44
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.
+tex
+\pgfkeys@tmptoks=\toks45
+))
+\pgf@x=\dimen187
+\pgf@y=\dimen188
+\pgf@xa=\dimen189
+\pgf@ya=\dimen190
+\pgf@xb=\dimen191
+\pgf@yb=\dimen192
+\pgf@xc=\dimen193
+\pgf@yc=\dimen194
+\pgf@xd=\dimen195
+\pgf@yd=\dimen196
+\w@pgf@writea=\write5
+\r@pgf@reada=\read2
+\c@pgf@counta=\count345
+\c@pgf@countb=\count346
+\c@pgf@countc=\count347
+\c@pgf@countd=\count348
+\t@pgf@toka=\toks46
+\t@pgf@tokb=\toks47
+\t@pgf@tokc=\toks48
+\pgf@sys@id@count=\count349
+ (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count350
+\pgfsyssoftpath@bigbuffer@items=\count351
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen197
+\pgfmath@count=\count352
+\pgfmath@box=\box106
+\pgfmath@toks=\toks49
+\pgfmath@stack@operand=\toks50
+\pgfmath@stack@operation=\toks51
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.co
+de.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.
+tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmeti
+cs.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex
+) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count353
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen198
+\pgf@picmaxx=\dimen199
+\pgf@picminy=\dimen256
+\pgf@picmaxy=\dimen257
+\pgf@pathminx=\dimen258
+\pgf@pathmaxx=\dimen259
+\pgf@pathminy=\dimen260
+\pgf@pathmaxy=\dimen261
+\pgf@xx=\dimen262
+\pgf@xy=\dimen263
+\pgf@yx=\dimen264
+\pgf@yy=\dimen265
+\pgf@zx=\dimen266
+\pgf@zy=\dimen267
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.t
+ex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen268
+\pgf@path@lasty=\dimen269
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen270
+\pgf@shorten@start@additional=\dimen271
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box107
+\pgf@hbox=\box108
+\pgf@layerbox@main=\box109
+\pgf@picture@serial@count=\count354
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.te
+x
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen272
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code
+.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen273
+\pgf@pt@y=\dimen274
+\pgf@pt@temp=\dimen275
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.
+tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen276
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen277
+\pgf@sys@shading@range@num=\count355
+\pgf@shadingcount=\count356
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box110
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.te
+x
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box111
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen278
+\pgf@nodesepend=\dimen279
+)
+(C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(C:\Program Files\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex))
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen280
+\pgffor@skip=\dimen281
+\pgffor@stack=\toks52
+\pgffor@toks=\toks53
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.
+tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count357
+\pgfplotmarksize=\dimen282
+)
+\tikz@lastx=\dimen283
+\tikz@lasty=\dimen284
+\tikz@lastxsaved=\dimen285
+\tikz@lastysaved=\dimen286
+\tikz@lastmovetox=\dimen287
+\tikz@lastmovetoy=\dimen288
+\tikzleveldistance=\dimen289
+\tikzsiblingdistance=\dimen290
+\tikz@figbox=\box112
+\tikz@figbox@bg=\box113
+\tikz@tempbox=\box114
+\tikz@tempbox@bg=\box115
+\tikztreelevel=\count358
+\tikznumberofchildren=\count359
+\tikznumberofcurrentchild=\count360
+\tikz@fig@count=\count361
+ (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count362
+\pgfmatrixcurrentcolumn=\count363
+\pgf@matrix@numberofcolumns=\count364
+)
+\tikz@expandcount=\count365
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibra
+rytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.t
+ex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen291
+\pgfarrowlength=\dimen292
+\pgfarrowwidth=\dimen293
+\pgfarrowlinewidth=\dimen294
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibra
+rypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count345
-\U@D=\dimen185
+\babel@savecnt=\count366
+\U@D=\dimen295
 \l@unhyphenated=\language79
 
 (C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count346
+\bbl@readstream=\read3
+\bbl@dirlevel=\count367
 
 *************************************
 * Local config file bblopts.cfg used
@@ -604,8 +858,8 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 )
 (C:\Program Files\MiKTeX\tex/latex/babel-spanish\spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
-\es@quottoks=\toks42
-\es@quotdepth=\count347
+\es@quottoks=\toks54
+\es@quotdepth=\count368
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
@@ -615,15 +869,15 @@ Package babel Info: Making > an active character on input line 722.
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
-\Principal@idxfile=\write5
-\openout5 = `Principal.idx'.
+\Principal@idxfile=\write6
+\openout6 = `Principal.idx'.
 
 
 Writing index file Principal.idx
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count348
-\l__pdf_internal_box=\box105
+\l__color_backend_stack_int=\count369
+\l__pdf_internal_box=\box116
 )
 (Principal.aux
 LaTeX Info: Redefining \. on input line 13.
@@ -651,23 +905,23 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 Package hyperref Info: Link coloring ON on input line 12.
  (Principal.out) (Principal.out)
-\@outlinefile=\write6
-\openout6 = `Principal.out'.
+\@outlinefile=\write7
+\openout7 = `Principal.out'.
 
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
-\scratchdimen=\dimen186
-\scratchbox=\box106
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count352
-\MPscratchDim=\dimen187
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count370
+\scratchdimen=\dimen296
+\scratchbox=\box117
+\nofMPsegments=\count371
+\nofMParguments=\count372
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count373
+\MPscratchDim=\dimen297
+\MPnumerator=\count374
+\makeMPintoPDFobject=\count375
+\everyMPtoPDFconversion=\toks56
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -721,7 +975,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count355
+\c@lstlisting=\count376
 (C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -737,7 +991,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
  (style/titlepage.tex
-<style/fig/ROJO_UPNA_300ppp.png, id=82, 284.5029pt x 151.0443pt>
+<style/fig/ROJO_UPNA_300ppp.png, id=101, 284.5029pt x 151.0443pt>
 File: style/fig/ROJO_UPNA_300ppp.png Graphic file (type png)
 <use style/fig/ROJO_UPNA_300ppp.png>
 Package pdftex.def Info: style/fig/ROJO_UPNA_300ppp.png  used on input line 7.
@@ -780,8 +1034,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ])
-\tf@toc=\write7
-\openout7 = `Principal.toc'.
+\tf@toc=\write8
+\openout8 = `Principal.toc'.
 
 
 
@@ -808,14 +1062,13 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 [2]) (style/toc/figures.tex (Principal.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@lof=\write8
-\openout8 = `Principal.lof'.
-
  [3
 
 
-]
+])
+\tf@lof=\write9
+\openout9 = `Principal.lof'.
+
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 
@@ -830,8 +1083,8 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write9
-\openout9 = `Principal.lot'.
+\tf@lot=\write10
+\openout10 = `Principal.lot'.
 
  [5
 
@@ -844,8 +1097,8 @@ Overfull \hbox (30.60695pt too wide) detected at line 3
  []
 
 )
-\tf@lol=\write10
-\openout10 = `Principal.lol'.
+\tf@lol=\write11
+\openout11 = `Principal.lol'.
 
  [7]) [8
 
@@ -863,30 +1116,63 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-) (chapter3/Chapter3.tex
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            [Estructura del proyecto]{Estructura del proyecto} [1
+l.14 
+      [1
 
-{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}])
+(chapter3/Chapter3.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            [Estructura del proyecto]{Estructura del proyecto} [2
-
-]
+            [Análisis de requisitos]{Análisis de requisitos} [2]
 Cap\'{\i }tulo 2.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-<fig/arquitecturaCapas.png, id=236, 612.78937pt x 322.20375pt>
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 6.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.21 	
+       [3
+
+]
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.59 	\item[Administrador del sistema:]
+                                        mantiene la aplicación, gestiona us...
+[4]) (chapter4/Chapter4.tex [5] [6
+
+]
+Cap\'{\i }tulo 3.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
+[][][][][][][][][]  
+ []
+
+<fig/arquitecturaCapas.png, id=292, 612.78937pt x 322.20375pt>
 File: fig/arquitecturaCapas.png Graphic file (type png)
 <use fig/arquitecturaCapas.png>
 Package pdftex.def Info: fig/arquitecturaCapas.png  used on input line 8.
@@ -894,17 +1180,10 @@ Package pdftex.def Info: fig/arquitecturaCapas.png  used on input line 8.
 
 Underfull \vbox (badness 5105) has occurred while \output is active []
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.14 
-      [3 <./fig/arquitecturaCapas.png>]
+ [7 <./fig/arquitecturaCapas.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 7.
-
-(C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
+ (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
@@ -914,25 +1193,18 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 20.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.27 	var 
-          formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQu...
-[4]
-Overfull \hbox (20.98497pt too wide) in paragraph at lines 34--35
+ [8]
+Overfull \hbox (48.14537pt too wide) in paragraph at lines 34--35
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.40477pt too wide) in paragraph at lines 48--49
+Overfull \hbox (34.56517pt too wide) in paragraph at lines 48--49
 [][][][][][][][]  
  []
 
 
-Overfull \hbox (0.61467pt too wide) in paragraph at lines 57--59
+Overfull \hbox (27.77507pt too wide) in paragraph at lines 57--59
 [][][][][][][][][][][][]  
  []
 
@@ -941,43 +1213,43 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
- [5]
+ [9]
 LaTeX Info: Redefining \. on input line 82.
 LaTeX Info: Redefining \% on input line 82.
 
-[6]) (chapter4/Chapter4.tex
+[10]) (chapter5/Chapter5.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [7] [8
+ [11] [12
 
 ]
-Cap\'{\i }tulo 3.
+Cap\'{\i }tulo 4.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
 [][][][][][][][][]  
  []
 
-[9]
-<fig/home.png, id=329, 1011.78pt x 489.32813pt>
+[13]
+<fig/home.png, id=388, 1011.78pt x 489.32813pt>
 File: fig/home.png Graphic file (type png)
 <use fig/home.png>
 Package pdftex.def Info: fig/home.png  used on input line 25.
 (pdftex.def)             Requested size: 298.75262pt x 144.48494pt.
-<fig/plataformaAprendizaje.png, id=331, 1035.87pt x 438.13687pt>
+<fig/plataformaAprendizaje.png, id=390, 1035.87pt x 438.13687pt>
 File: fig/plataformaAprendizaje.png Graphic file (type png)
 <use fig/plataformaAprendizaje.png>
 Package pdftex.def Info: fig/plataformaAprendizaje.png  used on input line 35.
 (pdftex.def)             Requested size: 298.75262pt x 126.36115pt.
 LaTeX Info: Redefining \. on input line 43.
 LaTeX Info: Redefining \% on input line 43.
- [10 <./fig/home.png> <./fig/plataformaAprendizaje.png>]
-<fig/plataformaCiberseguridad.png, id=342, 910.15031pt x 446.41782pt>
+ [14 <./fig/home.png> <./fig/plataformaAprendizaje.png>]
+<fig/plataformaCiberseguridad.png, id=401, 910.15031pt x 446.41782pt>
 File: fig/plataformaCiberseguridad.png Graphic file (type png)
 <use fig/plataformaCiberseguridad.png>
 Package pdftex.def Info: fig/plataformaCiberseguridad.png  used on input line 4
 9.
 (pdftex.def)             Requested size: 298.75262pt x 146.53497pt.
-<fig/cuestionarioIntake.png, id=343, 1029.8475pt x 524.71031pt>
+<fig/cuestionarioIntake.png, id=403, 1029.8475pt x 524.71031pt>
 File: fig/cuestionarioIntake.png Graphic file (type png)
 <use fig/cuestionarioIntake.png>
 Package pdftex.def Info: fig/cuestionarioIntake.png  used on input line 60.
@@ -987,73 +1259,79 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
- [11 <./fig/plataformaCiberseguridad.png>]
-<fig/pestanaDatosGenerales.png, id=349, 1225.57875pt x 591.71063pt>
+ [15 <./fig/plataformaCiberseguridad.png>]
+<fig/pestanaDatosGenerales.png, id=410, 1225.57875pt x 591.71063pt>
 File: fig/pestanaDatosGenerales.png Graphic file (type png)
 <use fig/pestanaDatosGenerales.png>
 Package pdftex.def Info: fig/pestanaDatosGenerales.png  used on input line 70.
 (pdftex.def)             Requested size: 298.75262pt x 144.23453pt.
-LaTeX Info: Redefining \. on input line 81.
-LaTeX Info: Redefining \% on input line 81.
- [12 <./fig/cuestionarioIntake.png> <./fig/pestanaDatosGenerales.png>]
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
- [13]
-<fig/seleccionarPropuestaFormacion.png, id=361, 1011.78pt x 494.59781pt>
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
+ [16 <./fig/cuestionarioIntake.png> <./fig/pestanaDatosGenerales.png>]
+Overfull \hbox (8.14478pt too wide) in paragraph at lines 86--87
+[]\T1/cmr/m/n/10.95 Comunidades en pr�c-ti-cas (apren-di-za-je en co-mu-ni-dad 
+o so-cial), apren-
+ []
+
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+[17]
+<fig/seleccionarPropuestaFormacion.png, id=422, 1011.78pt x 494.59781pt>
 File: fig/seleccionarPropuestaFormacion.png Graphic file (type png)
 <use fig/seleccionarPropuestaFormacion.png>
 Package pdftex.def Info: fig/seleccionarPropuestaFormacion.png  used on input l
-ine 110.
+ine 112.
 (pdftex.def)             Requested size: 298.75262pt x 146.04092pt.
-<fig/restoPestanas.png, id=362, 596.98032pt x 52.69687pt>
+<fig/restoPestanas.png, id=424, 596.98032pt x 52.69687pt>
 File: fig/restoPestanas.png Graphic file (type png)
 <use fig/restoPestanas.png>
-Package pdftex.def Info: fig/restoPestanas.png  used on input line 120.
+Package pdftex.def Info: fig/restoPestanas.png  used on input line 122.
 (pdftex.def)             Requested size: 298.75262pt x 26.37167pt.
-<fig/pestanaDocentes.png, id=363, 745.28438pt x 386.94562pt>
+<fig/pestanaDocentes.png, id=426, 745.28438pt x 386.94562pt>
 File: fig/pestanaDocentes.png Graphic file (type png)
 <use fig/pestanaDocentes.png>
-Package pdftex.def Info: fig/pestanaDocentes.png  used on input line 128.
+Package pdftex.def Info: fig/pestanaDocentes.png  used on input line 130.
 (pdftex.def)             Requested size: 298.75262pt x 155.10614pt.
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
- [14 <./fig/seleccionarPropuestaFormacion.png> <./fig/restoPestanas.png>]
-<fig/asistentesEnvioConvocatoria.png, id=370, 733.23938pt x 176.91093pt>
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+ [18 <./fig/seleccionarPropuestaFormacion.png> <./fig/restoPestanas.png>]
+<fig/asistentesEnvioConvocatoria.png, id=434, 733.23938pt x 176.91093pt>
 File: fig/asistentesEnvioConvocatoria.png Graphic file (type png)
 <use fig/asistentesEnvioConvocatoria.png>
 Package pdftex.def Info: fig/asistentesEnvioConvocatoria.png  used on input lin
-e 137.
+e 139.
 (pdftex.def)             Requested size: 298.75262pt x 72.08043pt.
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
- [15 <./fig/pestanaDocentes.png> <./fig/asistentesEnvioConvocatoria.png>]
-<fig/encuestaEficacia.png, id=378, 809.27344pt x 319.1925pt>
+
+[19 <./fig/pestanaDocentes.png> <./fig/asistentesEnvioConvocatoria.png>]
+<fig/encuestaEficacia.png, id=444, 809.27344pt x 319.1925pt>
 File: fig/encuestaEficacia.png Graphic file (type png)
 <use fig/encuestaEficacia.png>
 Package pdftex.def Info: fig/encuestaEficacia.png  used on input line 159.
 (pdftex.def)             Requested size: 298.75262pt x 117.83636pt.
-<fig/pestanaValoraciones.png, id=379, 806.26219pt x 453.94594pt>
+<fig/pestanaValoraciones.png, id=446, 806.26219pt x 453.94594pt>
 File: fig/pestanaValoraciones.png Graphic file (type png)
 <use fig/pestanaValoraciones.png>
 Package pdftex.def Info: fig/pestanaValoraciones.png  used on input line 169.
 (pdftex.def)             Requested size: 298.75262pt x 168.20673pt.
-<fig/detallesEncuesta.png, id=380, 758.08218pt x 225.84375pt>
+<fig/detallesEncuesta.png, id=448, 758.08218pt x 225.84375pt>
 File: fig/detallesEncuesta.png Graphic file (type png)
 <use fig/detallesEncuesta.png>
 Package pdftex.def Info: fig/detallesEncuesta.png  used on input line 178.
 (pdftex.def)             Requested size: 298.75262pt x 89.00224pt.
 
-Underfull \vbox (badness 4024) has occurred while \output is active []
+Underfull \vbox (badness 1484) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 182.
 LaTeX Info: Redefining \% on input line 182.
- [16 <./fig/encuestaEficacia.png> <./fig/pestanaValoraciones.png>]
-<fig/pestanaCalendarios.png, id=388, 799.48688pt x 450.9347pt>
+ [20 <./fig/encuestaEficacia.png> <./fig/pestanaValoraciones.png>]
+<fig/pestanaCalendarios.png, id=457, 799.48688pt x 450.9347pt>
 File: fig/pestanaCalendarios.png Graphic file (type png)
 <use fig/pestanaCalendarios.png>
 Package pdftex.def Info: fig/pestanaCalendarios.png  used on input line 186.
 (pdftex.def)             Requested size: 298.75262pt x 168.50835pt.
-<fig/pestanaHistorico.png, id=389, 953.81343pt x 494.59781pt>
+<fig/pestanaHistorico.png, id=459, 953.81343pt x 494.59781pt>
 File: fig/pestanaHistorico.png Graphic file (type png)
 <use fig/pestanaHistorico.png>
 Package pdftex.def Info: fig/pestanaHistorico.png  used on input line 195.
@@ -1063,13 +1341,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 199.
 LaTeX Info: Redefining \% on input line 199.
- [17 <./fig/detallesEncuesta.png> <./fig/pestanaCalendarios.png>]
-<fig/pestanaGestion.png, id=396, 895.09406pt x 496.85625pt>
+ [21 <./fig/detallesEncuesta.png> <./fig/pestanaCalendarios.png>]
+<fig/pestanaGestion.png, id=467, 895.09406pt x 496.85625pt>
 File: fig/pestanaGestion.png Graphic file (type png)
 <use fig/pestanaGestion.png>
 Package pdftex.def Info: fig/pestanaGestion.png  used on input line 203.
 (pdftex.def)             Requested size: 298.75262pt x 165.83566pt.
-<fig/listadoPedidos.png, id=397, 1150.2975pt x 565.36218pt>
+<fig/listadoPedidos.png, id=469, 1150.2975pt x 565.36218pt>
 File: fig/listadoPedidos.png Graphic file (type png)
 <use fig/listadoPedidos.png>
 Package pdftex.def Info: fig/listadoPedidos.png  used on input line 211.
@@ -1079,113 +1357,176 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 215.
 LaTeX Info: Redefining \% on input line 215.
- [18 <./fig/pestanaHistorico.png> <./fig/pestanaGestion.png>]
-<fig/pestanaGestionConPedidos.png, id=404, 772.38562pt x 427.5975pt>
+ [22 <./fig/pestanaHistorico.png> <./fig/pestanaGestion.png>]
+<fig/pestanaGestionConPedidos.png, id=476, 772.38562pt x 427.5975pt>
 File: fig/pestanaGestionConPedidos.png Graphic file (type png)
 <use fig/pestanaGestionConPedidos.png>
 Package pdftex.def Info: fig/pestanaGestionConPedidos.png  used on input line 2
-18.
+19.
 (pdftex.def)             Requested size: 298.75262pt x 165.39218pt.
-<fig/pestanaSolicitudes.png, id=405, 762.59906pt x 424.58624pt>
+<fig/pestanaSolicitudes.png, id=479, 762.59906pt x 424.58624pt>
 File: fig/pestanaSolicitudes.png Graphic file (type png)
 <use fig/pestanaSolicitudes.png>
-Package pdftex.def Info: fig/pestanaSolicitudes.png  used on input line 227.
+Package pdftex.def Info: fig/pestanaSolicitudes.png  used on input line 228.
 (pdftex.def)             Requested size: 298.75262pt x 166.33301pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 231.
-LaTeX Info: Redefining \% on input line 231.
- [19 <./fig/listadoPedidos.png> <./fig/pestanaGestionConPedidos.png>]
-<fig/pantallaHomeFormacionesCreadas.png, id=415, 779.16093pt x 394.47375pt>
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+ [23 <./fig/listadoPedidos.png> <./fig/pestanaGestionConPedidos.png>]
+<fig/pantallaHomeFormacionesCreadas.png, id=488, 779.16093pt x 394.47375pt>
 File: fig/pantallaHomeFormacionesCreadas.png Graphic file (type png)
 <use fig/pantallaHomeFormacionesCreadas.png>
 Package pdftex.def Info: fig/pantallaHomeFormacionesCreadas.png  used on input 
-line 239.
+line 240.
 (pdftex.def)             Requested size: 298.75262pt x 151.24986pt.
-LaTeX Info: Redefining \. on input line 244.
-LaTeX Info: Redefining \% on input line 244.
- [20 <./fig/pestanaSolicitudes.png> <./fig/pantallaHomeFormacionesCreadas.png>]
-<fig/btnClonarFormacion.png, id=423, 817.55438pt x 444.91219pt>
+LaTeX Info: Redefining \. on input line 245.
+LaTeX Info: Redefining \% on input line 245.
+ [24 <./fig/pestanaSolicitudes.png> <./fig/pantallaHomeFormacionesCreadas.png>]
+<fig/btnClonarFormacion.png, id=496, 817.55438pt x 444.91219pt>
 File: fig/btnClonarFormacion.png Graphic file (type png)
 <use fig/btnClonarFormacion.png>
-Package pdftex.def Info: fig/btnClonarFormacion.png  used on input line 249.
+Package pdftex.def Info: fig/btnClonarFormacion.png  used on input line 250.
 (pdftex.def)             Requested size: 298.75262pt x 162.57828pt.
-LaTeX Info: Redefining \. on input line 269.
-LaTeX Info: Redefining \% on input line 269.
- [21 <./fig/btnClonarFormacion.png>]
-<fig/ListadoPlanes.png, id=433, 898.85812pt x 432.86719pt>
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 E
+       n el momento en que un trabajador crea una acción formativa, la soli...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \. on input line 266.
+LaTeX Info: Redefining \% on input line 266.
+[25 <./fig/btnClonarFormacion.png>]
+LaTeX Info: Redefining \. on input line 320.
+LaTeX Info: Redefining \% on input line 320.
+ [26]
+<fig/ListadoPlanes.png, id=511, 898.85812pt x 432.86719pt>
 File: fig/ListadoPlanes.png Graphic file (type png)
 <use fig/ListadoPlanes.png>
-Package pdftex.def Info: fig/ListadoPlanes.png  used on input line 285.
+Package pdftex.def Info: fig/ListadoPlanes.png  used on input line 326.
 (pdftex.def)             Requested size: 298.75262pt x 143.87038pt.
-<fig/formularioPlanFormacion.png, id=435, 774.64406pt x 430.60875pt>
-File: fig/formularioPlanFormacion.png Graphic file (type png)
-<use fig/formularioPlanFormacion.png>
-Package pdftex.def Info: fig/formularioPlanFormacion.png  used on input line 29
-2.
-(pdftex.def)             Requested size: 298.75262pt x 166.0707pt.
-LaTeX Info: Redefining \. on input line 296.
-LaTeX Info: Redefining \% on input line 296.
- [22 <./fig/ListadoPlanes.png>]
-<fig/pestanasPlanFormacion.png, id=442, 849.1725pt x 482.55281pt>
-File: fig/pestanasPlanFormacion.png Graphic file (type png)
-<use fig/pestanasPlanFormacion.png>
-Package pdftex.def Info: fig/pestanasPlanFormacion.png  used on input line 299.
-
-(pdftex.def)             Requested size: 298.75262pt x 169.77222pt.
-<fig/pestanaDepartamentosPlanFormacion.png, id=444, 687.31781pt x 363.60844pt>
-File: fig/pestanaDepartamentosPlanFormacion.png Graphic file (type png)
-<use fig/pestanaDepartamentosPlanFormacion.png>
-Package pdftex.def Info: fig/pestanaDepartamentosPlanFormacion.png  used on inp
-ut line 307.
-(pdftex.def)             Requested size: 298.75262pt x 158.04633pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 311.
-LaTeX Info: Redefining \% on input line 311.
- [23 <./fig/formularioPlanFormacion.png> <./fig/pestanasPlanFormacion.png>]
-<fig/permisosUsuariosDepartamento.png, id=452, 677.53125pt x 66.2475pt>
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
+ [27]
+<fig/formularioPlanFormacion.png, id=518, 774.64406pt x 430.60875pt>
+File: fig/formularioPlanFormacion.png Graphic file (type png)
+<use fig/formularioPlanFormacion.png>
+Package pdftex.def Info: fig/formularioPlanFormacion.png  used on input line 33
+3.
+(pdftex.def)             Requested size: 298.75262pt x 166.0707pt.
+<fig/pestanasPlanFormacion.png, id=520, 849.1725pt x 482.55281pt>
+File: fig/pestanasPlanFormacion.png Graphic file (type png)
+<use fig/pestanasPlanFormacion.png>
+Package pdftex.def Info: fig/pestanasPlanFormacion.png  used on input line 340.
+
+(pdftex.def)             Requested size: 298.75262pt x 169.77222pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 344.
+LaTeX Info: Redefining \% on input line 344.
+ [28 <./fig/ListadoPlanes.png> <./fig/formularioPlanFormacion.png>]
+<fig/pestanaDepartamentosPlanFormacion.png, id=528, 687.31781pt x 363.60844pt>
+File: fig/pestanaDepartamentosPlanFormacion.png Graphic file (type png)
+<use fig/pestanaDepartamentosPlanFormacion.png>
+Package pdftex.def Info: fig/pestanaDepartamentosPlanFormacion.png  used on inp
+ut line 348.
+(pdftex.def)             Requested size: 298.75262pt x 158.04633pt.
+<fig/permisosUsuariosDepartamento.png, id=530, 677.53125pt x 66.2475pt>
 File: fig/permisosUsuariosDepartamento.png Graphic file (type png)
 <use fig/permisosUsuariosDepartamento.png>
 Package pdftex.def Info: fig/permisosUsuariosDepartamento.png  used on input li
-ne 314.
+ne 355.
 (pdftex.def)             Requested size: 298.75262pt x 29.21165pt.
-<fig/pantallaListadoPropuestasPlanFormacion.png, id=454, 892.08281pt x 498.3618
+<fig/pantallaListadoPropuestasPlanFormacion.png, id=532, 892.08281pt x 498.3618
 8pt>
 File: fig/pantallaListadoPropuestasPlanFormacion.png Graphic file (type png)
 <use fig/pantallaListadoPropuestasPlanFormacion.png>
 Package pdftex.def Info: fig/pantallaListadoPropuestasPlanFormacion.png  used o
-n input line 322.
+n input line 363.
 (pdftex.def)             Requested size: 298.75262pt x 166.90092pt.
+LaTeX Info: Redefining \. on input line 367.
+LaTeX Info: Redefining \% on input line 367.
+ [29 <./fig/pestanasPlanFormacion.png> <./fig/pestanaDepartamentosPlanFormacion
+.png> <./fig/permisosUsuariosDepartamento.png>]
+<fig/formularioCrearPropuestaFormacion.png, id=542, 934.99312pt x 521.69907pt>
+File: fig/formularioCrearPropuestaFormacion.png Graphic file (type png)
+<use fig/formularioCrearPropuestaFormacion.png>
+Package pdftex.def Info: fig/formularioCrearPropuestaFormacion.png  used on inp
+ut line 378.
+(pdftex.def)             Requested size: 298.75262pt x 166.69237pt.
+LaTeX Info: Redefining \. on input line 385.
+LaTeX Info: Redefining \% on input line 385.
+ [30 <./fig/pantallaListadoPropuestasPlanFormacion.png> <./fig/formularioCrearP
+ropuestaFormacion.png>]
+<fig/listadoPropuestas1FilaSeleccionada.png, id=552, 953.06062pt x 306.39468pt>
+
+File: fig/listadoPropuestas1FilaSeleccionada.png Graphic file (type png)
+<use fig/listadoPropuestas1FilaSeleccionada.png>
+Package pdftex.def Info: fig/listadoPropuestas1FilaSeleccionada.png  used on in
+put line 391.
+(pdftex.def)             Requested size: 298.75262pt x 96.04263pt.
+<fig/listadoPropuestas2FilasSeleccionadas.png, id=553, 943.27406pt x 335.75438p
+t>
+File: fig/listadoPropuestas2FilasSeleccionadas.png Graphic file (type png)
+<use fig/listadoPropuestas2FilasSeleccionadas.png>
+Package pdftex.def Info: fig/listadoPropuestas2FilasSeleccionadas.png  used on 
+input line 397.
+(pdftex.def)             Requested size: 298.75262pt x 106.3421pt.
+<fig/pestanaAsistentesDentroDePropuestas.png, id=557, 456.20438pt x 173.14688pt
+>
+File: fig/pestanaAsistentesDentroDePropuestas.png Graphic file (type png)
+<use fig/pestanaAsistentesDentroDePropuestas.png>
+Package pdftex.def Info: fig/pestanaAsistentesDentroDePropuestas.png  used on i
+nput line 411.
+(pdftex.def)             Requested size: 298.75262pt x 113.38957pt.
+<fig/pestanaPropuestasUnificadasDentroDePropuestas.png, id=558, 904.1278pt x 22
+7.34938pt>
+File: fig/pestanaPropuestasUnificadasDentroDePropuestas.png Graphic file (type 
+png)
+<use fig/pestanaPropuestasUnificadasDentroDePropuestas.png>
+Package pdftex.def Info: fig/pestanaPropuestasUnificadasDentroDePropuestas.png 
+ used on input line 417.
+(pdftex.def)             Requested size: 298.75262pt x 75.12265pt.
+LaTeX Info: Redefining \. on input line 420.
+LaTeX Info: Redefining \% on input line 420.
+ [31 <./fig/listadoPropuestas1FilaSeleccionada.png> <./fig/listadoPropuestas2Fi
+lasSeleccionadas.png>]
+<fig/pestanaFormacionesDentroDePropuestas.png, id=566, 482.55281pt x 97.86563pt
+>
+File: fig/pestanaFormacionesDentroDePropuestas.png Graphic file (type png)
+<use fig/pestanaFormacionesDentroDePropuestas.png>
+Package pdftex.def Info: fig/pestanaFormacionesDentroDePropuestas.png  used on 
+input line 423.
+(pdftex.def)             Requested size: 298.75262pt x 60.59093pt.
 )
-(chapter5/Chapter5.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [24 <./fig/pestanaDepartamentosPlanFormacion.png> <./fig/permisosUsuariosDepar
-tamento.png> <./fig/pantallaListadoPropuestasPlanFormacion.png>]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [25] [26
-
-]
-Cap\'{\i }tulo 4.
-
-Overfull \hbox (10.0pt too wide) in paragraph at lines 1--1
-[][][][][][][][][]  
- []
-
-) [27] [28
-
-] (bibliography/bibliography.tex (Principal.bbl
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+ [32 <./fig/pestanaAsistentesDentroDePropuestas.png> <./fig/pestanaPropuestasUn
+ificadasDentroDePropuestas.png> <./fig/pestanaFormacionesDentroDePropuestas.png
+>]
+(bibliography/bibliography.tex (Principal.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [29
+) [33
 
 
-]) (style/index.tex [30
+
+]) (style/index.tex [34
 
 
 ]
@@ -1194,7 +1535,7 @@ runsystem(makeindex Principal.idx)...executed safely (allowed).
  (Principal.ind)) (appendix/Appendix.tex
 (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (code/Calendario.java)) [31
+) (code/Calendario.java)) [35
 
 
 
@@ -1212,35 +1553,36 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `Principal.out' has not changed.
-(rerunfilecheck)             Checksum: A4129707756A7ED32BC10BA592D3FD2A;3222.
+(rerunfilecheck)             Checksum: 1679163FAFED01CA5CA76620B1CC27EF;3937.
  ) 
 Here is how much of TeX's memory you used:
- 18084 strings out of 474486
- 293431 string characters out of 5753569
- 2009542 words of memory out of 5000000
- 39827 multiletter control sequences out of 15000+600000
- 577474 words of font info for 81 fonts, out of 8000000 for 9000
+ 28563 strings out of 474486
+ 525509 string characters out of 5753569
+ 2010542 words of memory out of 5000000
+ 50080 multiletter control sequences out of 15000+600000
+ 577811 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,13n,100p,1311b,2262s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,101p,1311b,2262s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt1095.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm0900.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0600.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecxc1200.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\yasin\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\yasin\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\yasin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\yasin\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\
-yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\
-Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk
+0900.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm1095.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ectt1095.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm0900.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecxc1200.pk> <C:\Users\yasin\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\yasin\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\yasin\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\yasin\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\
+yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
+Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk
 > <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-095.pk><C:/Program Files/MiKTeX/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Principal.pdf (43 pages, 3125064 bytes).
+200.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on Principal.pdf (47 pages, 3558378 bytes).
 PDF statistics:
- 1009 PDF objects out of 1200 (max. 8388607)
- 163 named destinations out of 1000 (max. 500000)
- 301 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1157 PDF objects out of 1200 (max. 8388607)
+ 178 named destinations out of 1000 (max. 500000)
+ 375 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,96 +1,60 @@
-\chapter[Estructura del proyecto]{Estructura del proyecto}
+\chapter[Análisis de requisitos]{Análisis de requisitos}
 \label{Chap3}
 
-El proyecto se estructura siguiendo una arquitectura por capas \footnote{\href{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}{arquitectura por capas}}, lo que permite organizar el código y separar las responsabilidades de forma clara y eficiente. Cada capa cumple un papel distinto. La presentación se encarga de la interfaz y la interacción con el usuario, la aplicación contiene la lógica de negocio, la infraestructura gestiona el acceso a recursos externos como la base de datos y la capa de dominio define las reglas y entidades principales del modelo.
-La elección de esta arquitectura se debe a que proporciona una base sólida y escalable para el desarrollo, favorece la mantenibilidad del sistema y facilita la incorporación de nuevas funcionalidades sin afectar al resto de componentes. Además, permite una mayor reutilización del código y mejora la calidad del software al fomentar un diseño más limpio, modular y fácilmente testeable.
-\begin{figure} [h!btp]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/arquitecturaCapas.png}
-	\caption[Diagrama de una arquitectura por capas.]{Diagrama de una arquitectura por capas.}
-	\label{fig:ej0}
-\end{figure}
-\section{Presentación}
-La capa de presentación constituye el nivel superior de la arquitectura y se encarga de gestionar la interacción directa con el usuario. En esta capa se encuentra el proyecto Interfaz de Usuario Web (\textit{WebUI}), que corresponde a la aplicación web visible para los usuarios finales. Dentro de \textit{WebUI} se definen las vistas, es decir, los elementos visuales que conforman la interfaz, junto con los estilos \textit{CSS} que determinan su apariencia.
+Antes de abordar el desarrollo y la estructura técnica de la aplicación, resulta fundamental realizar un análisis de los requisitos funcionales y no funcionales que definirán el alcance del Ecosistema de Aprendizaje. Este análisis tiene como objetivo identificar las necesidades específicas de la organización, los usuarios involucrados y las funcionalidades esenciales que el sistema deberá cubrir para cumplir con los objetivos planteados.
 
-Asimismo, en esta capa se desarrollan las clases \textit{TypeScript}, responsables de manejar los distintos eventos del usuario y de definir las acciones que se ejecutan como respuesta a dichos eventos. Los controladores también forman parte de esta capa y su función principal es invocar a las clases de niveles inferiores para realizar operaciones sobre la base de datos. Estas clases, situadas en capas más profundas, se explicarán más adelante. Se incluyen también los \textit{ViewModels}, que son modelos diseñados específicamente para las vistas. Estos modelos facilitan la organización y presentación de los datos de forma estructurada y coherente, permitiendo que la información se muestre correctamente en la interfaz web. En esencia, actúan como una plantilla que define tanto la apariencia como el comportamiento de los datos dentro de la interfaz de usuario.
+\subsection{Requisitos funcionales}
 
-Un ejemplo ilustrativo puede observarse en el Código \ref{code:ej1}, donde se presentan varios métodos pertenecientes al controlador de la clase \texttt{Formación}. El primer método, que se invoca mediante una petición \textit{POST}, devuelve un conjunto de formaciones almacenadas en la base de datos, permitiendo además aplicar filtros de búsqueda a través del parámetro \texttt{filtros}, en caso de que ocurra algún error y no se devuelven las formaciones se muestra un mensaje al usuario en pantalla. En cambio, el segundo método se ejecuta mediante una petición \textit{GET}, que solicita un recurso específico del servidor y recupera una formación concreta identificada por su \texttt{ID} pasado como parámetro en la línea 27 (\texttt{FormacionID}), aquí también se hace una validación para comprobar el tipo de respuesta ya sea un error para informar al usuario, un aviso de que esa persona no está autorizada a ver los detalles de esa formación ó hay éxito que en ese caso se genera el \textit{ViewModel} correspondiente y se le pasa los datos de la formación para poder mostrarlos por pantalla al usuario. 
-
-Además de los métodos de consulta, el controlador incluye también operaciones para crear, modificar y eliminar registros de formaciones. Otra nota importante aquí es cuando ponemos a los métodos\lstinline | [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)] |, esto nos valida el rol del usuario el cual llama al método. En este caso definimos que solamente aquellos que mínimo el rol de \textit{Solicitante} podrán acceder a esté método, aunque más tarde explicaremos con más detalle el tema de los roles y como funciona la validación de permisos.
-\begin{lstlisting}[style=csharp, caption={Controlador del proyecto WebUI con métodos de selección de formaciones almacenados en base de datos.},label=code:ej1]
-[HttpPost("[action]")]
-[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
-public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, FormacionFiltrosDTO filtros)
-{
-	logger.LogInformation("Obtener el listado de formaciones filtrado");
+Los requisitos funcionales describen las acciones y procesos que la aplicación deberá permitir realizar a sus usuarios. A partir de las reuniones iniciales con Tracasa Global y Tracasa Instrumental, y del estudio de los flujos actuales de gestión de la formación, se han definido las siguientes funcionalidades principales:
+\begin{description}
+	\item[Gestión de acciones formativas:]  permitir la creación, edición, eliminación y clonación de acciones formativas, distinguiendo entre formaciones planificadas y extraordinarias.
 	
-	var formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQuery(filtros));
+	\item[Gestión de solicitudes:] permitir que los empleados soliciten nuevas formaciones o su participación en acciones ya existentes, con validación por parte de responsables, directores y el área de PyT (Proyectos y Tecnología).
 	
-	if (formacionesRespuesta.Tipo == TipoRespuesta.Error)
-	{
-		ModelState.AddModelError("ListadoGridError", "Ha ocurrido un error al obtener el listado de formaciones.");
-	}
+	\item[Flujo de aprobación y notificaciones:] automatizar el envío de correos electrónicos para informar a los distintos roles del estado de las solicitudes, aprobaciones y valoraciones pendientes.
 	
-	return Json(formacionesRespuesta.Data.ToDataSourceResult(request, ModelState));
-}	
+	\item[Gestión de docentes y asistentes:] permitir asociar docentes internos o externos a una formación, así como gestionar los asistentes y sus convocatorias.
+	
+	\item[Encuestas y valoraciones:] generar encuestas de eficacia formativa y registrar valoraciones asociadas a cada acción formativa.
+	
+	\item[Planes de formación anual:] posibilitar la creación, edición y seguimiento de planes de formación, con la asignación de propuestas por departamento y la gestión de permisos para cada usuario.
+	
+	\item[Integración con plataformas externas:] permitir el acceso directo a la plataforma de aprendizaje GoodHabitz y a la plataforma de ciberseguridad corporativa desde la propia aplicación.
+	
+	\item[Histórico y trazabilidad:] registrar los cambios y actualizaciones realizados sobre las acciones formativas para mantener un seguimiento completo de la evolución de cada proceso.
 	
 	
-[HttpGet("[action]/{FormacionID}")]
-[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
-public async Task<IActionResult> Detalle(int formacionID)
-{
-	logger.LogInformation($"Pantalla de detalle de la formacion: {formacionID}");
+\end{description}
+
+\subsection{Requisitos no funcionales}
+
+Además de las funcionalidades descritas, la aplicación deberá cumplir con una serie de condiciones relacionadas con su rendimiento, seguridad y usabilidad:
+
+\begin{description}
+	\item[Usabilidad:] la interfaz debe ser intuitiva, clara y accesible para usuarios con distintos niveles de experiencia técnica.
 	
-	var formacion = await Mediator.Send(new GetSingleFormacionQuery(formacionID));
+	\item[Seguridad:] el acceso a la aplicación deberá estar autenticado y controlado mediante un sistema de roles (solicitante, responsable, director, PyT o administrador), garantizando la protección de los datos personales y formativos.
 	
-	if (formacion.Tipo == TipoRespuesta.Error)
-	{
-		TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError.ToString();
-		return RedirectToAction("Index");
-	}
-	else if (formacion.Tipo == TipoRespuesta.NoAutorizado)
-	{
-		return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = 403 });
-	}
+	\item[Rendimiento:] el sistema debe ser capaz de gestionar múltiples solicitudes y consultas simultáneas sin afectar la velocidad de respuesta.
 	
-	var viewModel = new FormacionViewModel();
-	viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel(formacion.Data);
+	\item[Escalabilidad:] la arquitectura debe permitir la incorporación de nuevas funcionalidades o módulos sin afectar el funcionamiento existente.
 	
-	return View(viewModel);
-}
-\end{lstlisting}
+	\item[Mantenibilidad:] el código debe estar bien estructurado y documentado, siguiendo principios de modularidad y reutilización.
+	
+	\item[Compatibilidad:] la aplicación debe ser accesible desde los navegadores corporativos más utilizados y adaptarse correctamente a diferentes resoluciones de pantalla.
+\end{description}
 
+\subsection{Roles}
+Durante la fase de análisis se identificaron los diferentes tipos de usuarios que interactuarán con el sistema, cada uno con permisos y responsabilidades específicas:
 
-\section{Aplicación}
-La capa de aplicación representa el nivel en el que se concentra la lógica de negocio del sistema. En este nivel se implementa el principio de \textit{Command Query Responsibility Segregation} (CQRS), mediante el cual cada proceso o acción empresarial se modela como un comando o una consulta independiente. Este patrón arquitectónico permite diferenciar las operaciones que modifican el estado del sistema (comandos) de aquellas que únicamente recuperan información (consultas), promoviendo así una estructura más ordenada, clara y escalable.
-
-Dentro de esta capa también se definen las clases conocidas como \textit{Data Transfer Objects} (DTO). Estas entidades sirven como vehículos de intercambio de información entre las diferentes capas, evitando que los modelos internos se expongan directamente. Su propósito es agrupar y transportar los datos necesarios para ejecutar una acción concreta, garantizando una comunicación sencilla, coherente y desacoplada entre componentes de la aplicación.
-
-Finalmente, las operaciones relacionadas con los comandos y las consultas, como se muestra en el Código \ref{code:ej2}, se declaran mediante interfaces localizadas en esta misma capa, mientras que su implementación específica se desarrolla en la capa inferior.
-
-\begin{lstlisting}[style=csharp, caption={Interfaz de formaciones con métodos para llevar a cabo las operaciones sobre la base de datos.},label=code:ej2]
-	public interface IFormacionesDataService
-	{
-		Task<List<FormacionListDTO>> SelectAll(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
-		Task<List<int>> SelectAreas(List<string> areas, CancellationToken cancellationToken);
-		Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
-		Task<FormacionDTO> SelectSingle(int formacionID, CancellationToken cancellationToken);
-		Task<bool> ExisteCodigo(string codigo, CancellationToken cancellationToken);
-		Task<bool> ComprobarValoracionCompletada(int formacionID);
-		Task<FormacionDTO> Insert(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> Update(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<bool> Delete(int formacionID, CancellationToken cancellationToken);
-	}
-\end{lstlisting}
-\section{Infraestructura}
-La capa de infraestructura constituye el nivel responsable de la interacción con los recursos externos y de proporcionar los servicios necesarios para que las demás capas puedan operar correctamente. En esta capa se ubican las clases encargadas de acceder a sistemas externos, tales como bases de datos, sistemas de archivos, servicios web o cualquier otro recurso externo que el sistema requiera.
-
-Las clases que pertenecen a este nivel implementan las interfaces definidas en la capa de aplicación, cumpliendo así el principio de inversión de dependencias y garantizando una arquitectura más modular y desacoplada. Gracias a este enfoque, el resto del sistema no necesita conocer los detalles técnicos de cómo se realizan las operaciones externas, sino únicamente la interfaz que las define, lo que facilita la sustitución o actualización de componentes sin afectar al funcionamiento general.
-
-Otro elemento importante presente en esta capa son los procesos de migración, que hacen referencia al conjunto de procedimientos destinados a trasladar o actualizar la estructura y los datos de una base de datos. Las migraciones permiten mantener la coherencia entre el modelo de datos y el código fuente del proyecto, especialmente durante las fases de desarrollo o actualización del sistema. Mediante estas operaciones se pueden aplicar cambios de esquema, incorporar nuevas tablas o modificar relaciones existentes, asegurando la integridad de la información y la compatibilidad entre versiones.
-\section{Dominio}
-La capa de dominio constituye el núcleo esencial del sistema, ya que en ella se define la lógica de negocio que modela los procesos y reglas fundamentales de la aplicación. En este nivel se ubican las entidades, que representan los elementos principales del modelo de negocio y encapsulan tanto sus atributos como el comportamiento asociado.
-
-El propósito de esta capa es reflejar con fidelidad la realidad del problema que la aplicación pretende resolver, garantizando la coherencia interna y la integridad de los datos mediante las operaciones que se realizan sobre dichas entidades.
-
-Una característica clave del dominio es su independencia respecto a la infraestructura y a los elementos externos, como bases de datos o servicios. Esta separación asegura que las reglas de negocio permanezcan estables y no se vean afectadas por los cambios tecnológicos, facilitando así la evolución y el mantenimiento del sistema a largo plazo.
+\begin{description}
+	\item[Solicitante:] puede solicitar nuevas acciones formativas o inscribirse en formaciones ya creadas.
+	
+	\item[Responsable de área:] recibe y valida las solicitudes de los empleados de su equipo.
+	
+	\item[Director de departamento:] revisa y aprueba las solicitudes validadas por los responsables de las áreas que forman parte de su departamento.
+	
+	\item[PyT (Proyectos y Tecnología):] gestiona las solicitudes aprobadas, tramita las formaciones y supervisa el cumplimiento de los procesos.
+	
+	\item[Administrador del sistema:] mantiene la aplicación, gestiona usuarios y configura los parámetros globales de funcionamiento.
+\end{description}

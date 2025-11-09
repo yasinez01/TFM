@@ -1,327 +1,96 @@
-\chapter[Proyecto]{Proyecto}
+\chapter[Estructura del proyecto]{Estructura del proyecto}
 \label{Chap4}
 
-La aplicación \textit{Ecosistema de Aprendizaje} es un entorno digital que nos va a permitir, desde la organización, gestionar el aprendizaje y el desarrollo profesional de una manera más ágil y dinámica.A través de esta aplicación, se busca dar respuesta a la necesidad de disponer de un entorno digital unificado que permita a Tracasa Global y Tracasa Instrumental gestionar de forma eficiente los procesos de formación y desarrollo profesional de sus empleados. Este proyecto se enmarca en una estrategia de transformación digital más amplia, orientada a optimizar la gestión del talento y fomentar el aprendizaje continuo dentro de la organización. Desde el punto de vista funcional, la aplicación ofrecerá una interfaz intuitiva y accesible, compuesta por diferentes pantallas y formularios que permitirán a los usuarios interactuar con el sistema de manera sencilla.
-La herramienta persigue no solo digitalizar los procesos de solicitud y seguimiento de la formación, sino también mejorar la trazabilidad y la comunicación entre empleados, managers y responsables del área de proyectos tecnológicos. De este modo, se potencia una gestión más ágil, transparente y alineada con los objetivos estratégicos de la empresa.
-
-La aplicación nos ofrece varias funcionalidades:  
-
-\begin{enumerate}
-	\item Posibilidad de cada persona pueda solicitar formación, que será validada por el manager y PyT (gestión de proyectos tecnológicos).  
-	\item Posibilidad de conocer qué acciones formativas se van a hacer en la empresa y solicitar incluirse en ella. También será validado por el manager y PyT. 
-	\item Acceder a una plataforma de aprendizaje donde cada persona podrá desarrollase en aquellas materias que puedan resultar de interés. Aquellas acciones que sean por interés personal y no estén relacionadas con el desempeño de su puesto, se realizarán fuera de jornada laboral.
-\end{enumerate}
-
-Cuando accedemos a la aplicación, visualizamos la pantalla \textit{HOME} que sale en la Figura \ref{fig:ej1}, donde podremos elegir la acción que vayamos a realizar:  
-
-\begin{enumerate}
-	\item Acceso a la plataforma de aprendizaje \textit{GoodHabitz}.
-	\item Acceso a la plataforma de ciberseguridad.
-	\item Solicitar una nueva acción formativa.
-	\item Visualizar las acciones previo a su comienzo y solicitar unirse a ella. 
-\end{enumerate}
+El proyecto se estructura siguiendo una arquitectura por capas \footnote{\href{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}}, lo que permite organizar el código y separar las responsabilidades de forma clara y eficiente. Cada capa cumple un papel distinto. La presentación se encarga de la interfaz y la interacción con el usuario, la aplicación contiene la lógica de negocio, la infraestructura gestiona el acceso a recursos externos como la base de datos y la capa de dominio define las reglas y entidades principales del modelo.
+La elección de esta arquitectura se debe a que proporciona una base sólida y escalable para el desarrollo, favorece la mantenibilidad del sistema y facilita la incorporación de nuevas funcionalidades sin afectar al resto de componentes. Además, permite una mayor reutilización del código y mejora la calidad del software al fomentar un diseño más limpio, modular y fácilmente testeable.
 \begin{figure} [h!btp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{fig/home.png}
-	\caption[Pantalla home con los accesos directos.]{Pantalla home con los accesos directos.}
-	\label{fig:ej1}
+	\includegraphics[width=0.7\textwidth]{fig/arquitecturaCapas.png}
+	\caption[Diagrama de una arquitectura por capas.]{Diagrama de una arquitectura por capas.}
+	\label{fig:ej0}
 \end{figure}
+\section{Presentación}
+La capa de presentación constituye el nivel superior de la arquitectura y se encarga de gestionar la interacción directa con el usuario. En esta capa se encuentra el proyecto Interfaz de Usuario Web (\textit{WebUI}), que corresponde a la aplicación web visible para los usuarios finales. Dentro de \textit{WebUI} se definen las vistas, es decir, los elementos visuales que conforman la interfaz, junto con los estilos \textit{CSS} que determinan su apariencia.
 
-\section{Acceso a plataforma de aprendizaje}
-Para acceder a la plataforma de aprendizaje, que vemos en la Figura \ref{fig:ej2}, debemos posicionarnos en la pantalla Home y seleccionar en GoodHabitz 
-Al acceder a la plataforma, por defecto, y sólo la primera vez, aparecerá un mensaje para aceptar la política de privacidad y acuerdo de usuario. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/plataformaAprendizaje.png}
-	\caption[Pantalla plataforma de aprendizaje.]{Pantalla plataforma de aprendizaje.}
-	\label{fig:ej2}
-\end{figure}
-A continuación, encontraremos, en la parte superior de la pantalla, dos opciones a las que podremos acceder:  
-\begin{itemize}
-	\item Tus cursos: donde podremos encontrar aquellas acciones formativas que cada usuario haya realizado, esté realizando en ese momento o, también podemos encontrar aquellas formaciones que la empresa haya sugerido realizar
-	\item Todos los cursos: podremos ver el catálogo de acciones formativas a las que podemos acceder y cursar.
-\end{itemize}
+Asimismo, en esta capa se desarrollan las clases \textit{TypeScript}, responsables de manejar los distintos eventos del usuario y de definir las acciones que se ejecutan como respuesta a dichos eventos. Los controladores también forman parte de esta capa y su función principal es invocar a las clases de niveles inferiores para realizar operaciones sobre la base de datos. Estas clases, situadas en capas más profundas, se explicarán más adelante. Se incluyen también los \textit{ViewModels}, que son modelos diseñados específicamente para las vistas. Estos modelos facilitan la organización y presentación de los datos de forma estructurada y coherente, permitiendo que la información se muestre correctamente en la interfaz web. En esencia, actúan como una plantilla que define tanto la apariencia como el comportamiento de los datos dentro de la interfaz de usuario.
 
-\section{Acceso directo a la plataforma de ciberseguridad}
-Acceso directo a contenidos para mejorar las capacidades en ciberseguridad tal y como se observa en la Figura \ref{fig:ej3} 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/plataformaCiberseguridad.png}
-	\caption[Plataforma de ciberseguridad.]{Plataforma de ciberseguridad.}
-	\label{fig:ej3}
-\end{figure}
+Un ejemplo ilustrativo puede observarse en el Código \ref{code:ej1}, donde se presentan varios métodos pertenecientes al controlador de la clase \texttt{Formación}. El primer método, que se invoca mediante una petición \textit{POST}, devuelve un conjunto de formaciones almacenadas en la base de datos, permitiendo además aplicar filtros de búsqueda a través del parámetro \texttt{filtros}, en caso de que ocurra algún error y no se devuelven las formaciones se muestra un mensaje al usuario en pantalla. En cambio, el segundo método se ejecuta mediante una petición \textit{GET}, que solicita un recurso específico del servidor y recupera una formación concreta identificada por su \texttt{ID} pasado como parámetro en la línea 27 (\texttt{FormacionID}), aquí también se hace una validación para comprobar el tipo de respuesta ya sea un error para informar al usuario, un aviso de que esa persona no está autorizada a ver los detalles de esa formación ó hay éxito que en ese caso se genera el \textit{ViewModel} correspondiente y se le pasa los datos de la formación para poder mostrarlos por pantalla al usuario. 
 
-\section{Solicitar nueva acción formativa}
-Se proporciona dos accesos para poder solicitar una formación. Podemos crear una formación extraordinaria o planificada. La diferencia que hay es que en el caso de la planificada debemos seleccionar una propuesta de plan de formación (que explicaremos más tarde) que asignaríamos a la formación que vamos a crear y para el caso de extraordinaria no se le asigna.
+Además de los métodos de consulta, el controlador incluye también operaciones para crear, modificar y eliminar registros de formaciones. Otra nota importante aquí es cuando ponemos a los métodos\lstinline | [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)] |, esto nos valida el rol del usuario el cual llama al método. En este caso definimos que solamente aquellos que mínimo el rol de \textit{Solicitante} podrán acceder a esté método, aunque más tarde explicaremos con más detalle el tema de los roles y como funciona la validación de permisos.
+\begin{lstlisting}[style=csharp, caption={Controlador del proyecto WebUI con métodos de selección de formaciones almacenados en base de datos.},label=code:ej1]
+	[HttpPost("[action]")]
+	[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
+	public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, FormacionFiltrosDTO filtros)
+	{
+		logger.LogInformation("Obtener el listado de formaciones filtrado");
+		
+		var formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQuery(filtros));
+		
+		if (formacionesRespuesta.Tipo == TipoRespuesta.Error)
+		{
+			ModelState.AddModelError("ListadoGridError", "Ha ocurrido un error al obtener el listado de formaciones.");
+		}
+		
+		return Json(formacionesRespuesta.Data.ToDataSourceResult(request, ModelState));
+	}	
+	
+	
+	[HttpGet("[action]/{FormacionID}")]
+	[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
+	public async Task<IActionResult> Detalle(int formacionID)
+	{
+		logger.LogInformation($"Pantalla de detalle de la formacion: {formacionID}");
+		
+		var formacion = await Mediator.Send(new GetSingleFormacionQuery(formacionID));
+		
+		if (formacion.Tipo == TipoRespuesta.Error)
+		{
+			TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError.ToString();
+			return RedirectToAction("Index");
+		}
+		else if (formacion.Tipo == TipoRespuesta.NoAutorizado)
+		{
+			return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = 403 });
+		}
+		
+		var viewModel = new FormacionViewModel();
+		viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel(formacion.Data);
+		
+		return View(viewModel);
+	}
+\end{lstlisting}
 
-Al acceder a la opción de \textit{Solicitar formación extraordinaria} encontraremos la siguiente pantalla:  
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/cuestionarioIntake.png}
-	\caption[Cuestionario INTAKE para solicitar formación.]{Cuestionario INTAKE para solicitar formación.}
-	\label{fig:ej4}
-\end{figure}
-Un cuestionario de 10 preguntas para recoger información sobre la necesidad formativa u oportunidad de mejora. Este cuestionario solo aparece para el caso de formación extraordinaria.
 
-Nos encontramos con otra pestaña \textit{Datos generales} que sí aparece para ambos tipos de formación.
-que nos muestra la siguiente pantalla:
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaDatosGenerales.png}
-	\caption[Formulario de datos generales a rellenar.]{Formulario de datos generales a rellenar.}
-	\label{fig:ej5}
-\end{figure}
+\section{Aplicación}
+La capa de aplicación representa el nivel en el que se concentra la lógica de negocio del sistema. En este nivel se implementa el principio de \textit{Command Query Responsibility Segregation} (CQRS), mediante el cual cada proceso o acción empresarial se modela como un comando o una consulta independiente. Este patrón arquitectónico permite diferenciar las operaciones que modifican el estado del sistema (comandos) de aquellas que únicamente recuperan información (consultas), promoviendo así una estructura más ordenada, clara y escalable.
 
-Cumplimentar los datos de la segunda pantalla:
-\begin{itemize}
-	\item \textbf{Nombre:} Nombre de la acción formativa.
-	\item \textbf{Área:} Área a la que pertenece el creador de la solicitud.
-	\item \textbf{Aprobador/a:} Responsable directo del/los asistentes. En caso de asistir personal de varias áreas, identificar como aprobador al responsable del área de la que asistan más personas.
-	\item \textbf{Validador/a:} Director de departamento al que pertenecen los asistentes. En caso de asistir personal de varios departamentos, identificar como aprobador al director del departamento del que asistan más personas.
-	\item \textbf{Valorador/a:} Encargado/a de valorar la formación. Puede haber más de un/a valorador/a para cada formación. Por defecto se asigna como valorador/a el aprobador/a.
-	\item \textbf{Planificación:} Ubicarla en el trimestre en el que se imparte la acción.
-	\item \textbf{Modalidad de la formación:} Modalidad en la que se imparte (Online, Streaming, presencial, mixta…).
-	\item \textbf{Tipo de formación:} Si la formación es interna (el docente es de plantilla), externa (el docente es una empresa/persona ajena a la empresa), mixta (se combinan ambas modalidades).
-	\item \textbf{Medio pedagógico:} Comunidades en prácticas (aprendizaje en comunidad o social), aprendizaje experiencial (Learning by doing), aprendizaje tradicional (formación tradicional).
-	\item \textbf{Tipo de contenido:} Si se trata de conocimientos técnicos, Soft Skills, Idiomas, Agile…
-	\item \textbf{Lugar:} Dónde tiene lugar la acción formativa.
-	\item \textbf{Tipo de coste:} Coste (si la acción implica un coste en la matriculación) o gratuita (no supone coste en la inscripción).
-	\item \textbf{Código:} Aparece cumplimentada por defecto. No rellenable.
-	\item \textbf{Unidades:} Número de personas para asistir.
-	\item \textbf{Importe:} En caso de que suponga coste, indicar cuantía por persona sin IVA.
-	\item \textbf{Total:} Cuantía total sin IVA. No rellenable.
-	\item \textbf{Fecha Inicio:} Fecha en la que tiene lugar el inicio de la acción formativa.
-	\item \textbf{Fecha Fin:} Fecha en la que finaliza la acción formativa.
-	\item \textbf{Horas de formación:} Número de horas que dura la acción formativa.
-	\item \textbf{Sala:} La sala donde se impartirá la acción formativa.
-	\item \textbf{Días aviso valoración:} Aparece cumplimentada por defecto. No rellenable.
-	\item \textbf{Tipo de plan de formación:} Planificado o Extraordinario. Según qué tipo de solicitud hemos solicitado tendrá un valor u otro, con la posibilidad de poder cambiarlo.
-	\item \textbf{Plan de formación anual:} Plan para formar en el año actual. En el caso de solicitud extraordinaria este campo estará deshabilitado y, para el caso de planificada, tendrá como valor la propuesta del plan de formación seleccionada, también con la opción de poder cambiarla.
-	\item \textbf{Mostrar en la home:} Opción para mostrar o no en la pestaña home.
-	\item \textbf{Es bonificable:} Opción para indicar si es bonificable o no la acción formativa.
-	\item \textbf{Contenido y/o programa:} Espacio destinado a alojar el link del programa de contenidos, en caso de disponer de él, o adjuntarlo en caso de tenerlo como documento.
-	\item \textbf{Temario:} Espacio destinado a adjuntar el temario en caso de tenerlo como documento.
-	\item \textbf{Observaciones:} Observaciones opcionales para indicar en la acción formativa.
-\end{itemize}
+Dentro de esta capa también se definen las clases conocidas como \textit{Data Transfer Objects} (DTO). Estas entidades sirven como vehículos de intercambio de información entre las diferentes capas, evitando que los modelos internos se expongan directamente. Su propósito es agrupar y transportar los datos necesarios para ejecutar una acción concreta, garantizando una comunicación sencilla, coherente y desacoplada entre componentes de la aplicación.
 
-Si hemos seleccionado la opción de \textit{Solicitar formación planificada} nos aparece 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/seleccionarPropuestaFormacion.png}
-	\caption[Ventana para seleccionar propuesta a asignar a la formación.]{Ventana para seleccionar propuesta a asignar a la formación.}
-	\label{fig:ej6}
-\end{figure}
+Finalmente, las operaciones relacionadas con los comandos y las consultas, como se muestra en el Código \ref{code:ej2}, se declaran mediante interfaces localizadas en esta misma capa, mientras que su implementación específica se desarrolla en la capa inferior.
 
-Es un listado de propuestas aceptadas de los planes de formación que estén aprobados y activos. Se selecciona una propuesta y haciendo clic en el botón \textit{Aceptar} nos carga solo la pestaña de \textit{Datos generales} con los campos \textit{Tipo de plan de formación} y \textit{Plan de formación} automáticamente rellenados.
+\begin{lstlisting}[style=csharp, caption={Interfaz de formaciones con métodos para llevar a cabo las operaciones sobre la base de datos.},label=code:ej2]
+	public interface IFormacionesDataService
+	{
+		Task<List<FormacionListDTO>> SelectAll(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
+		Task<List<int>> SelectAreas(List<string> areas, CancellationToken cancellationToken);
+		Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
+		Task<FormacionDTO> SelectSingle(int formacionID, CancellationToken cancellationToken);
+		Task<bool> ExisteCodigo(string codigo, CancellationToken cancellationToken);
+		Task<bool> ComprobarValoracionCompletada(int formacionID);
+		Task<FormacionDTO> Insert(FormacionDTO formacionDTO, CancellationToken cancellationToken);
+		Task<FormacionDTO> Update(FormacionDTO formacionDTO, CancellationToken cancellationToken);
+		Task<bool> Delete(int formacionID, CancellationToken cancellationToken);
+	}
+\end{lstlisting}
+\section{Infraestructura}
+La capa de infraestructura constituye el nivel responsable de la interacción con los recursos externos y de proporcionar los servicios necesarios para que las demás capas puedan operar correctamente. En esta capa se ubican las clases encargadas de acceder a sistemas externos, tales como bases de datos, sistemas de archivos, servicios web o cualquier otro recurso externo que el sistema requiera.
 
-Una vez cumplimentada la pantalla de Datos generales, debemos guardar y continuar la creación de la solicitud y a continuación aparecerá más pestañas en la parte superior. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/restoPestanas.png}
-	\caption[Pestañas que cargan después de crear una formación.]{Pestañas que cargan después de crear una formación.}
-	\label{fig:ej7}
-\end{figure}
+Las clases que pertenecen a este nivel implementan las interfaces definidas en la capa de aplicación, cumpliendo así el principio de inversión de dependencias y garantizando una arquitectura más modular y desacoplada. Gracias a este enfoque, el resto del sistema no necesita conocer los detalles técnicos de cómo se realizan las operaciones externas, sino únicamente la interfaz que las define, lo que facilita la sustitución o actualización de componentes sin afectar al funcionamiento general.
 
-La pestaña Docencia es el espacio para crear el/los docentes e introducir toda la información relativa a la docencia:  
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaDocentes.png}
-	\caption[Pestaña de los docentes de la formación.]{Pestaña de los docentes de la formación.}
-	\label{fig:ej8}
-\end{figure}
-Pulsamos Crear docente y aparece una línea para introducir los datos correspondientes (Nombre, DNI, CIF, Tipo de docente, si es ajeno a la empresa o interno, entidad a la que pertenece…).
+Otro elemento importante presente en esta capa son los procesos de migración, que hacen referencia al conjunto de procedimientos destinados a trasladar o actualizar la estructura y los datos de una base de datos. Las migraciones permiten mantener la coherencia entre el modelo de datos y el código fuente del proyecto, especialmente durante las fases de desarrollo o actualización del sistema. Mediante estas operaciones se pueden aplicar cambios de esquema, incorporar nuevas tablas o modificar relaciones existentes, asegurando la integridad de la información y la compatibilidad entre versiones.
+\section{Dominio}
+La capa de dominio constituye el núcleo esencial del sistema, ya que en ella se define la lógica de negocio que modela los procesos y reglas fundamentales de la aplicación. En este nivel se ubican las entidades, que representan los elementos principales del modelo de negocio y encapsulan tanto sus atributos como el comportamiento asociado.
 
-Cuando la acción formativa está pendiente de tramitación se permite seleccionar asistentes y nos aparece el botón de enviar convocatoria:
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/asistentesEnvioConvocatoria.png}
-	\caption[Seleccionar asistentes para enviarles envío de convocatoria.]{Seleccionar asistentes para enviarles envío de convocatoria.}
-	\label{fig:ej9}
-\end{figure}
+El propósito de esta capa es reflejar con fidelidad la realidad del problema que la aplicación pretende resolver, garantizando la coherencia interna y la integridad de los datos mediante las operaciones que se realizan sobre dichas entidades.
 
-Al hacer clic se envía un correo a los asistentes seleccionados. En este correo se encuentra un adjunto .ics que contiene los eventos creados en la pestaña Calendario (que veremos más adelante) para agregarlos automáticamente en el Outlook personal de cada asistente.
-
-Por otro lado, en el cuerpo del correo aparece un enlace el cual nos dirige a una página donde se muestra el nombre de la acción formativa y podemos aceptar o rechazar la asistencia con la posibilidad de agregar comentario opcional. Se puede aceptar o rechazar solo una vez, por lo que si se intenta acceder de nuevo después de contestar salta acceso denegado.
-
-Cuando la formación pasa a ser tramitada, automáticamente a todos los asistentes que están pendientes de responder o que no se les mandó correo antes se les envía el correo.
-Hay dos casos a considerar al enviar un correo a uno o varios asistentes:
-1.	
-2.	
-\begin{enumerate}
-	\item Si el correo se envía el mismo día de la fecha de finalización de la acción formativa, la asistencia se rechaza automáticamente y se notifica a los asistentes por correo electrónico.  
-	\item Si quedan menos de 10 días para la fecha de finalización de la acción formativa, la asistencia se acepta automáticamente y no se envía ningún correo a los asistentes.
-\end{enumerate}
-
-Cuando la formación pasa a ser pendiente de valoración, al seleccionar los asistentes aparece un nuevo botón para enviar correo para encuesta de eficacia formativa.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/encuestaEficacia.png}
-	\caption[Página para rellenar encuesta de eficacia formativa.]{Página para rellenar encuesta de eficacia formativa.}
-	\label{fig:ej10}
-\end{figure}
-
-No se puede rellenar más de una vez excepto si se vuelve a enviar al asistente de nuevo el correo como comentamos en convocatoria. 
-En este estado se agrega una pestaña más que es Valoraciones:
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaValoraciones.png}
-	\caption[Pestaña de valoraciones de una formación.]{Pestaña de valoraciones de una formación.}
-	\label{fig:ej11}
-\end{figure}
-
-Nos indica tanto las valoraciones de la formación, que explicaremos más tarde, como las encuestas realizadas, como vemos se muestra marcado en rojo la valoración media total de todas las encuestas. Si desplegamos alguna encuesta podemos ver la respuesta del asistente y la valoración total de dicha encuesta.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/detallesEncuesta.png}
-	\caption[Resultado de una encuesta realizada a una formación.]{Resultado de una encuesta realizada a una formación.}
-	\label{fig:ej12}
-\end{figure}
-
-En la pestaña Calendario, se incluirá los datos relativos a días y horas que abarca la formación.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaCalendarios.png}
-	\caption[Pestaña de calendario de una formación.]{Pestaña de calendario de una formación.}
-	\label{fig:ej13}
-\end{figure}
-Es un sistema flexible que permite personalizar las jornadas y días. El funcionamiento es similar al de la herramienta \textit{Outlook}.
-
-En la pestaña Histórico, se guarda un historial de cambios de los estados de la acción formativa, cambios de valores de los campos de los datos generales (importe, horas, fecha inicio, fecha fin), cuando se añade/elimina un docente y cuando se añade/elimina un asistente.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaHistorico.png}
-	\caption[Pestaña con el histórico de cambios en una formación.]{Pestaña con el histórico de cambios en una formación.}
-	\label{fig:ej14}
-\end{figure}
-
-En la pestaña Gestión, se pueden enviar avisos por correo, rellenar opcionalmente el campo de cantidad bonificada y/o asignar pedidos, creando uno nuevo o asignando uno existente.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaGestion.png}
-	\caption[Pestaña de gestión de una formación.]{Pestaña de gestión de una formación.}
-	\label{fig:ej15}
-\end{figure}
-
-Al querer asignar pedido nos muestra el listado de pedidos para seleccionar
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/listadoPedidos.png}
-	\caption[Listado de pedidos para asignar a una formación.]{Listado de pedidos para asignar a una formación.}
-	\label{fig:ej16}
-\end{figure} 
-Se pueden filtrar y al asignar un pedido nos muestra la referencia interna y el nº del pedido vinculado con la posibilidad de tanto ver el pedido como desvincularlo.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaGestionConPedidos.png}
-	\caption[Pestaña de gestión de una formación con pedidos asignados.]{Pestaña de gestión de una formación con pedidos asignados.}
-	\label{fig:ej17}
-\end{figure} 
-Vemos que aparece también el listado de facturas del pedido vinculado. A parte de los datos de las facturas se nos proporciona el estado de cada factura (pagada o pendiente). Si una factura pendiente se ha cambiado de estado a pagada podemos actualizar las facturas de estado usando el botón \textit{Marcar Pagada} que aparece en la columna de Acción para las facturas pendientes.
-
-En la pestaña Solicitudes podemos ver todas las solicitudes de inscripción pendientes de aprobar
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaSolicitudes.png}
-	\caption[Pestaña de solicitudes de inscripción pendientes de aprobar.]{Pestaña de solicitudes de inscripción pendientes de aprobar.}
-	\label{fig:ej18}
-\end{figure} 
-
-Finalizamos la solicitud de acción formativa pulsando \textit{Avisar al aprobador} y automáticamente llega un aviso a los responsables y PyT para validar y tramitar la acción, si es el caso. En caso de que, una vez solicitada una acción formativa, surja cualquier tipo de modificación, de procederá a hacer los cambios oportunos en la aplicación y, tras guardar esos cambios, debemos volver a \textit{Avisar al aprobador}.
-
-\section{Solicitar incluirse en una acción formativa ya creada}
-
-En la pantalla Home podremos visualizar, tal y como podemos observar en la Figura \ref{fig:ej19}, las acciones formativas que han sido solicitadas, aprobadas y tramitadas pero que aún no han dado comienzo, dando la posibilidad de que otras personas, que no han sido convocadas y que pueden estar interesadas en asistir, puedan solicitar su incorporación. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pantallaHomeFormacionesCreadas.png}
-	\caption[Pantalla de HOME con las formaciones ya tramitadas sin comenzar.]{Pantalla de HOME con las formaciones ya tramitadas sin comenzar.}
-	\label{fig:ej19}
-\end{figure} 
-Pulsamos en cualquier parte de la línea de la formación en la que estamos interesados. Mostrará la información de la acción y para finalizar la solicitud de incorporación a la acción, debemos pulsar Solicitar inscripción y llegará a responsables y PyT para validar y tramitar la solicitud, si es el caso. 
-
-\section{Clonación y valoraciones}
-Está incluida también la opción de clonar una acción formativa como se ve en la Figura \ref{fig:ej20}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/btnClonarFormacion.png}
-	\caption[Botones de clonación de la formación.]{Botones de clonación de la formación.}
-	\label{fig:ej20}
-\end{figure}
-Podemos clonar tanto en instrumental como en global. Al hacer clic se realiza un proceso similar a cuando solicitamos formación con algunos cambios:
-\begin{enumerate}
-	\item La pestaña Cuestionario INTAKE se rellena por defecto con la información que había en la acción formativa que se desea clonar.
-	\item La pestaña Datos generales se rellena por defecto con la información que había en la acción formativa que desea clonar, excepto los campos Fecha inicio y Fecha fin. En el caso de clonar en la empresa contraria los campos que son selectores se cargan con los datos de dicha empresa.
-	\item Se muestra la pestaña Docencia con los docentes que tenía la acción formativa que se va a clonar sin la posibilidad de agregar o crear nuevos docentes. 
-\end{enumerate}
-\vspace{0.5em}
-\textbf{INFORMACIÓN PARA RESPONSABLES Y DIRECTORES}\\
-En el momento en que se crea la acción formativa por parte del trabajador, la solicitud llega al responsable de área para que sea analizada.  
-\begin{itemize}
-	\item En caso de ser rechaza, automáticamente se envía una notificación al creador de la misma comunicándole el estado y motivo de la misma.
-	\item Si es aprobada, llega un correo al director del departamento, si procede, para analizarla.  
-\end{itemize}
-
-El proceso se repite en este punto
-\begin{itemize}
-	\item En caso de rechazarla, automáticamente se envía una notificación comunicando al responsable de área y al creador de la acción el estado de la acción formativa y el motivo.
-	\item En caso de aprobarla, llega un correo a PyT para analizar y aprobar y tramitarla. 
-\end{itemize}
-
-A los responsables de área y directores de departamentos les llegarán continuamente notificaciones de las solicitudes o de cualquier otra tarea que tengan pendiente de completar. 
-En caso de no tener localizadas estas notificaciones, se podrá acceder a la relación de tareas pendientes a través de la aplicación.  
-Cuando accedan a la aplicación, en el menú de la izquierda, podrán ver dos opciones más que el resto de trabajadores: 
-\begin{itemize}
-	\item Una opción denominada \textit{Pdte. Autorizar}, que son las solicitudes que tienen pendientes de aprobar. Desde ese apartado podrán acceder a la información de las acciones y podrán tramitarlas.  
-	\item Otra opción denominada \textit{Pdte. Valorar}, que son las valoraciones de la eficacia de la formación que tienen pendientes de valorar. Desde esa notificación podrán acceder a la información de la acción formativa y, en la parte superior aparecerá una nueva pestaña con la valoración, para poder cumplimentarla. 
-\end{itemize}
-
-\section{Planes de formación y propuestas}
-En el menú lateral tenemos una sección de planes de formación anula, si hacemos clic nos aparece la siguiente Figura \ref{fig:ej21}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/ListadoPlanes.png}
-	\caption[Pantalla con el listado de planes de formación anual.]{Pantalla con el listado de planes de formación anual.}
-	\label{fig:ej21}
-\end{figure}
-Un listado de planes con la opción de poder filtrar los activos o inactivos. Para crear un plan de formación hacemos clic en el botón \textit{Crear plan de formación anual} que nos muestra la página de la Figura \ref{fig:ej22}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/formularioPlanFormacion.png}
-	\caption[Pantalla con el formulario para crear un plan de formación anual.]{Pantalla con el formulario para crear un plan de formación anual.}
-	\label{fig:ej22}
-\end{figure}
-Al crear el plan aparecen más pestañas, tal y como podemos observar y la Figura \ref{fig:ej23} y en la parte inferior, se nos muestra el estado del plan junto al año del plan.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanasPlanFormacion.png}
-	\caption[Pantalla de edición del plan de formación anual con todas las pestañas.]{Pantalla de edición del plan de formación anual con todas las pestañas.}
-	\label{fig:ej23}
-\end{figure}
-
-En la pestaña Departamentos vemos la siguiente Figura \ref{fig:ej24}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pestanaDepartamentosPlanFormacion.png}
-	\caption[Pantalla de departamentos del plan de formación anual.]{Pantalla de departamentos del plan de formación anual.}
-	\label{fig:ej24}
-\end{figure}
-Aquí, por cada departamento se podrá indicar que usuarios tendrán permisos para subir propuestas de formación para el departamento indicado. Para cada usuario hay una columna Enviar plan a PyT para poder indicar a que usuario dar los permisos, tal y como vemos en la Figura \ref{fig:ej25}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/permisosUsuariosDepartamento.png}
-	\caption[Usuarios con permiso de un departamento del plan de formación anual.]{Usuarios con permiso de un departamento del plan de formación anual.}
-	\label{fig:ej25}
-\end{figure}
-
-En la pestaña de propuestas se encuentra el listado de las propuestas para el plan de formación como podemos ver en la Figura \ref{fig:ej26}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{fig/pantallaListadoPropuestasPlanFormacion.png}
-	\caption[Pantalla con el listado de las propuestas de plan de formación anual.]{Pantalla con el listado de las propuestas de plan de formación anual.}
-	\label{fig:ej26}
-\end{figure}
-
-Debajo del listado nos aparecen los estados que podría tener una propuesta y cada estado con un color diferente. En el listado al inicio de cada propuesta aparece el color que representa su estado. En el caso de la Figura \ref{fig:ej26}, hay 2 propuestas unificadas, 4 aceptadas y 1 rechazada.
+Una característica clave del dominio es su independencia respecto a la infraestructura y a los elementos externos, como bases de datos o servicios. Esta separación asegura que las reglas de negocio permanezcan estables y no se vean afectadas por los cambios tecnológicos, facilitando así la evolución y el mantenimiento del sistema a largo plazo.
