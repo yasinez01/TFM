@@ -288,27 +288,30 @@ Gracias a este sistema de comunicación y control, la aplicación centraliza tod
 	\resizebox{0.9\textwidth}{!}{%
 		\begin{tikzpicture}[
 			node distance=1.6cm and 1.8cm,
-			every node/.style={rectangle, draw, rounded corners, align=center, font=\footnotesize, minimum width=3.5cm, minimum height=0.9cm},
+            % en lugar de definir el estilo para todos definimos un nuevo elemento para usar
+            % tambien le damos una anchura minima grande para uqe todos los nodos tengan el mismo tamaño
+			accion/.style={rectangle, draw, rounded corners, align=center, font=\footnotesize, minimum width=5.5cm, minimum height=0.9cm},
+            nodoFlecha/.style={font=\footnotesize},
 			arrow/.style={-Stealth, thick}
 			]
 			
-			\node (trabajador) {Trabajador crea la acción formativa};
-			\node (responsable) [below=of trabajador] {Responsable de área analiza \\ (Aprueba / Rechaza)};
-			\node (responsableAprueba) [below=of responsable] {Aprobada → Enviar al director de departamento};
-			\node (director) [below=of responsableAprueba] {Director de departamento analiza \\ (Aprueba / Rechaza)};
-			\node (directorAprueba) [below=of director] {Aprobada → Enviar a PyT};
-			\node (pyt) [below=of directorAprueba] {PyT revisa y tramita la formación};
+			\node[accion] (trabajador) {Trabajador crea la acción formativa};
+			\node[accion] (responsable) [below=of trabajador] {Responsable de área analiza};
+			\node[accion] (responsableAprueba) [below=of responsable] {Enviar al director de departamento};
+			\node[accion] (director) [below=of responsableAprueba] {Director de departamento analiza};
+			\node[accion] (directorAprueba) [below=of director] {Enviar a PyT};
+			\node[accion] (pyt) [below=of directorAprueba] {PyT revisa y tramita la formación};
 			
 			\draw[arrow] (trabajador) -- (responsable);
 			
-			\node (rechazado1) [left=1.8cm of responsable] {Rechazada \\ → Notifica al creador de la solicitud};
-			\draw[arrow] (responsable) -- (rechazado1);
-			\draw[arrow] (responsable) -- (responsableAprueba);
+			\node[accion] (rechazado1) [right=2.5cm of responsable] {Notifica al creador de la solicitud};
+			\draw[arrow] (responsable) -- (rechazado1) node [nodoFlecha, midway, above] {rechazada};
+			\draw[arrow] (responsable) -- (responsableAprueba) node [nodoFlecha, midway, right] {aprobada};
 			\draw[arrow] (responsableAprueba) -- (director);
 			
-			\node (rechazado2) [left=1.8cm of director] {Rechazada \\ → Notifica al responsable \\ y creador de la solicitud};
-			\draw[arrow] (director) -- (rechazado2);
-			\draw[arrow] (director) -- (directorAprueba);
+			\node[accion] (rechazado2) [right=2.5cm of director] {Notifica al responsable \\ y creador de la solicitud};
+			\draw[arrow] (director) -- (rechazado2) node [nodoFlecha, midway, above] {rechazada};
+			\draw[arrow] (director) -- (directorAprueba) node [nodoFlecha, midway, right] {aprobada};
 			
 			\draw[arrow] (directorAprueba) -- (pyt);
 			
