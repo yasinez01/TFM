@@ -1,7 +1,204 @@
-\chapter[Conclusiones y Trabajo Futuro]{Conclusiones y Trabajo Futuro}
+\chapter[Funcionamiento interno]{Funcionamiento interno}
 \label{Chap6}
 
+En las secciones anteriores se ha descrito el funcionamiento del Ecosistema de Aprendizaje 
+desde el punto de vista del usuario, detallando las pantallas, los flujos y las interacciones. 
+En esta sección se aborda el sistema desde la perspectiva del desarrollador, explicando 
+la arquitectura interna, los patrones aplicados, el funcionamiento del backend y diversos fragmentos de código relevantes para comprender cómo se ha construido la solución.
 
+El objetivo de esta sección es aportar una visión técnica del proyecto, profundizando en la estructura del código, la implementación de la lógica de negocio, la comunicación entre las capas y las decisiones técnicas que han guiado el desarrollo.
 
+\subsection{Arquitectura técnica y organización del proyecto}
 
+El sistema se ha implementado siguiendo una arquitectura por capas combinada con el 
+patrón \textit{Command Query Responsibility Segregation} (CQRS). Esta combinación proporciona una estructura clara, mantenible y fácilmente escalable. La separación entre comandos y consultas permite dividir de forma explícita las operaciones que modifican estado de aquellas que únicamente lo leen.
 
+La estructura general del proyecto puede verse en el siguiente esquema:
+
+\begin{verbatim}
+	/WebUI
+	/Controllers
+	/Views
+	/Scripts
+	/ViewModels
+	
+	/Application
+	/Commands
+	/Queries
+	/DTOs
+	/Interfaces
+	
+	/Infrastructure
+	/Servicios
+	/Migrations
+	
+	/Domain
+	/Entities
+\end{verbatim}
+
+Cada una de estas áreas cumple un rol específico:
+\begin{description}
+	\item[WebUI:] interacción con el usuario, controladores, vistas y modelos de presentación.
+	\item[Application:] lógica de negocio, implementación de CQRS, validaciones y DTOs.
+	\item[Infrastructure:] acceso a datos, repositorios, migraciones y servicios externos.
+	\item[Domain:] entidades principales y reglas del dominio de negocio.
+\end{description}
+
+\subsection{Implementación de consultas (Query Handlers)}
+
+El controlador mostrado en la Sección 4 de formaciones llama internamente a consultas modeladas como \textit{Handlers}. Estas consultas se encuentran en la capa \textit{Application} y permiten recuperar datos de manera estructurada.
+
+A continuación se muestra un ejemplo simplificado del \textit{Handler} correspondiente a la obtención del listado de formaciones:
+\begin{lstlisting}[style=csharp, caption={Clase Handler que realiza una consulta para obtener formaciones.},label=code:ej3]
+	public class GetAllFormacionesQueryHandler 
+	: IRequestHandler<GetAllFormacionesQuery, 
+	RespuestaDTO<List<FormacionListDTO>>>
+	{
+		private readonly IFormacionesDataService _formacionesDataService;
+		
+		public GetAllFormacionesQueryHandler(IFormacionesDataService
+		formacionesDataService)
+		{
+			_formacionesDataService = formacionesDataService;
+		}
+		
+		public async Task<RespuestaDTO<List<FormacionListDTO>>> Handle(
+		GetAllFormacionesQuery request, CancellationToken ct)
+		{
+			var formaciones = await _formacionesDataService.SelectAll(
+			request.Filtros,cancellationToken);
+			
+			if (formaciones == null)
+			return RespuestaDTO<List<FormacionListDTO>>
+			.Error("No se pudieron recuperar las formaciones.");
+			
+			return RespuestaDTO<List<FormacionListDTO>>
+			.Success(lista);
+		}
+	}
+\end{lstlisting}
+
+Este código ilustra algunos de los aspectos fundamentales del diseño:
+
+\begin{itemize}
+	\item La obtención de datos se delega a un servicio de infraestructura mediante una interfaz.
+	\item Se encapsula la respuesta en un objeto \textit{RespuestaDTO}, unificando el tratamiento de errores.
+	\item El código queda desacoplado de la base de datos y centrado en la lógica del caso de uso.
+\end{itemize}
+
+\subsection{Implementación de comandos (Command Handlers)}
+
+Las operaciones que modifican el estado de la aplicación, como crear o actualizar una
+formación, se implementan mediante \textit{Command Handlers}. Su diseño es similar al de 
+las consultas, pero incluye validaciones y lógica de negocio adicional.
+\begin{lstlisting}[style=csharp, caption={Clase Handler con validación y lógica de negocio adicional.},label=code:ej4]
+	public class CrearFormacionCommandHandler 
+: IRequestHandler<CrearFormacionCommand, RespuestaDTO<int>>
+	{
+		private readonly IFormacionesDataService _repo;
+		
+		public async Task<RespuestaDTO<int>> Handle(
+		CrearFormacionCommand request, CancellationToken ct)
+		{
+			// Validación de negocio
+			if (await _repo.ExisteCodigo(request.Formacion.Codigo, ct))
+			return RespuestaDTO<int>.Error(
+			"El código de formación ya existe.");
+			
+			var nueva = await _repo.Insert(request.Formacion, ct);
+			
+			return RespuestaDTO<int>.Success(nueva.Id);
+		}
+	}
+\end{lstlisting}
+
+Este tipo de comandos garantiza que todas las modificaciones sigan las reglas de dominio
+establecidas en la capa \textit{Domain}.
+
+\subsection{Acceso a datos e infraestructura}
+
+La capa \textit{Infrastructure} implementa las interfaces definidas en \textit{Application} mediante Entity Framework. Las entidades del dominio se mapean a tablas mediante Fluent API:
+
+\begin{lstlisting}[style=csharp, caption={Mapeo de tablas mediante Fluent API.},label=code:ej5]
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		modelBuilder.Entity<Formacion>(entity =>
+		{
+			entity.ToTable("Formaciones");
+			entity.Property(f => f.Nombre)
+			.HasMaxLength(200)
+			.IsRequired();
+		});
+	}
+\end{lstlisting}
+
+Asimismo, cada cambio en el modelo genera una migración que se aplica sobre SQL Server, 
+manteniendo sincronizada la estructura de la base de datos con el código fuente.
+
+\subsection{Sistema de permisos y filtros de autorización}
+
+El control de acceso a los distintos métodos del controlador se realiza mediante un filtro personalizado que valida los roles del usuario autenticado. Esto permite proteger acciones como ver detalles de una formación o tramitar solicitudes.
+
+\begin{lstlisting}[style=csharp, caption={Clase que valida el permiso del usuario para poder consultar vistas o realizar acciones.},label=code:ej6]
+	public class TienePermisosFilter : ActionFilterAttribute
+	{
+		private readonly EAutorizacionPermisos _permiso;
+		
+		public TienePermisosFilter(EAutorizacionPermisos permiso)
+		{
+			_permiso = permiso;
+		}
+		
+		public override void OnActionExecuting(ActionExecutingContext context)
+		{
+			var usuario = context.HttpContext.User;
+			
+			if (!usuario.HasClaim("Permiso", _permiso.ToString()))
+			{
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler", "Error", 
+				new { statusCode = 403 });
+			}
+		}
+	}
+\end{lstlisting}
+
+El uso de este filtro en los controladores permite centralizar la gestión de permisos y 
+evitar duplicación de lógica.
+
+\subsection{Sistema de notificaciones y enlaces únicos}
+
+El envío automático de correos electrónicos es una de las piezas clave del flujo interno. Tenemos un comando encargado de envío de correos después de que se aplique algún tramite, como por ejemplo al agregar un asistente a una formación le llega un correo para poder aceptar o rechazar la convocatoria. También tenemos otro controlador que es un recordatorio que envía diferentes correos según las fechas. Por ejemplo, cuando un asistente es agregado a una formación y queda una semana para que la formación comience, si ese asistente aún no ha aceptado ni rechazado la convocatoria automáticamente le llega un correo de recordatorio ya que cuando quede un solo día para que comience la formación, si no confirmó entonces se rechaza automáticamente.
+%% mostrar imagen de las plantillas.
+%\subsection{Gestión de estados y trazabilidad}
+
+%Las formaciones pasan por múltiples estados (borrador, pendiente de aprobación, %tramitada,
+%etc.). Para garantizar la trazabilidad se ha definido un \textit{enum} centralizado:
+
+%\ begin{lstlisting}[language=C]
+%	public enum EstadoFormacion {
+%		Borrador,
+%		PendienteAprobacion,
+%		Aprobada,
+%		Tramitada,
+%		PendienteValoracion,
+%		Finalizada
+%	}
+%\ end{lstlisting}
+
+%Cada transición genera automáticamente una entrada en el histórico, registrada mediante
+%una entidad específica en la base de datos. Esto permite reconstruir cualquier cambio y 
+%facilitar auditorías internas.
+
+\subsection{Procesamiento de encuestas y valoraciones}
+
+Al finalizar una acción formativa, el sistema envía automáticamente una encuesta de 
+eficacia. Cada respuesta queda asociada a un asistente y a una formación, y el promedio 
+se calcula dinámicamente. Este proceso se refleja posteriormente en la pestaña \textit{Valoraciones}, visible para los roles autorizados.
+
+\subsection{Conclusión técnica}
+
+El diseño interno del Ecosistema de Aprendizaje combina una arquitectura moderna con 
+patrones avanzados y una estricta separación por capas. Esto ha permitido 
+desarrollar un sistema robusto, mantenible y fácilmente ampliable. La modularidad del 
+código y el uso de Entity Framework, servicios desacoplados y filtros de permisos garantizan que la aplicación pueda evolucionar en el futuro incorporando nuevas funcionalidades sin comprometer su estabilidad.

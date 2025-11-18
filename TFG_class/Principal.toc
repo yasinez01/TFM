@@ -7,19 +7,33 @@
 \contentsline {subsection}{\numberline {2.0.1}Requisitos funcionales}{3}{subsection.2.0.1}%
 \contentsline {subsection}{\numberline {2.0.2}Requisitos no funcionales}{4}{subsection.2.0.2}%
 \contentsline {subsection}{\numberline {2.0.3}Roles}{4}{subsection.2.0.3}%
-\contentsline {chapter}{\numberline {3}Estructura del proyecto}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Presentación}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Aplicación}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Infraestructura}{11}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Dominio}{11}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Proyecto}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Acceso a plataforma de aprendizaje}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Acceso directo a la plataforma de ciberseguridad}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Solicitar nueva acción formativa}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Solicitar incluirse en una acción formativa ya creada}{24}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Clonación y valoraciones}{25}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}INFORMACIÓN PARA RESPONSABLES Y DIRECTORES}{25}{subsection.4.5.1}%
-\contentsline {section}{\numberline {4.6}Planes de formación y propuestas}{27}{section.4.6}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{33}{section*.38}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{35}{section*.39}%
-\contentsline {chapter}{Ap\'{e}ndice}{35}{section*.39}%
+\contentsline {chapter}{\numberline {3}Tecnologías y herramientas utilizadas}{7}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Lenguaje de programación y ecosistema .NET}{7}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}Interfaz de usuario}{8}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.0.3}Gestión de datos: Entity Framework y SQL Server}{9}{subsection.3.0.3}%
+\contentsline {subsection}{\numberline {3.0.4}Sistema de notificaciones y comunicaciones}{10}{subsection.3.0.4}%
+\contentsline {chapter}{\numberline {4}Estructura del proyecto}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Presentación}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Aplicación}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Infraestructura}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Dominio}{15}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Desarrollo del Ecosistema de Aprendizaje}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Acceso a plataforma de aprendizaje}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Acceso directo a la plataforma de ciberseguridad}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Solicitar nueva acción formativa}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Solicitar incluirse en una acción formativa ya creada}{28}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Clonación y valoraciones}{29}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Información para responsables y directores}{29}{subsection.5.5.1}%
+\contentsline {section}{\numberline {5.6}Planes de formación y propuestas}{31}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Funcionamiento interno}{37}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Arquitectura técnica y organización del proyecto}{37}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}Implementación de consultas (Query Handlers)}{38}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Implementación de comandos (Command Handlers)}{39}{subsection.6.0.3}%
+\contentsline {subsection}{\numberline {6.0.4}Acceso a datos e infraestructura}{40}{subsection.6.0.4}%
+\contentsline {subsection}{\numberline {6.0.5}Sistema de permisos y filtros de autorización}{40}{subsection.6.0.5}%
+\contentsline {subsection}{\numberline {6.0.6}Sistema de notificaciones y enlaces únicos}{41}{subsection.6.0.6}%
+\contentsline {subsection}{\numberline {6.0.7}Procesamiento de encuestas y valoraciones}{41}{subsection.6.0.7}%
+\contentsline {subsection}{\numberline {6.0.8}Conclusión técnica}{42}{subsection.6.0.8}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{section*.38}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{43}{section*.39}%
+\contentsline {chapter}{Ap\'{e}ndice}{43}{section*.39}%

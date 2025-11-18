@@ -1,23 +1,60 @@
-\chapter[Introducción]{Introducción}
+\chapter[Análisis de requisitos]{Análisis de requisitos}
 \label{Chap2}
 
- En la actualidad, las organizaciones se encuentran inmersas en un entorno empresarial en constante transformación, donde la gestión del conocimiento y el desarrollo de
-competencias profesionales se han convertido en factores estratégicos para garantizar la competitividad y la sostenibilidad a largo plazo. La capacidad de formar a los equipos de manera ágil, estructurada y alineada con los objetivos corporativos es un desafío clave para cualquier empresa que aspire a mantener una posición destacada en su sector.
+Antes de abordar el desarrollo y la estructura técnica de la aplicación, resulta fundamental realizar un análisis de los requisitos funcionales y no funcionales que definirán el alcance del Ecosistema de Aprendizaje. Este análisis tiene como objetivo identificar las necesidades específicas de la organización, los usuarios involucrados y las funcionalidades esenciales que el sistema deberá cubrir para cumplir con los objetivos planteados.
 
-En este contexto, surge el presente Trabajo de Fin de Máster, que tiene como propósito el diseño, desarrollo e implementación de la aplicación web Ecosistema de Aprendizaje en colaboración con Tracasa Global y Tracasa Instrumental. Esta solución tecnológica se concibe como una plataforma integral destinada a optimizar los procesos de gestión del aprendizaje, permitiendo a los trabajadores acceder a un entorno digital centralizado desde el cual pueden solicitar nuevas acciones formativas, inscribirse en programas ya existentes y acceder a diferentes recursos de capacitación externos. 
+\subsection{Requisitos funcionales}
 
-La aplicación no solo buscará facilitar el acceso a la formación, sino también incorporar un sistema de validación y aprobación por parte de responsables y directores, garantizando así la coherencia entre las necesidades individuales de los empleados y las prioridades estratégicas de la empresa. Además, se prevé que incluya funcionalidades avanzadas como la planificación de actividades, el seguimiento del progreso y la valoración de la eficacia formativa, con el fin de contribuir a una mayor trazabilidad y transparencia en los procesos de desarrollo profesional.
+Los requisitos funcionales describen las acciones y procesos que la aplicación deberá permitir realizar a sus usuarios. A partir de las reuniones iniciales con Tracasa Global y Tracasa Instrumental, y del estudio de los flujos actuales de gestión de la formación, se han definido las siguientes funcionalidades principales:
+\begin{description}
+	\item[Gestión de acciones formativas:]  permitir la creación, edición, eliminación y clonación de acciones formativas, distinguiendo entre formaciones planificadas y extraordinarias.
+	
+	\item[Gestión de solicitudes:] permitir que los empleados soliciten nuevas formaciones o su participación en acciones ya existentes, con validación por parte de responsables, directores y el área de PyT (Proyectos y Tecnología).
+	
+	\item[Flujo de aprobación y notificaciones:] automatizar el envío de correos electrónicos para informar a los distintos roles del estado de las solicitudes, aprobaciones y valoraciones pendientes.
+	
+	\item[Gestión de docentes y asistentes:] permitir asociar docentes internos o externos a una formación, así como gestionar los asistentes y sus convocatorias.
+	
+	\item[Encuestas y valoraciones:] generar encuestas de eficacia formativa y registrar valoraciones asociadas a cada acción formativa.
+	
+	\item[Planes de formación anual:] posibilitar la creación, edición y seguimiento de planes de formación, con la asignación de propuestas por departamento y la gestión de permisos para cada usuario.
+	
+	\item[Integración con plataformas externas:] permitir el acceso directo a la plataforma de aprendizaje GoodHabitz y a la plataforma de ciberseguridad corporativa desde la propia aplicación.
+	
+	\item[Histórico y trazabilidad:] registrar los cambios y actualizaciones realizados sobre las acciones formativas para mantener un seguimiento completo de la evolución de cada proceso.
+	
+	
+\end{description}
 
-El desarrollo del proyecto se estructurará en distintas fases claramente definidas. En primer lugar, se llevará a cabo una fase de análisis de requisitos, en la que se recopilarán las necesidades funcionales y técnicas de la empresa, identificando los procesos clave a digitalizar y los distintos perfiles de usuario que interactuarán con la aplicación (empleados, responsables, directores y administradores del sistema). A partir de esta información se definirán los requisitos funcionales principales, como la creación y gestión de acciones formativas, la validación de solicitudes, la integración con plataformas externas de aprendizaje, la generación de informes de seguimiento y la automatización de notificaciones por correo.
+\subsection{Requisitos no funcionales}
 
-Posteriormente, se realizará la fase de diseño, en la que se definirá la arquitectura de la solución siguiendo un modelo por capas, garantizando la separación de responsabilidades y la escalabilidad del sistema. En esta etapa se elaborarán los diagramas de flujo, los modelos de datos y la estructura de componentes que servirán como base para la fase de implementación.
+Además de las funcionalidades descritas, la aplicación deberá cumplir con una serie de condiciones relacionadas con su rendimiento, seguridad y usabilidad:
 
-Durante la fase de desarrollo, se procederá a construir los distintos módulos de la aplicación utilizando tecnologías modernas del ecosistema \textit{.NET} y \textit{C sharp}, junto con \textit{TypeScript} y \textit{HTML/CSS} para la capa de presentación. Se aplicará el patrón arquitectónico \textit{Command Query Responsibility Segregation (CQRS)} para separar las operaciones de lectura y escritura, asegurando así un código más limpio y mantenible.
+\begin{description}
+	\item[Usabilidad:] la interfaz debe ser intuitiva, clara y accesible para usuarios con distintos niveles de experiencia técnica.
+	
+	\item[Seguridad:] el acceso a la aplicación deberá estar autenticado y controlado mediante un sistema de roles (solicitante, responsable, director, PyT o administrador), garantizando la protección de los datos personales y formativos.
+	
+	\item[Rendimiento:] el sistema debe ser capaz de gestionar múltiples solicitudes y consultas simultáneas sin afectar la velocidad de respuesta.
+	
+	\item[Escalabilidad:] la arquitectura debe permitir la incorporación de nuevas funcionalidades o módulos sin afectar el funcionamiento existente.
+	
+	\item[Mantenibilidad:] el código debe estar bien estructurado y documentado, siguiendo principios de modularidad y reutilización.
+	
+	\item[Compatibilidad:] la aplicación debe ser accesible desde los navegadores corporativos más utilizados y adaptarse correctamente a diferentes resoluciones de pantalla.
+\end{description}
 
-Una vez implementada la base del sistema, se llevará a cabo la fase de pruebas, en la que se realizarán tanto pruebas unitarias como de integración, además de validaciones funcionales con usuarios de la empresa colaboradora. Este proceso permitirá detectar posibles errores, ajustar la experiencia de usuario y garantizar la fiabilidad del sistema antes de su despliegue.
+\subsection{Roles}
+Durante la fase de análisis se identificaron los diferentes tipos de usuarios que interactuarán con el sistema, cada uno con permisos y responsabilidades específicas:
 
-Finalmente, la fase de despliegue y entrega contemplará la puesta en marcha de la aplicación en el entorno corporativo, la configuración de las bases de datos y servidores, así como la formación de los usuarios en el uso de la herramienta.
-
-Se estima que el desarrollo completo del proyecto se extenderá a lo largo de aproximadamente 1 año, combinando sesiones de planificación y seguimiento con el equipo técnico de Tracasa y el área de gestión de proyectos tecnológicos (PyT). Para ello, se adoptará una metodología ágil de trabajo, que permitirá iterar de manera continua sobre los avances, incorporar mejoras basadas en el feedback de los usuarios y priorizar las funcionalidades más relevantes para cada perfil.
-
-En definitiva, este proyecto representa una apuesta firme por la innovación y la transformación digital en el ámbito de la formación corporativa. La implementación del Ecosistema de Aprendizaje permitirá a Tracasa Global y Tracasa Instrumental fortalecer su modelo de gestión del talento, fomentar el aprendizaje continuo y consolidar una cultura organizativa orientada al crecimiento y a la excelencia.
+\begin{description}
+	\item[Solicitante:] puede solicitar nuevas acciones formativas o inscribirse en formaciones ya creadas.
+	
+	\item[Responsable de área:] recibe y valida las solicitudes de los empleados de su equipo.
+	
+	\item[Director de departamento:] revisa y aprueba las solicitudes validadas por los responsables de las áreas que forman parte de su departamento.
+	
+	\item[PyT (Proyectos y Tecnología):] gestiona las solicitudes aprobadas, tramita las formaciones y supervisa el cumplimiento de los procesos.
+	
+	\item[Administrador del sistema:] mantiene la aplicación, gestiona usuarios y configura los parámetros globales de funcionamiento.
+\end{description}

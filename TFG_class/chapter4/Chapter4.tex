@@ -1,7 +1,7 @@
 \chapter[Estructura del proyecto]{Estructura del proyecto}
 \label{Chap4}
 
-El proyecto se estructura siguiendo una arquitectura por capas \footnote{\href{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}}, lo que permite organizar el código y separar las responsabilidades de forma clara y eficiente. Cada capa cumple un papel distinto. La presentación se encarga de la interfaz y la interacción con el usuario, la aplicación contiene la lógica de negocio, la infraestructura gestiona el acceso a recursos externos como la base de datos y la capa de dominio define las reglas y entidades principales del modelo.
+El proyecto se estructura siguiendo una arquitectura por capas\footnote{\href{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}{https://reactiveprogramming.io/blog/es/estilos-arquitectonicos/capas}}, lo que permite organizar el código y separar las responsabilidades de forma clara y eficiente. Cada capa cumple un papel distinto. La presentación se encarga de la interfaz y la interacción con el usuario, la aplicación contiene la lógica de negocio, la infraestructura gestiona el acceso a recursos externos como la base de datos y la capa de dominio define las reglas y entidades principales del modelo.
 La elección de esta arquitectura se debe a que proporciona una base sólida y escalable para el desarrollo, favorece la mantenibilidad del sistema y facilita la incorporación de nuevas funcionalidades sin afectar al resto de componentes. Además, permite una mayor reutilización del código y mejora la calidad del software al fomentar un diseño más limpio, modular y fácilmente testeable.
 \begin{figure} [h!btp]
 	\centering
@@ -31,7 +31,8 @@ Además de los métodos de consulta, el controlador incluye también operaciones
 			ModelState.AddModelError("ListadoGridError", "Ha ocurrido un error al obtener el listado de formaciones.");
 		}
 		
-		return Json(formacionesRespuesta.Data.ToDataSourceResult(request, ModelState));
+		return Json(formacionesRespuesta.Data.ToDataSourceResult
+		(request, ModelState));
 	}	
 	
 	
@@ -45,7 +46,8 @@ Además de los métodos de consulta, el controlador incluye también operaciones
 		
 		if (formacion.Tipo == TipoRespuesta.Error)
 		{
-			TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError.ToString();
+			TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError
+			.ToString();
 			return RedirectToAction("Index");
 		}
 		else if (formacion.Tipo == TipoRespuesta.NoAutorizado)
@@ -54,7 +56,8 @@ Además de los métodos de consulta, el controlador incluye también operaciones
 		}
 		
 		var viewModel = new FormacionViewModel();
-		viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel(formacion.Data);
+		viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel
+		(formacion.Data);
 		
 		return View(viewModel);
 	}

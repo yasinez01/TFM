@@ -1,60 +1,117 @@
-\chapter[Análisis de requisitos]{Análisis de requisitos}
+\chapter[Tecnologías y herramientas utilizadas]{Tecnologías y herramientas utilizadas}
 \label{Chap3}
 
-Antes de abordar el desarrollo y la estructura técnica de la aplicación, resulta fundamental realizar un análisis de los requisitos funcionales y no funcionales que definirán el alcance del Ecosistema de Aprendizaje. Este análisis tiene como objetivo identificar las necesidades específicas de la organización, los usuarios involucrados y las funcionalidades esenciales que el sistema deberá cubrir para cumplir con los objetivos planteados.
+La elección de las tecnologías empleadas en el desarrollo del Ecosistema de Aprendizaje responde a la necesidad de construir una solución robusta, segura y con capacidad de crecer a largo plazo dentro del entorno corporativo de Tracasa Global y Tracasa Instrumental. En este sentido, se van a seleccionado herramientas consolidadas en el sector y ampliamente utilizadas en el desarrollo de aplicaciones empresariales, garantizando así un mantenimiento eficiente, una curva de aprendizaje asumible y una larga vida útil del sistema.
 
-\subsection{Requisitos funcionales}
+\subsection{Lenguaje de programación y ecosistema .NET}
 
-Los requisitos funcionales describen las acciones y procesos que la aplicación deberá permitir realizar a sus usuarios. A partir de las reuniones iniciales con Tracasa Global y Tracasa Instrumental, y del estudio de los flujos actuales de gestión de la formación, se han definido las siguientes funcionalidades principales:
-\begin{description}
-	\item[Gestión de acciones formativas:]  permitir la creación, edición, eliminación y clonación de acciones formativas, distinguiendo entre formaciones planificadas y extraordinarias.
-	
-	\item[Gestión de solicitudes:] permitir que los empleados soliciten nuevas formaciones o su participación en acciones ya existentes, con validación por parte de responsables, directores y el área de PyT (Proyectos y Tecnología).
-	
-	\item[Flujo de aprobación y notificaciones:] automatizar el envío de correos electrónicos para informar a los distintos roles del estado de las solicitudes, aprobaciones y valoraciones pendientes.
-	
-	\item[Gestión de docentes y asistentes:] permitir asociar docentes internos o externos a una formación, así como gestionar los asistentes y sus convocatorias.
-	
-	\item[Encuestas y valoraciones:] generar encuestas de eficacia formativa y registrar valoraciones asociadas a cada acción formativa.
-	
-	\item[Planes de formación anual:] posibilitar la creación, edición y seguimiento de planes de formación, con la asignación de propuestas por departamento y la gestión de permisos para cada usuario.
-	
-	\item[Integración con plataformas externas:] permitir el acceso directo a la plataforma de aprendizaje GoodHabitz y a la plataforma de ciberseguridad corporativa desde la propia aplicación.
-	
-	\item[Histórico y trazabilidad:] registrar los cambios y actualizaciones realizados sobre las acciones formativas para mantener un seguimiento completo de la evolución de cada proceso.
-	
-	
-\end{description}
+Antes de profundizar en las tecnologías utilizadas en el desarrollo del backend, resulta
+pertinente introducir brevemente el concepto de \textbf{framework}, ya que constituye la base
+sobre la que se construye gran parte de la solución implementada.
 
-\subsection{Requisitos no funcionales}
+Un \textit{framework} puede entenderse como un conjunto de herramientas, componentes y
+estructuras previamente definidas que facilitan la creación de aplicaciones de manera más
+ágil y eficiente. Su propósito es evitar que los desarrolladores deban partir desde cero en cada proyecto, proporcionando elementos reutilizables y mecanismos estandarizados para resolver problemas comunes. Gracias a ello, se reduce el tiempo de desarrollo, se mejora la calidad del software y se garantiza una mayor consistencia en la implementación.
 
-Además de las funcionalidades descritas, la aplicación deberá cumplir con una serie de condiciones relacionadas con su rendimiento, seguridad y usabilidad:
+En este contexto, la plataforma \textbf{.NET} constituye uno de los frameworks más completos y ampliamente adoptados en el ámbito empresarial. Se trata de una plataforma de código abierto y multiplataforma diseñada para compilar y ejecutar aplicaciones de todo tipo, desde soluciones web hasta servicios distribuidos o herramientas de escritorio. .NET destaca por su alto rendimiento, su sistema avanzado de ejecución y su amplio conjunto de bibliotecas optimizadas, que permiten trabajar de forma segura, productiva y escalable. Entre sus características clave se encuentran la administración automática de memoria, la seguridad de tipos, la protección de la memoria y la existencia de un extenso ecosistema de herramientas y marcos de trabajo especializados.
 
-\begin{description}
-	\item[Usabilidad:] la interfaz debe ser intuitiva, clara y accesible para usuarios con distintos niveles de experiencia técnica.
-	
-	\item[Seguridad:] el acceso a la aplicación deberá estar autenticado y controlado mediante un sistema de roles (solicitante, responsable, director, PyT o administrador), garantizando la protección de los datos personales y formativos.
-	
-	\item[Rendimiento:] el sistema debe ser capaz de gestionar múltiples solicitudes y consultas simultáneas sin afectar la velocidad de respuesta.
-	
-	\item[Escalabilidad:] la arquitectura debe permitir la incorporación de nuevas funcionalidades o módulos sin afectar el funcionamiento existente.
-	
-	\item[Mantenibilidad:] el código debe estar bien estructurado y documentado, siguiendo principios de modularidad y reutilización.
-	
-	\item[Compatibilidad:] la aplicación debe ser accesible desde los navegadores corporativos más utilizados y adaptarse correctamente a diferentes resoluciones de pantalla.
-\end{description}
+Sobre esta plataforma se apoya el lenguaje \textbf{C\#}, utilizado como lenguaje principal en el desarrollo del Ecosistema de Aprendizaje. C\# es un lenguaje moderno, fuertemente tipado y orientado a objetos, diseñado para ofrecer productividad y claridad en el código, además de funciones avanzadas como la concurrencia integrada, el manejo automático de recursos y una sintaxis elegante fácil de mantener a largo plazo. Su interoperabilidad con otros lenguajes del ecosistema .NET y su alta fiabilidad lo han convertido en la opción predilecta dentro del entorno profesional cuando se requieren aplicaciones robustas, seguras y de gran rendimiento.
 
-\subsection{Roles}
-Durante la fase de análisis se identificaron los diferentes tipos de usuarios que interactuarán con el sistema, cada uno con permisos y responsabilidades específicas:
+La elección conjunta de C\# y .NET proporciona una base tecnológica sólida para el proyecto, especialmente en un entorno corporativo donde la seguridad, la escalabilidad y la mantenibilidad son requisitos fundamentales.
 
-\begin{description}
-	\item[Solicitante:] puede solicitar nuevas acciones formativas o inscribirse en formaciones ya creadas.
+Entre los motivos que justifican el uso de esta tecnología destacan los siguientes:
+
+\begin{itemize}
+	\item \textbf{Madurez y estabilidad}: .NET es una plataforma ampliamente consolidada y en constante evolución, lo que garantiza fiabilidad incluso en proyectos de larga
+	duración.
 	
-	\item[Responsable de área:] recibe y valida las solicitudes de los empleados de su equipo.
+	\item \textbf{Rendimiento elevado}: el entorno de ejecución de .NET ofrece tiempos de
+	respuesta competitivos, ideales para sistemas corporativos que gestionan un gran
+	volumen de solicitudes simultáneas.
 	
-	\item[Director de departamento:] revisa y aprueba las solicitudes validadas por los responsables de las áreas que forman parte de su departamento.
+	\item \textbf{Seguridad integrada}: la plataforma incorpora mecanismos nativos de protección,	validación y control de acceso, esenciales en aplicaciones que manejan datos sensibles como los relativos a formación y gestión interna.
 	
-	\item[PyT (Proyectos y Tecnología):] gestiona las solicitudes aprobadas, tramita las formaciones y supervisa el cumplimiento de los procesos.
+	\item \textbf{Productividad y facilidad de mantenimiento}: gracias al uso de C\# y al acceso a bibliotecas optimizadas, el desarrollo es más ágil y el código más fácil de mantener.
 	
-	\item[Administrador del sistema:] mantiene la aplicación, gestiona usuarios y configura los parámetros globales de funcionamiento.
-\end{description}
+	\item \textbf{Interoperabilidad y ecosistema amplio}: .NET permite integrar la solución con otros servicios y tecnologías corporativas, reduciendo riesgos y facilitando futuras ampliaciones.
+\end{itemize}
+
+En conjunto, el uso del ecosistema .NET y del lenguaje C\# constituye una opción altamente adecuada para el desarrollo del Ecosistema de Aprendizaje, proporcionando un equilibrio óptimo entre rendimiento, seguridad, mantenibilidad y capacidad de evolución tecnológica.
+
+
+\subsection{Interfaz de usuario}
+
+La capa de presentación del Ecosistema de Aprendizaje se ha desarrollado combinando
+\textbf{TypeScript}, el motor de componentes \textbf{Blazor} y estilos definidos mediante
+\textbf{CSS global}. Este conjunto tecnológico permite construir interfaces modernas,
+dinámicas y fáciles de mantener, aprovechando tanto el ecosistema web tradicional como
+las capacidades integradas de .NET para el desarrollo de aplicaciones interactivas.
+
+\begin{itemize}
+	\item \textbf{TypeScript} aporta tipado estático, una organización más clara del código y la detección temprana de errores durante el desarrollo. Esto reduce fallos en ejecución y mejora significativamente la mantenibilidad de la interfaz.
+	
+	\item \textbf{Blazor} facilita la creación de componentes interactivos empleando código familiar para el equipo de desarrollo, permitiendo integrar lógica de presentación de forma estructurada sin necesidad de depender exclusivamente de JavaScript. Su capacidad para trabajar con datos y eventos de manera fluida mejora la consistencia de la experiencia de usuario.
+	
+	\item \textbf{CSS} se utiliza para definir estilos unificados en toda la aplicación, garantizando coherencia visual, facilidad de personalización y una apariencia profesional adaptada al entorno corporativo.
+\end{itemize}
+
+Este conjunto de tecnologías permite construir una interfaz intuitiva, ligera y adaptada a los estándares actuales de usabilidad, asegurando que la experiencia de usuario resulte
+coherente para todos los perfiles que interactúan con la aplicación.
+
+\subsection{Gestión de datos: Entity Framework y SQL Server}
+El acceso a datos se ha implementado mediante \textbf{Entity Framework}, un \textit{ORM} que simplifica la comunicación con la base de datos. Sus principales ventajas incluyen:
+
+\begin{itemize}
+	\item \textbf{Reducción del código repetitivo}: permite abstraer consultas comunes sin
+	necesidad de escribir SQL manual, disminuyendo la probabilidad de errores.
+	
+	\item \textbf{Sincronización continua del modelo de datos}: gracias al sistema de migraciones,
+	es posible actualizar la base de datos de forma segura a medida que evoluciona el
+	proyecto.
+	
+	\item \textbf{Facilidad de mantenimiento}: su integración natural con C\# permite trabajar de
+	forma coherente con las entidades del sistema.
+\end{itemize}
+
+Como motor de almacenamiento se ha utilizado \textbf{SQL Server}, una tecnología ampliamente extendida en entornos corporativos y que presenta ventajas significativas:
+
+\begin{itemize}
+	\item \textbf{Potentes capacidades de administración}: SQL Server facilita la gestión de volúmenes grandes de información, el control de transacciones y la seguridad.
+	
+	\item \textbf{Escalabilidad}: permite afrontar un crecimiento progresivo del sistema sin necesidad de realizar cambios disruptivos en la infraestructura.
+	
+	\item \textbf{Integración con herramientas empresariales existentes}: lo que agiliza los	procesos de despliegue y mantenimiento.
+\end{itemize}
+
+Estas características hacen que la combinación de Entity Framework con SQL Server sea
+particularmente adecuada para aplicaciones internas de gestión, donde la consistencia,
+seguridad y trazabilidad de los datos son elementos clave.
+
+\subsection{Sistema de notificaciones y comunicaciones}
+La plataforma incorpora un sistema automatizado de \textbf{envío de correos electrónicos},
+fundamental para coordinar las aprobaciones, convocatorias, valoraciones y avisos entre
+usuarios. Su importancia radica en que:
+
+\begin{itemize}
+	\item Reduce los tiempos de gestión.
+	\item Evita pérdidas de información entre departamentos.
+	\item Asegura una comunicación constante y centralizada.
+\end{itemize}
+
+La integración del sistema de notificaciones dentro de la lógica de la aplicación permite que el usuario reciba información en tiempo real, lo que incrementa la eficiencia de los flujos de trabajo relacionados con la formación.
+
+%\subsection{Despliegue y mantenimiento}
+%Aunque el despliegue final se orienta al entorno corporativo, la solución ha sido diseñada
+%para ser compatible tanto con entornos clásicos como con infraestructuras más modernas
+%basadas en contenedores. Esto permite:
+
+%\begin{itemize}
+%	\item \textbf{Facilitar futuras migraciones} hacia entornos en la nube o infraestructuras
+%	híbridas.
+%	\item \textbf{Aumentar la portabilidad} del sistema sin requerir cambios en la lógica interna.
+%	\item \textbf{Simplificar el mantenimiento}, al emplear tecnologías estandarizadas y de fácil supervisión para equipos técnicos.
+%\end{itemize}
+
+En conjunto, todas estas tecnologías permiten construir una aplicación robusta, segura,
+fácil de mantener y preparada para evolucionar en el futuro. Su uso está alineado con las
+tendencias actuales en desarrollo de software corporativo, ofreciendo garantías de fiabilidad y sostenibilidad a largo plazo dentro del entorno empresarial de Tracasa.
