@@ -4,14 +4,14 @@
 \contentsline {chapter}{Listings}{\es@scroman {vi}}{section*.3}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Análisis de requisitos}{3}{chapter.2}%
-\contentsline {subsection}{\numberline {2.0.1}Requisitos funcionales}{3}{subsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.0.2}Requisitos no funcionales}{4}{subsection.2.0.2}%
-\contentsline {subsection}{\numberline {2.0.3}Roles}{4}{subsection.2.0.3}%
+\contentsline {section}{\numberline {2.1}Requisitos funcionales}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Requisitos no funcionales}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Roles}{4}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Tecnologías y herramientas utilizadas}{7}{chapter.3}%
-\contentsline {subsection}{\numberline {3.0.1}Lenguaje de programación y ecosistema .NET}{7}{subsection.3.0.1}%
-\contentsline {subsection}{\numberline {3.0.2}Interfaz de usuario}{8}{subsection.3.0.2}%
-\contentsline {subsection}{\numberline {3.0.3}Gestión de datos: Entity Framework y SQL Server}{9}{subsection.3.0.3}%
-\contentsline {subsection}{\numberline {3.0.4}Sistema de notificaciones y comunicaciones}{10}{subsection.3.0.4}%
+\contentsline {section}{\numberline {3.1}Lenguaje de programación y ecosistema .NET}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Interfaz de usuario}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Gestión de datos: Entity Framework y SQL Server}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Sistema de notificaciones y comunicaciones}{10}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Estructura del proyecto}{11}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Presentación}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Aplicación}{14}{section.4.2}%
@@ -26,14 +26,14 @@
 \contentsline {subsection}{\numberline {5.5.1}Información para responsables y directores}{29}{subsection.5.5.1}%
 \contentsline {section}{\numberline {5.6}Planes de formación y propuestas}{31}{section.5.6}%
 \contentsline {chapter}{\numberline {6}Funcionamiento interno}{37}{chapter.6}%
-\contentsline {subsection}{\numberline {6.0.1}Arquitectura técnica y organización del proyecto}{37}{subsection.6.0.1}%
-\contentsline {subsection}{\numberline {6.0.2}Implementación de consultas (Query Handlers)}{38}{subsection.6.0.2}%
-\contentsline {subsection}{\numberline {6.0.3}Implementación de comandos (Command Handlers)}{39}{subsection.6.0.3}%
-\contentsline {subsection}{\numberline {6.0.4}Acceso a datos e infraestructura}{40}{subsection.6.0.4}%
-\contentsline {subsection}{\numberline {6.0.5}Sistema de permisos y filtros de autorización}{40}{subsection.6.0.5}%
-\contentsline {subsection}{\numberline {6.0.6}Sistema de notificaciones y enlaces únicos}{41}{subsection.6.0.6}%
-\contentsline {subsection}{\numberline {6.0.7}Procesamiento de encuestas y valoraciones}{41}{subsection.6.0.7}%
-\contentsline {subsection}{\numberline {6.0.8}Conclusión técnica}{42}{subsection.6.0.8}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{43}{section*.38}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{43}{section*.39}%
-\contentsline {chapter}{Ap\'{e}ndice}{43}{section*.39}%
+\contentsline {section}{\numberline {6.1}Arquitectura técnica y organización del proyecto}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Implementación de consultas (Query Handlers)}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Implementación de comandos (Command Handlers)}{40}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Acceso a datos e infraestructura}{43}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Sistema de permisos y filtros de autorización}{45}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Sistema de notificaciones y enlaces únicos}{47}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Procesamiento de encuestas y valoraciones}{48}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Conclusión técnica}{48}{section.6.8}%
+\contentsline {chapter}{Bibliografía}{49}{section*.38}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{49}{section*.39}%
+\contentsline {chapter}{Ap\'{e}ndice}{49}{section*.39}%

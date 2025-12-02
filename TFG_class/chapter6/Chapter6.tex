@@ -1,42 +1,44 @@
 \chapter[Funcionamiento interno]{Funcionamiento interno}
 \label{Chap6}
 
-En las secciones anteriores se ha descrito el funcionamiento del Ecosistema de Aprendizaje 
-desde el punto de vista del usuario, detallando las pantallas, los flujos y las interacciones. 
-En esta sección se aborda el sistema desde la perspectiva del desarrollador, explicando 
-la arquitectura interna, los patrones aplicados, el funcionamiento del backend y diversos fragmentos de código relevantes para comprender cómo se ha construido la solución.
+En el capítulo \ref{Chap5} se ha descrito el funcionamiento del Ecosistema de Aprendizaje desde el punto de vista del usuario, detallando las pantallas, los flujos y las interacciones. En esta sección se aborda el sistema desde la perspectiva del desarrollador, explicando la arquitectura interna, los patrones aplicados, el funcionamiento del backend y diversos fragmentos de código relevantes para comprender cómo se ha construido la solución.
 
 El objetivo de esta sección es aportar una visión técnica del proyecto, profundizando en la estructura del código, la implementación de la lógica de negocio, la comunicación entre las capas y las decisiones técnicas que han guiado el desarrollo.
 
-\subsection{Arquitectura técnica y organización del proyecto}
+\section{Arquitectura técnica y organización del proyecto}
 
 El sistema se ha implementado siguiendo una arquitectura por capas combinada con el 
 patrón \textit{Command Query Responsibility Segregation} (CQRS). Esta combinación proporciona una estructura clara, mantenible y fácilmente escalable. La separación entre comandos y consultas permite dividir de forma explícita las operaciones que modifican estado de aquellas que únicamente lo leen.
 
-La estructura general del proyecto puede verse en el siguiente esquema:
-
-\begin{verbatim}
-	/WebUI
-	/Controllers
-	/Views
-	/Scripts
-	/ViewModels
-	
-	/Application
-	/Commands
-	/Queries
-	/DTOs
-	/Interfaces
-	
-	/Infrastructure
-	/Servicios
-	/Migrations
-	
-	/Domain
-	/Entities
-\end{verbatim}
-
-Cada una de estas áreas cumple un rol específico:
+La estructura general del proyecto puede verse en el siguiente esquema: \\
+\begin{forest}
+	pic dir tree,
+	where level=0{} {
+		directory,
+	},
+		[Proyecto
+	[WebUI
+	[Controllers]
+	[Views]
+	[Scripts]
+	[ViewModels]
+	]
+	[Application
+	[Commands]
+	[Queries]
+	[DTOs]
+	[Interfaces]
+	]
+	[Infrastructure
+	[Servicios]
+	[Migrations]
+	]
+	[Domain
+	[Entities]
+	]
+	]
+\end{forest}
+\\Cada una de estas áreas cumple un rol específico:
 \begin{description}
 	\item[WebUI:] interacción con el usuario, controladores, vistas y modelos de presentación.
 	\item[Application:] lógica de negocio, implementación de CQRS, validaciones y DTOs.
@@ -44,159 +46,341 @@ Cada una de estas áreas cumple un rol específico:
 	\item[Domain:] entidades principales y reglas del dominio de negocio.
 \end{description}
 
-\subsection{Implementación de consultas (Query Handlers)}
+\section{Implementación de consultas (Query Handlers)}
 
-El controlador mostrado en la Sección 4 de formaciones llama internamente a consultas modeladas como \textit{Handlers}. Estas consultas se encuentran en la capa \textit{Application} y permiten recuperar datos de manera estructurada.
+El controlador mostrado en el capítulo \ref{Chap4} de formaciones llama internamente a consultas modeladas como \textit{Handlers}. Estas consultas se encuentran en la capa \textit{Application} y permiten recuperar datos de manera estructurada.
 
 A continuación se muestra un ejemplo simplificado del \textit{Handler} correspondiente a la obtención del listado de formaciones:
 \begin{lstlisting}[style=csharp, caption={Clase Handler que realiza una consulta para obtener formaciones.},label=code:ej3]
-	public class GetAllFormacionesQueryHandler 
-	: IRequestHandler<GetAllFormacionesQuery, 
-	RespuestaDTO<List<FormacionListDTO>>>
+public class GetAllFormacionesQueryHandler : 
+IRequestHandler<GetAllFormacionesQuery, ApiRespuesta<List<FormacionListDTO>>>
+{
+	private readonly IFormacionesDataService _formacionesDataService;
+	
+	public GetAllFormacionesQueryHandler(IFormacionesDataService formacionesDataService)
 	{
-		private readonly IFormacionesDataService _formacionesDataService;
-		
-		public GetAllFormacionesQueryHandler(IFormacionesDataService
-		formacionesDataService)
-		{
-			_formacionesDataService = formacionesDataService;
-		}
-		
-		public async Task<RespuestaDTO<List<FormacionListDTO>>> Handle(
-		GetAllFormacionesQuery request, CancellationToken ct)
-		{
-			var formaciones = await _formacionesDataService.SelectAll(
-			request.Filtros,cancellationToken);
-			
-			if (formaciones == null)
-			return RespuestaDTO<List<FormacionListDTO>>
-			.Error("No se pudieron recuperar las formaciones.");
-			
-			return RespuestaDTO<List<FormacionListDTO>>
-			.Success(lista);
-		}
+		_formacionesDataService = formacionesDataService;
 	}
+	
+	public async Task<ApiRespuesta<List<FormacionListDTO>>> Handle(GetAllFormacionesQuery request,
+	CancellationToken cancellationToken)
+	{
+		var apiRespuesta = new ApiRespuesta<List<FormacionListDTO>> { 
+		Data = new List<FormacionListDTO>(), Tipo = TipoRespuesta.Error };
+		
+		List<FormacionListDTO> formaciones = await Task.Run(() => _formacionesDataService
+		.SelectAll(request.Filtros, cancellationToken));
+		if (formaciones != null)
+		{			
+			apiRespuesta.Tipo = TipoRespuesta.Success;
+			apiRespuesta.Data = formaciones;
+		}
+		
+		return apiRespuesta;
+	}
+}
 \end{lstlisting}
 
 Este código ilustra algunos de los aspectos fundamentales del diseño:
 
 \begin{itemize}
-	\item La obtención de datos se delega a un servicio de infraestructura mediante una interfaz.
-	\item Se encapsula la respuesta en un objeto \textit{RespuestaDTO}, unificando el tratamiento de errores.
+	\item La obtención de datos se delega a un servicio de infraestructura mediante la interfaz IFormacionesDataService.
+	\item Se encapsula la respuesta en un objeto \textit{FormacionListDTO}, unificando el tratamiento de errores.
 	\item El código queda desacoplado de la base de datos y centrado en la lógica del caso de uso.
 \end{itemize}
 
-\subsection{Implementación de comandos (Command Handlers)}
+Además, vemos que a esta \textit{Query} se le pasa un objeto para filtrar las formaciones que es \textit{FormacionFiltrosDTO}. Se usa para poder obtener formaciones filtradas ya sea por texto, area, fecha de inicio...
+\begin{lstlisting}[style=csharp, caption={Clase DTO para filtrar las formaciones.},label=code:ej4]
+public class FormacionFiltrosDTO
+{	
+	public string FiltroTexto { get; set; }
+	public string FiltroArea { get; set; }
+	public string FiltroTipo { get; set; }
+	public string FiltroModalidad { get; set; }
+	public string FiltroTipoConocimiento { get; set; }
+	public string FiltroAsistente { get; set; }
+	public int? FiltroFormacionEstado { get; set; }
+	public int? FiltroPedido { get; set; }
+	public DateTime? FiltroFechaInicioDesde { get; set; }
+	public DateTime? FiltroFechaInicioHasta { get; set; }
+	public bool? FiltroBonificable { get; set; }
+	public bool? FiltroAccionCorrectiva { get; set; }
+	public bool? FiltroPendienteFactura { get; set; }
+}
+\end{lstlisting}
+En cada \textit{Query} tenemos un parámetro de filtrado.
+
+\section{Implementación de comandos (Command Handlers)}
 
 Las operaciones que modifican el estado de la aplicación, como crear o actualizar una
 formación, se implementan mediante \textit{Command Handlers}. Su diseño es similar al de 
 las consultas, pero incluye validaciones y lógica de negocio adicional.
-\begin{lstlisting}[style=csharp, caption={Clase Handler con validación y lógica de negocio adicional.},label=code:ej4]
-	public class CrearFormacionCommandHandler 
-: IRequestHandler<CrearFormacionCommand, RespuestaDTO<int>>
-	{
-		private readonly IFormacionesDataService _repo;
-		
-		public async Task<RespuestaDTO<int>> Handle(
-		CrearFormacionCommand request, CancellationToken ct)
-		{
-			// Validación de negocio
-			if (await _repo.ExisteCodigo(request.Formacion.Codigo, ct))
-			return RespuestaDTO<int>.Error(
-			"El código de formación ya existe.");
-			
-			var nueva = await _repo.Insert(request.Formacion, ct);
-			
-			return RespuestaDTO<int>.Success(nueva.Id);
-		}
+\begin{lstlisting}[style=csharp, caption={Clase Handler para crear una formación.},label=code:ej5]
+public class CreateFormacionCommandHandler :
+IRequestHandler<CreateFormacionCommand, ApiRespuesta<FormacionDTO>>
+{
+	private readonly IFormacionesDataService _formacionesDataService;
+	public CreateFormacionCommandHandler(IFormacionesDataService formacionesDataService)
+	{            
+		_formacionesDataService = formacionesDataService;
 	}
-\end{lstlisting}
-
-Este tipo de comandos garantiza que todas las modificaciones sigan las reglas de dominio
-establecidas en la capa \textit{Domain}.
-
-\subsection{Acceso a datos e infraestructura}
-
-La capa \textit{Infrastructure} implementa las interfaces definidas en \textit{Application} mediante Entity Framework. Las entidades del dominio se mapean a tablas mediante Fluent API:
-
-\begin{lstlisting}[style=csharp, caption={Mapeo de tablas mediante Fluent API.},label=code:ej5]
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
-	{
-		modelBuilder.Entity<Formacion>(entity =>
-		{
-			entity.ToTable("Formaciones");
-			entity.Property(f => f.Nombre)
-			.HasMaxLength(200)
-			.IsRequired();
-		});
-	}
-\end{lstlisting}
-
-Asimismo, cada cambio en el modelo genera una migración que se aplica sobre SQL Server, 
-manteniendo sincronizada la estructura de la base de datos con el código fuente.
-
-\subsection{Sistema de permisos y filtros de autorización}
-
-El control de acceso a los distintos métodos del controlador se realiza mediante un filtro personalizado que valida los roles del usuario autenticado. Esto permite proteger acciones como ver detalles de una formación o tramitar solicitudes.
-
-\begin{lstlisting}[style=csharp, caption={Clase que valida el permiso del usuario para poder consultar vistas o realizar acciones.},label=code:ej6]
-	public class TienePermisosFilter : ActionFilterAttribute
-	{
-		private readonly EAutorizacionPermisos _permiso;
+	
+	public async Task<ApiRespuesta<FormacionDTO>> Handle(CreateFormacionCommand request,
+	CancellationToken cancellationToken)
+	{            
+		var formacionDTO = request.FormacionDTO;
+		var apiRespuesta = new ApiRespuesta<FormacionDTO>() { Tipo = TipoRespuesta.Error
+		, Data = formacionDTO };
 		
-		public TienePermisosFilter(EAutorizacionPermisos permiso)
-		{
-			_permiso = permiso;
-		}
-		
-		public override void OnActionExecuting(ActionExecutingContext context)
-		{
-			var usuario = context.HttpContext.User;
+		if (formacionDTO.ListaErrores.Count == 0) {
 			
-			if (!usuario.HasClaim("Permiso", _permiso.ToString()))
+			InicializarCampos(formacionDTO);
+			
+			formacionDTO = await Task.Run(() => _formacionesDataService
+			.Insert(formacionDTO, cancellationToken));
+			
+			if (formacionDTO != null)
 			{
-				context.Result = new RedirectToActionResult(
-				"HttpStatusCodeHandler", "Error", 
-				new { statusCode = 403 });
+				apiRespuesta.Tipo = TipoRespuesta.Success;
+				apiRespuesta.Data = formacionDTO;
+			}
+		}
+		
+		return apiRespuesta;
+	}
+	
+	private void InicializarCampos(FormacionDTO formacionDTO)
+	{
+		formacionDTO.FormacionID = 0;
+		formacionDTO.FormacionEstadoID = (int)EFormacionEstados.PendienteAprobacion;
+		formacionDTO.CreadoPor = Utility.UsuarioActual.NombreSinDominio;
+		formacionDTO.CreadoEn = DateTime.Now;
+		formacionDTO.ModificadoPor = formacionDTO.CreadoPor;
+		formacionDTO.ModificadoEn = formacionDTO.CreadoEn;
+		
+		formacionDTO.CuestionarioDTO.CuestionarioInicialID = 0;
+		formacionDTO.CuestionarioDTO.CreadoPor = formacionDTO.CreadoPor;
+		formacionDTO.CuestionarioDTO.CreadoEn = formacionDTO.CreadoEn;
+		formacionDTO.CuestionarioDTO.ModificadoPor = formacionDTO.CreadoPor;
+		formacionDTO.CuestionarioDTO.ModificadoEn = formacionDTO.CreadoEn;
+		
+		if (formacionDTO.AdjuntoFormFile != null
+		&& formacionDTO.AdjuntoFormFile.Length > 0)
+		{
+			using (var memoryStream = new MemoryStream())
+			{
+				formacionDTO.AdjuntoFormFile
+				.CopyTo(memoryStream);
+				byte[] archivoBytes = memoryStream.ToArray();
+				
+				formacionDTO.Adjunto = archivoBytes;
+				formacionDTO.AdjuntoNombre = formacionDTO.AdjuntoFormFile.FileName;
 			}
 		}
 	}
+	
+}
+\end{lstlisting}
+
+Este tipo de comandos garantiza que todas las modificaciones sigan las reglas de dominio
+establecidas en la capa \textit{Domain}. Además, para los comandos, tenemos clases validator por cada comando donde validamos los parámetros de los comandos. Es decir, validar que no sean nulos cuando son parámetros obligatorios, validar longitud de cadenas si tienen un máximo para guardar en base de datos....
+\begin{lstlisting}[style=csharp, caption={Clase Validator para crear una formación.},label=code:ej6]
+	public class CreateFormacionCommandValidator : AbstractValidator<CreateFormacionCommand>
+	{
+		public CreateFormacionCommandValidator()
+		{
+			
+			RuleFor(v => v.FormacionDTO.Nombre)
+			.NotEmpty()
+			.NotNull()
+			.MaximumLength(256);
+			
+			RuleFor(v => v.FormacionDTO.Lugar)
+			.NotEmpty()
+			.NotNull()
+			.MaximumLength(256);
+			
+			RuleFor(v => v.FormacionDTO.FechaInicio)
+			.LessThanOrEqualTo(l => l.FormacionDTO.FechaFin);
+		}
+	}
+\end{lstlisting}
+En este caso, validamos que:
+\begin{itemize}
+	\item El valor de \textit{Nombre} de la formación no sea nulo y que no tenga más de 256 caracteres.
+	\item El valor de \textit{Lugar} de la formación no sea nulo y que no tenga más de 256 caracteres.
+	\item El valor de \textit{FechaInicio} de la formación no sea posterior al valor de \textit{FechaFin} de la formación.
+\end{itemize}
+
+Si alguna regla no se cumple se guarda el error y se le muestra al usuario para que rellene el formulario correctamente antes de poder crear la formación.
+\section{Acceso a datos e infraestructura}
+
+La capa \textit{Infrastructure} implementa las interfaces definidas en \textit{Application} mediante Entity Framework. Las entidades del dominio se mapean a tablas mediante Fluent API:
+
+\begin{lstlisting}[style=csharp, caption={Mapeo de tablas mediante Fluent API.},label=code:ej7]
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+	modelBuilder.Entity<Formacion>(entity =>
+	{
+		entity.ToTable("Formaciones");
+		entity.Property(f => f.Nombre)
+		.HasMaxLength(200)
+		.IsRequired();
+	});
+}
+\end{lstlisting}
+
+Asimismo, cada cambio en el modelo genera una migración que se aplica sobre SQL Server, manteniendo sincronizada la estructura de la base de datos con el código fuente. Los métodos que implementan las interfaces tienen de lógica solamente el mapeo y la interacción con las tablas de base de datos. 
+\begin{lstlisting}[style=csharp, caption={Mapeo de tablas mediante Fluent API.},label=code:ej8]
+public async Task<FormacionDTO> Insert(FormacionDTO formacionDTO, 
+CancellationToken cancellationToken)
+{
+	using (var transaction = _context.Database.BeginTransaction())
+	{
+		try
+		{
+			CuestionarioInicial cuestionario = _mapper.Map<CuestionarioInicial>
+			(formacionDTO.CuestionarioDTO);
+			
+			_context.CuestionarioInicial.Add(cuestionario);
+			await _context.SaveChangesAsync(cancellationToken);
+			
+			formacionDTO.CuestionarioInicialID = cuestionario.CuestionarioInicialID;
+			Formacion formacion = _mapper.Map<Formacion>(formacionDTO);
+			
+			_context.Formacion.Add(formacion);
+			await _context.SaveChangesAsync(cancellationToken);
+			
+			formacionDTO.FormacionID = formacion.FormacionID;
+			formacionDTO.ValoracionUsuario.ForEach(valorador =>
+			{
+				Valoracion valoracionEntity = new Valoracion
+				{
+					FormacionID = formacion.FormacionID,
+					ValoracionUsuario = valorador
+				};
+				_context.Valoracion.Add(valoracionEntity);
+			});
+			await _context.SaveChangesAsync(cancellationToken);
+			transaction.Commit();
+			_logger.LogInformation("Exito al crear la formación");
+			
+		}
+		catch (Exception ex)
+		{
+			transaction.Dispose();
+			_logger.LogError(ex, "Error al crear la formación");
+			formacionDTO = null;
+		}
+	}
+	
+	return formacionDTO;
+}
+\end{lstlisting}
+
+\section{Sistema de permisos y filtros de autorización}
+
+El control de acceso a los distintos métodos del controlador se realiza mediante un filtro personalizado que valida los roles del usuario autenticado. Esto permite proteger acciones como ver detalles de una formación o tramitar solicitudes.
+
+\begin{lstlisting}[style=csharp, caption={Clase que valida el permiso del usuario para poder consultar vistas o realizar acciones.},label=code:ej9]
+public class TienePermisosFilterAttribute : AuthorizeAttribute, IAuthorizationFilter
+{
+	
+	private EAutorizacionPermisos AutorizacionPermisos { get; set; }
+	public TienePermisosFilterAttribute(EAutorizacionPermisos autorizacionPermisos)
+	{
+		AutorizacionPermisos = autorizacionPermisos;
+	}
+	
+	public void OnAuthorization(AuthorizationFilterContext context)
+	{
+		
+		var usuario = Utility.UsuarioActual;
+		
+		if (context.HttpContext.User
+		.HasClaim("NotAuthorized", "NotAuthorized") 
+		|| usuario == null)
+		{
+			context.Result = new RedirectToActionResult(
+			"HttpStatusCodeHandler",
+			"Error", 
+			new { statusCode = 403 });
+		}
+		else 
+		{
+			switch (AutorizacionPermisos) {
+				case EAutorizacionPermisos.NINGUNO:
+				if ((usuario.AutorizacionPermisos & EAutorizacionPermisos.NINGUNO) 
+				!= EAutorizacionPermisos.NINGUNO)           
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error", 
+				 new { statusCode = 403 });                        
+				break;
+				
+				case EAutorizacionPermisos.SOLICITANTE:
+				if ((usuario.AutorizacionPermisos & EAutorizacionPermisos.SOLICITANTE) 
+				!= EAutorizacionPermisos.SOLICITANTE)
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error", 
+				 new { statusCode = 403 });
+				break;
+				
+				case EAutorizacionPermisos.PYV:
+				if ((usuario.AutorizacionPermisos & EAutorizacionPermisos.PYV) 
+				!= EAutorizacionPermisos.PYV)
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error", 
+				 new { statusCode = 403 });
+				break;
+				
+				case EAutorizacionPermisos.ADMINISTRADOR:
+				if (((usuario.AutorizacionPermisos & EAutorizacionPermisos.ADMINISTRADOR) 
+				!= EAutorizacionPermisos.ADMINISTRADOR) && !usuario.EsUsuarioSuplantado)
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error",
+				  new { statusCode = 403 });
+				break;
+				
+				case EAutorizacionPermisos.RESPONSABLENEGOCIO:
+				if (((usuario.AutorizacionPermisos & EAutorizacionPermisos.RESPONSABLENEGOCIO) 
+				!= EAutorizacionPermisos.RESPONSABLENEGOCIO) && !usuario.EsUsuarioSuplantado)
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error", 
+				 new { statusCode = 403 });
+				break;
+				
+				default:
+				context.Result = new RedirectToActionResult(
+				"HttpStatusCodeHandler",
+				 "Error",
+				  new { statusCode = 403 });
+				break;
+			}
+		}
+		
+	}
+}
 \end{lstlisting}
 
 El uso de este filtro en los controladores permite centralizar la gestión de permisos y 
 evitar duplicación de lógica.
 
-\subsection{Sistema de notificaciones y enlaces únicos}
+\section{Sistema de notificaciones y enlaces únicos}
 
 El envío automático de correos electrónicos es una de las piezas clave del flujo interno. Tenemos un comando encargado de envío de correos después de que se aplique algún tramite, como por ejemplo al agregar un asistente a una formación le llega un correo para poder aceptar o rechazar la convocatoria. También tenemos otro controlador que es un recordatorio que envía diferentes correos según las fechas. Por ejemplo, cuando un asistente es agregado a una formación y queda una semana para que la formación comience, si ese asistente aún no ha aceptado ni rechazado la convocatoria automáticamente le llega un correo de recordatorio ya que cuando quede un solo día para que comience la formación, si no confirmó entonces se rechaza automáticamente.
-%% mostrar imagen de las plantillas.
-%\subsection{Gestión de estados y trazabilidad}
 
-%Las formaciones pasan por múltiples estados (borrador, pendiente de aprobación, %tramitada,
-%etc.). Para garantizar la trazabilidad se ha definido un \textit{enum} centralizado:
-
-%\ begin{lstlisting}[language=C]
-%	public enum EstadoFormacion {
-%		Borrador,
-%		PendienteAprobacion,
-%		Aprobada,
-%		Tramitada,
-%		PendienteValoracion,
-%		Finalizada
-%	}
-%\ end{lstlisting}
-
-%Cada transición genera automáticamente una entrada en el histórico, registrada mediante
-%una entidad específica en la base de datos. Esto permite reconstruir cualquier cambio y 
-%facilitar auditorías internas.
-
-\subsection{Procesamiento de encuestas y valoraciones}
+\section{Procesamiento de encuestas y valoraciones}
 
 Al finalizar una acción formativa, el sistema envía automáticamente una encuesta de 
 eficacia. Cada respuesta queda asociada a un asistente y a una formación, y el promedio 
 se calcula dinámicamente. Este proceso se refleja posteriormente en la pestaña \textit{Valoraciones}, visible para los roles autorizados.
 
-\subsection{Conclusión técnica}
+\section{Conclusión técnica}
 
 El diseño interno del Ecosistema de Aprendizaje combina una arquitectura moderna con 
 patrones avanzados y una estricta separación por capas. Esto ha permitido 

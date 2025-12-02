@@ -18,49 +18,49 @@ Un ejemplo ilustrativo puede observarse en el Código \ref{code:ej1}, donde se p
 
 Además de los métodos de consulta, el controlador incluye también operaciones para crear, modificar y eliminar registros de formaciones. Otra nota importante aquí es cuando ponemos a los métodos\lstinline | [TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)] |, esto nos valida el rol del usuario el cual llama al método. En este caso definimos que solamente aquellos que mínimo el rol de \textit{Solicitante} podrán acceder a esté método, aunque más tarde explicaremos con más detalle el tema de los roles y como funciona la validación de permisos.
 \begin{lstlisting}[style=csharp, caption={Controlador del proyecto WebUI con métodos de selección de formaciones almacenados en base de datos.},label=code:ej1]
-	[HttpPost("[action]")]
-	[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
-	public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, FormacionFiltrosDTO filtros)
-	{
-		logger.LogInformation("Obtener el listado de formaciones filtrado");
-		
-		var formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQuery(filtros));
-		
-		if (formacionesRespuesta.Tipo == TipoRespuesta.Error)
-		{
-			ModelState.AddModelError("ListadoGridError", "Ha ocurrido un error al obtener el listado de formaciones.");
-		}
-		
-		return Json(formacionesRespuesta.Data.ToDataSourceResult
-		(request, ModelState));
-	}	
+[HttpPost("[action]")]
+[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
+public async Task<IActionResult> GetListadoFormaciones([DataSourceRequest] DataSourceRequest request, FormacionFiltrosDTO filtros)
+{
+	logger.LogInformation("Obtener el listado de formaciones filtrado");
 	
+	var formacionesRespuesta = await Mediator.Send(new GetAllFormacionesQuery(filtros));
 	
-	[HttpGet("[action]/{FormacionID}")]
-	[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
-	public async Task<IActionResult> Detalle(int formacionID)
+	if (formacionesRespuesta.Tipo == TipoRespuesta.Error)
 	{
-		logger.LogInformation($"Pantalla de detalle de la formacion: {formacionID}");
-		
-		var formacion = await Mediator.Send(new GetSingleFormacionQuery(formacionID));
-		
-		if (formacion.Tipo == TipoRespuesta.Error)
-		{
-			TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError
-			.ToString();
-			return RedirectToAction("Index");
-		}
-		else if (formacion.Tipo == TipoRespuesta.NoAutorizado)
-		{
-			return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = 403 });
-		}
-		
-		var viewModel = new FormacionViewModel();
-		viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel
-		(formacion.Data);
-		
-		return View(viewModel);
+		ModelState.AddModelError("ListadoGridError", "Ha ocurrido un error al obtener el listado de formaciones.");
 	}
+	
+	return Json(formacionesRespuesta.Data.ToDataSourceResult
+	(request, ModelState));
+}	
+
+
+[HttpGet("[action]/{FormacionID}")]
+[TienePermisosFilter(EAutorizacionPermisos.SOLICITANTE)]
+public async Task<IActionResult> Detalle(int formacionID)
+{
+	logger.LogInformation($"Pantalla de detalle de la formacion: {formacionID}");
+	
+	var formacion = await Mediator.Send(new GetSingleFormacionQuery(formacionID));
+	
+	if (formacion.Tipo == TipoRespuesta.Error)
+	{
+		TempData["NotificacionMensaje"] = NotificacionMensaje.FormacionObtenerError
+		.ToString();
+		return RedirectToAction("Index");
+	}
+	else if (formacion.Tipo == TipoRespuesta.NoAutorizado)
+	{
+		return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = 403 });
+	}
+	
+	var viewModel = new FormacionViewModel();
+	viewModel.FormacionGeneral = viewModel.FormacionGeneral.GetViewModel
+	(formacion.Data);
+	
+	return View(viewModel);
+}
 \end{lstlisting}
 
 
@@ -72,18 +72,18 @@ Dentro de esta capa también se definen las clases conocidas como \textit{Data T
 Finalmente, las operaciones relacionadas con los comandos y las consultas, como se muestra en el Código \ref{code:ej2}, se declaran mediante interfaces localizadas en esta misma capa, mientras que su implementación específica se desarrolla en la capa inferior.
 
 \begin{lstlisting}[style=csharp, caption={Interfaz de formaciones con métodos para llevar a cabo las operaciones sobre la base de datos.},label=code:ej2]
-	public interface IFormacionesDataService
-	{
-		Task<List<FormacionListDTO>> SelectAll(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
-		Task<List<int>> SelectAreas(List<string> areas, CancellationToken cancellationToken);
-		Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
-		Task<FormacionDTO> SelectSingle(int formacionID, CancellationToken cancellationToken);
-		Task<bool> ExisteCodigo(string codigo, CancellationToken cancellationToken);
-		Task<bool> ComprobarValoracionCompletada(int formacionID);
-		Task<FormacionDTO> Insert(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<FormacionDTO> Update(FormacionDTO formacionDTO, CancellationToken cancellationToken);
-		Task<bool> Delete(int formacionID, CancellationToken cancellationToken);
-	}
+public interface IFormacionesDataService
+{
+	Task<List<FormacionListDTO>> SelectAll(FormacionFiltrosDTO filtros, CancellationToken cancellationToken);
+	Task<List<int>> SelectAreas(List<string> areas, CancellationToken cancellationToken);
+	Task<bool> PerteneceFormacionArea(int formacionId, List<string> areas, CancellationToken cancellationToken);
+	Task<FormacionDTO> SelectSingle(int formacionID, CancellationToken cancellationToken);
+	Task<bool> ExisteCodigo(string codigo, CancellationToken cancellationToken);
+	Task<bool> ComprobarValoracionCompletada(int formacionID);
+	Task<FormacionDTO> Insert(FormacionDTO formacionDTO, CancellationToken cancellationToken);
+	Task<FormacionDTO> Update(FormacionDTO formacionDTO, CancellationToken cancellationToken);
+	Task<bool> Delete(int formacionID, CancellationToken cancellationToken);
+}
 \end{lstlisting}
 \section{Infraestructura}
 La capa de infraestructura constituye el nivel responsable de la interacción con los recursos externos y de proporcionar los servicios necesarios para que las demás capas puedan operar correctamente. En esta capa se ubican las clases encargadas de acceder a sistemas externos, tales como bases de datos, sistemas de archivos, servicios web o cualquier otro recurso externo que el sistema requiera.
