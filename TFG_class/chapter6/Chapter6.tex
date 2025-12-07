@@ -81,15 +81,9 @@ IRequestHandler<GetAllFormacionesQuery, ApiRespuesta<List<FormacionListDTO>>>
 }
 \end{lstlisting}
 
-Este código ilustra algunos de los aspectos fundamentales del diseño:
+Este fragmento de código define una clase llamada \textit{GetAllFormacionesQueryHandler}. Esta clase se encarga de manejar una solicitud para obtener todas las formaciones en el sistema, basándose en los filtros proporcionados en la consulta. En el constructor, se inyecta una dependencia del servicio \textit{IFormacionesDataService}, que se utiliza para acceder a los datos relacionados con las formaciones. El método \textit{Handle} es el encargado de ejecutar la consulta. Recibe como parámetros el objeto \textit{request}, que contiene los filtros para la consulta, y un \textit{cancellationToken} para permitir la cancelación de la operación si es necesario. Dentro del método, se inicializa una \textit{apiRespuesta} con un estado de error. Luego, se ejecuta de forma asíncrona el método \textit{SelectAll} del servicio \textit{formacionesDataService}, que realiza la consulta a la base de datos utilizando los filtros y el token de cancelación. Si la consulta devuelve una lista de formaciones, el tipo de respuesta se actualiza a \textit{Success}, y la lista obtenida se asigna al campo \textit{Data} de la respuesta. Finalmente, el método retorna la respuesta que puede contener tanto los datos de las formaciones como un posible error si no se encuentran datos o si ocurre alguna otra falla.
+La clase \textit{FormacionListDTO} que en este caso representa una formación contiene:
 
-\begin{itemize}
-	\item La obtención de datos se delega a un servicio de infraestructura mediante la interfaz IFormacionesDataService.
-	\item Se encapsula la respuesta en un objeto \textit{FormacionListDTO}, unificando el tratamiento de errores.
-	\item El código queda desacoplado de la base de datos y centrado en la lógica del caso de uso.
-\end{itemize}
-
-Además, vemos que a esta \textit{Query} se le pasa un objeto para filtrar las formaciones que es \textit{FormacionFiltrosDTO}. Se usa para poder obtener formaciones filtradas ya sea por texto, area, fecha de inicio...
 \begin{lstlisting}[style=csharp, caption={Clase DTO para filtrar las formaciones.},label=code:ej4]
 public class FormacionFiltrosDTO
 {	
@@ -108,7 +102,7 @@ public class FormacionFiltrosDTO
 	public bool? FiltroPendienteFactura { get; set; }
 }
 \end{lstlisting}
-En cada \textit{Query} tenemos un parámetro de filtrado.
+En cada \textit{Query} tenemos un parámetro de filtrado. 
 
 \section{Implementación de comandos (Command Handlers)}
 
@@ -182,6 +176,11 @@ IRequestHandler<CreateFormacionCommand, ApiRespuesta<FormacionDTO>>
 }
 \end{lstlisting}
 
+Este fragmento de código define una clase llamada \textit{CreateFormacionCommandHandler}. Su propósito es manejar la creación de una nueva formación. En el constructor, se inyecta el servicio \textit{IFormacionesDataService}, utilizado para insertar la nueva formación en la base de datos.
+
+El método \textit{Handle} recibe como parámetros el objeto \textit{request}, que contiene los datos de la formación a crear, y un \textit{cancellationToken}. Inicialmente, se crea una respuesta \textit{apiRespuesta} con un estado de error y los datos de la formación. Si la lista de errores de la formación está vacía, se procede a inicializar varios campos del objeto \textit{formacionDTO} mediante el método \textit{InicializarCampos}, que establece valores predeterminados como el estado de la formación y los datos de creación. Luego, se ejecuta la inserción de la formación de manera asíncrona utilizando el método \textit{Insert} del servicio \textit{formacionesDataService}. Si la inserción es exitosa, se actualiza la respuesta a \textit{Success} y se asignan los datos de la formación insertada.
+Finalmente, el método \textit{Handle} retorna una respuesta que puede contener la formación recién creada o un error si ocurre algún problema en el proceso.
+
 Este tipo de comandos garantiza que todas las modificaciones sigan las reglas de dominio
 establecidas en la capa \textit{Domain}. Además, para los comandos, tenemos clases validator por cada comando donde validamos los parámetros de los comandos. Es decir, validar que no sean nulos cuando son parámetros obligatorios, validar longitud de cadenas si tienen un máximo para guardar en base de datos....
 \begin{lstlisting}[style=csharp, caption={Clase Validator para crear una formación.},label=code:ej6]
@@ -229,6 +228,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 	});
 }
 \end{lstlisting}
+Este fragmento de código define una sobrecarga del método \textit{OnModelCreating} en una clase que hereda de \textit{DbContext}. En este método, se configura el modelo de la entidad \textit{Formacion} utilizando el objeto \textit{modelBuilder}. La entidad \textit{Formacion} se mapea a la tabla \textit{Formaciones} en la base de datos mediante \textit{entity.ToTable\{ "Formaciones" \}}. Luego, se configura la propiedad \textit{Nombre} de la entidad para que sea obligatoria (\textit{IsRequired()}) y tenga una longitud máxima de 200 caracteres (\textit{HasMaxLength(200)}). Esta configuración garantiza que la propiedad \textit{Nombre} sea requerida y tenga un límite de caracteres en la base de datos.
 
 Asimismo, cada cambio en el modelo genera una migración que se aplica sobre SQL Server, manteniendo sincronizada la estructura de la base de datos con el código fuente. Los métodos que implementan las interfaces tienen de lógica solamente el mapeo y la interacción con las tablas de base de datos. 
 \begin{lstlisting}[style=csharp, caption={Mapeo de tablas mediante Fluent API.},label=code:ej8]
@@ -277,6 +277,9 @@ CancellationToken cancellationToken)
 	return formacionDTO;
 }
 \end{lstlisting}
+
+Este fragmento de código define un método asíncrono \textit{Insert} que inserta una nueva formación en la base de datos. Primero, se inicia una transacción de base de datos. Luego, se mapea el objeto \textit{formacionDTO.CuestionarioDTO} a una entidad \textit{CuestionarioInicial} y se guarda en la base de datos. Después, se mapea \textit{formacionDTO} a una entidad \textit{Formacion} y se agrega a la base de datos. A continuación, se insertan las valoraciones de los usuarios asociadas a la formación. Si todas las operaciones son exitosas, se confirma la transacción. En caso de error, se captura la excepción, se deshace la transacción y se registra el error. Finalmente, el método retorna el objeto \textit{formacionDTO}.
+
 
 \section{Sistema de permisos y filtros de autorización}
 
@@ -366,6 +369,7 @@ public class TienePermisosFilterAttribute : AuthorizeAttribute, IAuthorizationFi
 	}
 }
 \end{lstlisting}
+Este fragmento de código define una clase \textit{TienePermisosFilterAttribute} que hereda de \textit{AuthorizeAttribute} e implementa la interfaz \textit{IAuthorizationFilter}. Su función es verificar si el usuario tiene los permisos necesarios para acceder a un recurso. En el constructor, se recibe un parámetro \textit{AutorizacionPermisos}, que indica el nivel de permiso requerido. El método \textit{OnAuthorization} comprueba si el usuario está autorizado para realizar la acción solicitada, evaluando su rol mediante un \textit{switch} según el tipo de permiso. Si el usuario no tiene el permiso adecuado o está marcado como \textit{NotAuthorized}, se redirige a una página de error con el código de estado 403.
 
 El uso de este filtro en los controladores permite centralizar la gestión de permisos y 
 evitar duplicación de lógica.

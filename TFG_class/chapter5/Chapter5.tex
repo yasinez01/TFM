@@ -259,7 +259,7 @@ Podemos clonar tanto en instrumental como en global. Al hacer clic se realiza un
 	\item Se muestra la pestaña Docencia con los docentes que tenía la acción formativa que se va a clonar sin la posibilidad de agregar o crear nuevos docentes. 
 \end{enumerate}
 \vspace{0.5em}
-\subsection{Información para responsables y directores}\\ 
+\subsection{Información para responsables y directores} 
 En el momento en que un trabajador crea una acción formativa, la solicitud generada se envía automáticamente al \textbf{responsable de área} correspondiente para su revisión inicial. Este será el encargado de analizar la propuesta y valorar si la acción solicitada se ajusta a las necesidades del departamento o si, por el contrario, no resulta procedente.  
 
 \begin{itemize}
@@ -310,7 +310,7 @@ Gracias a este sistema de comunicación y control, la aplicación centraliza tod
 		\draw[arrow] (responsable) -- (responsableAprueba) node [nodoFlecha, midway, right] {aprobada};
 			\draw[arrow] (responsableAprueba) -- (director);
 			
-			\node[accion] (rechazado2) [right=2.5cm of director] {Notifica al responsable \\ y creador de la solicitud};
+			\node[accion] (rechazado2) [right=2.5cm of director] {Notifica al responsable y creador de la solicitud};
 			\draw[arrow] (director) -- (rechazado2) node [nodoFlecha, midway, above] {rechazada};
 			\draw[arrow] (director) -- (directorAprueba) node [nodoFlecha, midway, right] {aprobada};
 			

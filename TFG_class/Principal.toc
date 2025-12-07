@@ -30,10 +30,10 @@
 \contentsline {section}{\numberline {6.2}Implementación de consultas (Query Handlers)}{38}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Implementación de comandos (Command Handlers)}{40}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Acceso a datos e infraestructura}{43}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Sistema de permisos y filtros de autorización}{45}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Sistema de notificaciones y enlaces únicos}{47}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Procesamiento de encuestas y valoraciones}{48}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Conclusión técnica}{48}{section.6.8}%
-\contentsline {chapter}{Bibliografía}{49}{section*.38}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{49}{section*.39}%
-\contentsline {chapter}{Ap\'{e}ndice}{49}{section*.39}%
+\contentsline {section}{\numberline {6.5}Sistema de permisos y filtros de autorización}{46}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Sistema de notificaciones y enlaces únicos}{48}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Procesamiento de encuestas y valoraciones}{49}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Conclusión técnica}{49}{section.6.8}%
+\contentsline {chapter}{Bibliografía}{51}{section*.38}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{53}{section*.39}%
+\contentsline {chapter}{Ap\'{e}ndice}{53}{section*.39}%
