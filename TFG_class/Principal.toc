@@ -1,7 +1,6 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {iii}}{section*.1}%
-\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {v}}{section*.2}%
-\contentsline {chapter}{Listings}{\es@scroman {vi}}{section*.3}%
+\contentsline {chapter}{Listings}{\es@scroman {v}}{section*.2}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Análisis de requisitos}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Requisitos funcionales}{3}{section.2.1}%
@@ -32,8 +31,8 @@
 \contentsline {section}{\numberline {6.4}Acceso a datos e infraestructura}{43}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Sistema de permisos y filtros de autorización}{46}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Sistema de notificaciones y enlaces únicos}{48}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Procesamiento de encuestas y valoraciones}{49}{section.6.7}%
+\contentsline {section}{\numberline {6.7}Procesamiento de encuestas y valoraciones}{48}{section.6.7}%
 \contentsline {section}{\numberline {6.8}Conclusión técnica}{49}{section.6.8}%
-\contentsline {chapter}{Bibliografía}{51}{section*.38}%
-\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{53}{section*.39}%
-\contentsline {chapter}{Ap\'{e}ndice}{53}{section*.39}%
+\contentsline {chapter}{Bibliografía}{51}{section*.37}%
+\contentsline {chapter}{\'{I}ndice alfab\'{e}tico}{53}{section*.38}%
+\contentsline {chapter}{Ap\'{e}ndice}{53}{section*.38}%

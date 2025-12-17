@@ -3,48 +3,48 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de una arquitectura por capas.}}{11}{figure.caption.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de una arquitectura por capas.}}{11}{figure.caption.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Pantalla home con los accesos directos.}}{18}{figure.caption.5}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pantalla plataforma de aprendizaje.}}{18}{figure.caption.6}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Plataforma de ciberseguridad.}}{19}{figure.caption.7}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Cuestionario INTAKE para solicitar formación.}}{20}{figure.caption.8}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Formulario de datos generales a rellenar.}}{20}{figure.caption.9}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Ventana para seleccionar propuesta a asignar a la formación.}}{22}{figure.caption.10}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Pestañas que cargan después de crear una formación.}}{22}{figure.caption.11}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Pestaña de los docentes de la formación.}}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Seleccionar asistentes para enviarles envío de convocatoria.}}{23}{figure.caption.13}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Página para rellenar encuesta de eficacia formativa.}}{24}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Pestaña de valoraciones de una formación.}}{24}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Resultado de una encuesta realizada a una formación.}}{25}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Pestaña de calendario de una formación.}}{25}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Pestaña con el histórico de cambios en una formación.}}{26}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Pestaña de gestión de una formación.}}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Listado de pedidos para asignar a una formación.}}{27}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Pestaña de gestión de una formación con pedidos asignados.}}{27}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Pestaña de solicitudes de inscripción pendientes de aprobar.}}{28}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Pantalla de HOME con las formaciones ya tramitadas sin comenzar.}}{28}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Botones de clonación de la formación.}}{29}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Flujo de aprobación y notificaciones de las acciones formativas, incluyendo rutas de rechazo.}}{31}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Pantalla con el listado de planes de formación anual.}}{32}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Pantalla con el formulario para crear un plan de formación anual.}}{32}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Pantalla de edición del plan de formación anual con todas las pestañas.}}{33}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Pantalla de departamentos del plan de formación anual.}}{33}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Usuarios con permiso de un departamento del plan de formación anual.}}{33}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual.}}{34}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Pantalla con el formulario para crear una propuesta del plan de formaciones.}}{34}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual con una fila seleccionada.}}{35}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual con dos filas seleccionadas.}}{35}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Pestaña de asistentes dentro de la propuesta del plan de formaciones.}}{36}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces Pestaña de propuestas unificadas dentro de la propuesta del plan de formaciones.}}{36}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Pestaña de formaciones creadas que tienen asignada la propuesta del plan de formaciones.}}{36}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pantalla home con los accesos directos.}}{18}{figure.caption.4}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pantalla plataforma de aprendizaje.}}{18}{figure.caption.5}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Plataforma de ciberseguridad.}}{19}{figure.caption.6}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cuestionario INTAKE para solicitar formación.}}{20}{figure.caption.7}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Formulario de datos generales a rellenar.}}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Ventana para seleccionar propuesta a asignar a la formación.}}{22}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Pestañas que cargan después de crear una formación.}}{22}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Pestaña de los docentes de la formación.}}{23}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Seleccionar asistentes para enviarles envío de convocatoria.}}{23}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Página para rellenar encuesta de eficacia formativa.}}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Pestaña de valoraciones de una formación.}}{24}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Resultado de una encuesta realizada a una formación.}}{25}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Pestaña de calendario de una formación.}}{25}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Pestaña con el histórico de cambios en una formación.}}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Pestaña de gestión de una formación.}}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Listado de pedidos para asignar a una formación.}}{27}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Pestaña de gestión de una formación con pedidos asignados.}}{27}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Pestaña de solicitudes de inscripción pendientes de aprobar.}}{28}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Pantalla de HOME con las formaciones ya tramitadas sin comenzar.}}{28}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Botones de clonación de la formación.}}{29}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Flujo de aprobación y notificaciones de las acciones formativas, incluyendo rutas de rechazo.}}{31}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Pantalla con el listado de planes de formación anual.}}{32}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Pantalla con el formulario para crear un plan de formación anual.}}{32}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Pantalla de edición del plan de formación anual con todas las pestañas.}}{33}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Pantalla de departamentos del plan de formación anual.}}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Usuarios con permiso de un departamento del plan de formación anual.}}{33}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual.}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Pantalla con el formulario para crear una propuesta del plan de formaciones.}}{34}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual con una fila seleccionada.}}{35}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Pantalla con el listado de las propuestas de plan de formación anual con dos filas seleccionadas.}}{35}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Pestaña de asistentes dentro de la propuesta del plan de formaciones.}}{36}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Pestaña de propuestas unificadas dentro de la propuesta del plan de formaciones.}}{36}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Pestaña de formaciones creadas que tienen asignada la propuesta del plan de formaciones.}}{36}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {Ap\'{e}ndice.1}{\ignorespaces Listado de mantenimiento de modalidad.}}{53}{figure.caption.40}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.2}{\ignorespaces Listado de mantenimiento de tipos de contenido.}}{53}{figure.caption.41}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.3}{\ignorespaces Listado de mantenimiento de medios pedagógicos.}}{54}{figure.caption.42}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.4}{\ignorespaces Pestaña datos generales de configuración.}}{54}{figure.caption.43}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.5}{\ignorespaces Pestaña de configuración de correo.}}{54}{figure.caption.44}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.6}{\ignorespaces Pestaña con las plantillas de los correos.}}{55}{figure.caption.45}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.7}{\ignorespaces Ejemplo con una plantilla de correo.}}{55}{figure.caption.46}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.8}{\ignorespaces Pestaña sharepoint de configuración.}}{55}{figure.caption.47}%
-\contentsline {figure}{\numberline {Ap\'{e}ndice.9}{\ignorespaces Pestaña administrador de configuración.}}{56}{figure.caption.48}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.1}{\ignorespaces Listado de mantenimiento de modalidad.}}{53}{figure.caption.39}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.2}{\ignorespaces Listado de mantenimiento de tipos de contenido.}}{53}{figure.caption.40}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.3}{\ignorespaces Listado de mantenimiento de medios pedagógicos.}}{54}{figure.caption.41}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.4}{\ignorespaces Pestaña datos generales de configuración.}}{54}{figure.caption.42}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.5}{\ignorespaces Pestaña de configuración de correo.}}{54}{figure.caption.43}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.6}{\ignorespaces Pestaña con las plantillas de los correos.}}{55}{figure.caption.44}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.7}{\ignorespaces Ejemplo con una plantilla de correo.}}{55}{figure.caption.45}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.8}{\ignorespaces Pestaña sharepoint de configuración.}}{55}{figure.caption.46}%
+\contentsline {figure}{\numberline {Ap\'{e}ndice.9}{\ignorespaces Pestaña administrador de configuración.}}{56}{figure.caption.47}%

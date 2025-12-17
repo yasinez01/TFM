@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  7 DEC 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  16 DEC 2025 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,7 +1143,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \. on input line 52.
 LaTeX Info: Redefining \% on input line 52.
  (style/titlepage.tex
-<style/fig/ROJO_UPNA_300ppp.png, id=157, 284.5029pt x 151.0443pt>
+<style/fig/ROJO_UPNA_300ppp.png, id=153, 284.5029pt x 151.0443pt>
 File: style/fig/ROJO_UPNA_300ppp.png Graphic file (type png)
 <use style/fig/ROJO_UPNA_300ppp.png>
 Package pdftex.def Info: style/fig/ROJO_UPNA_300ppp.png  used on input line 7.
@@ -1159,25 +1159,31 @@ Non-PDF special ignored!
 {C:/Users/yasin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./style/fig/
 ROJO_UPNA_300ppp.png>] [2
 
-]) (style/Dedicatoria.tex [3
-
-] [4
-
-]) (style/toc/toc.tex
+]) (style/resumen.tex
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 3
 .
 
 (C:\Program Files\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) (Principal.toc
+) [3
+
+
+] [4
+
+])
+(style/Dedicatoria.tex [5
+
+] [6
+
+]) (style/toc/toc.tex (Principal.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1276,23 +1282,13 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.29344pt}.
 
-[4]) (style/toc/tables.tex (Principal.lot
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-)
-\tf@lot=\write11
-\openout11 = `Principal.lot'.
+[4]) (style/toc/codes.tex (Principal.lol)
+\tf@lol=\write11
+\openout11 = `Principal.lol'.
 
  [5
 
-]) (style/toc/codes.tex [6
-
-]
-(Principal.lol)
-\tf@lol=\write12
-\openout12 = `Principal.lol'.
-
- [7]) [8
+]) [6
 
 ] (chapter1/Chapter1.tex
 Cap\'{\i }tulo 1.
@@ -1313,7 +1309,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.13 
+l.11 
       [1
 
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}])
@@ -1353,7 +1349,21 @@ l.58
        [4]) (chapter3/Chapter3.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [5] [6
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            [Tecnologías y herramientas utilizadas]{Tecnologías y herramie...
+[5]
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            [Tecnologías y herramientas utilizadas]{Tecnologías y herramie...
+[6
 
 ]
 Cap\'{\i }tulo 3.
@@ -1466,21 +1476,21 @@ Overfull \hbox (8.14478pt too wide) in paragraph at lines 86--87
 o so-cial), apren-
  []
 
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
 [21]
-<fig/seleccionarPropuestaFormacion.png, id=567, 1011.78pt x 494.59781pt>
+<fig/seleccionarPropuestaFormacion.png, id=570, 1011.78pt x 494.59781pt>
 File: fig/seleccionarPropuestaFormacion.png Graphic file (type png)
 <use fig/seleccionarPropuestaFormacion.png>
 Package pdftex.def Info: fig/seleccionarPropuestaFormacion.png  used on input l
 ine 112.
 (pdftex.def)             Requested size: 298.75262pt x 146.04092pt.
-<fig/restoPestanas.png, id=569, 596.98032pt x 52.69687pt>
+<fig/restoPestanas.png, id=572, 596.98032pt x 52.69687pt>
 File: fig/restoPestanas.png Graphic file (type png)
 <use fig/restoPestanas.png>
 Package pdftex.def Info: fig/restoPestanas.png  used on input line 122.
 (pdftex.def)             Requested size: 298.75262pt x 26.37167pt.
-<fig/pestanaDocentes.png, id=571, 745.28438pt x 386.94562pt>
+<fig/pestanaDocentes.png, id=574, 745.28438pt x 386.94562pt>
 File: fig/pestanaDocentes.png Graphic file (type png)
 <use fig/pestanaDocentes.png>
 Package pdftex.def Info: fig/pestanaDocentes.png  used on input line 130.
@@ -1488,43 +1498,41 @@ Package pdftex.def Info: fig/pestanaDocentes.png  used on input line 130.
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
  [22 <./fig/seleccionarPropuestaFormacion.png> <./fig/restoPestanas.png>]
-<fig/asistentesEnvioConvocatoria.png, id=579, 733.23938pt x 176.91093pt>
+<fig/asistentesEnvioConvocatoria.png, id=582, 733.23938pt x 176.91093pt>
 File: fig/asistentesEnvioConvocatoria.png Graphic file (type png)
 <use fig/asistentesEnvioConvocatoria.png>
 Package pdftex.def Info: fig/asistentesEnvioConvocatoria.png  used on input lin
 e 139.
 (pdftex.def)             Requested size: 298.75262pt x 72.08043pt.
-LaTeX Info: Redefining \. on input line 153.
-LaTeX Info: Redefining \% on input line 153.
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
 
 [23 <./fig/pestanaDocentes.png> <./fig/asistentesEnvioConvocatoria.png>]
-<fig/encuestaEficacia.png, id=588, 809.27344pt x 319.1925pt>
+<fig/encuestaEficacia.png, id=591, 809.27344pt x 319.1925pt>
 File: fig/encuestaEficacia.png Graphic file (type png)
 <use fig/encuestaEficacia.png>
 Package pdftex.def Info: fig/encuestaEficacia.png  used on input line 159.
 (pdftex.def)             Requested size: 298.75262pt x 117.83636pt.
-<fig/pestanaValoraciones.png, id=590, 806.26219pt x 453.94594pt>
+<fig/pestanaValoraciones.png, id=593, 806.26219pt x 453.94594pt>
 File: fig/pestanaValoraciones.png Graphic file (type png)
 <use fig/pestanaValoraciones.png>
 Package pdftex.def Info: fig/pestanaValoraciones.png  used on input line 169.
 (pdftex.def)             Requested size: 298.75262pt x 168.20673pt.
-<fig/detallesEncuesta.png, id=592, 758.08218pt x 225.84375pt>
+<fig/detallesEncuesta.png, id=595, 758.08218pt x 225.84375pt>
 File: fig/detallesEncuesta.png Graphic file (type png)
 <use fig/detallesEncuesta.png>
 Package pdftex.def Info: fig/detallesEncuesta.png  used on input line 178.
 (pdftex.def)             Requested size: 298.75262pt x 89.00224pt.
-
-Underfull \vbox (badness 1484) has occurred while \output is active []
-
 LaTeX Info: Redefining \. on input line 182.
 LaTeX Info: Redefining \% on input line 182.
- [24 <./fig/encuestaEficacia.png> <./fig/pestanaValoraciones.png>]
-<fig/pestanaCalendarios.png, id=601, 799.48688pt x 450.9347pt>
+
+[24 <./fig/encuestaEficacia.png> <./fig/pestanaValoraciones.png>]
+<fig/pestanaCalendarios.png, id=604, 799.48688pt x 450.9347pt>
 File: fig/pestanaCalendarios.png Graphic file (type png)
 <use fig/pestanaCalendarios.png>
 Package pdftex.def Info: fig/pestanaCalendarios.png  used on input line 186.
 (pdftex.def)             Requested size: 298.75262pt x 168.50835pt.
-<fig/pestanaHistorico.png, id=603, 953.81343pt x 494.59781pt>
+<fig/pestanaHistorico.png, id=606, 953.81343pt x 494.59781pt>
 File: fig/pestanaHistorico.png Graphic file (type png)
 <use fig/pestanaHistorico.png>
 Package pdftex.def Info: fig/pestanaHistorico.png  used on input line 195.
@@ -1535,12 +1543,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 199.
 LaTeX Info: Redefining \% on input line 199.
  [25 <./fig/detallesEncuesta.png> <./fig/pestanaCalendarios.png>]
-<fig/pestanaGestion.png, id=612, 895.09406pt x 496.85625pt>
+<fig/pestanaGestion.png, id=615, 895.09406pt x 496.85625pt>
 File: fig/pestanaGestion.png Graphic file (type png)
 <use fig/pestanaGestion.png>
 Package pdftex.def Info: fig/pestanaGestion.png  used on input line 203.
 (pdftex.def)             Requested size: 298.75262pt x 165.83566pt.
-<fig/listadoPedidos.png, id=614, 1150.2975pt x 565.36218pt>
+<fig/listadoPedidos.png, id=617, 1150.2975pt x 565.36218pt>
 File: fig/listadoPedidos.png Graphic file (type png)
 <use fig/listadoPedidos.png>
 Package pdftex.def Info: fig/listadoPedidos.png  used on input line 211.
@@ -1551,13 +1559,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 215.
 LaTeX Info: Redefining \% on input line 215.
  [26 <./fig/pestanaHistorico.png> <./fig/pestanaGestion.png>]
-<fig/pestanaGestionConPedidos.png, id=621, 772.38562pt x 427.5975pt>
+<fig/pestanaGestionConPedidos.png, id=624, 772.38562pt x 427.5975pt>
 File: fig/pestanaGestionConPedidos.png Graphic file (type png)
 <use fig/pestanaGestionConPedidos.png>
 Package pdftex.def Info: fig/pestanaGestionConPedidos.png  used on input line 2
 19.
 (pdftex.def)             Requested size: 298.75262pt x 165.39218pt.
-<fig/pestanaSolicitudes.png, id=624, 762.59906pt x 424.58624pt>
+<fig/pestanaSolicitudes.png, id=627, 762.59906pt x 424.58624pt>
 File: fig/pestanaSolicitudes.png Graphic file (type png)
 <use fig/pestanaSolicitudes.png>
 Package pdftex.def Info: fig/pestanaSolicitudes.png  used on input line 228.
@@ -1568,7 +1576,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 232.
 LaTeX Info: Redefining \% on input line 232.
  [27 <./fig/listadoPedidos.png> <./fig/pestanaGestionConPedidos.png>]
-<fig/pantallaHomeFormacionesCreadas.png, id=633, 779.16093pt x 394.47375pt>
+<fig/pantallaHomeFormacionesCreadas.png, id=636, 779.16093pt x 394.47375pt>
 File: fig/pantallaHomeFormacionesCreadas.png Graphic file (type png)
 <use fig/pantallaHomeFormacionesCreadas.png>
 Package pdftex.def Info: fig/pantallaHomeFormacionesCreadas.png  used on input 
@@ -1577,7 +1585,7 @@ line 240.
 LaTeX Info: Redefining \. on input line 246.
 LaTeX Info: Redefining \% on input line 246.
  [28 <./fig/pestanaSolicitudes.png> <./fig/pantallaHomeFormacionesCreadas.png>]
-<fig/btnClonarFormacion.png, id=641, 817.55438pt x 444.91219pt>
+<fig/btnClonarFormacion.png, id=644, 817.55438pt x 444.91219pt>
 File: fig/btnClonarFormacion.png Graphic file (type png)
 <use fig/btnClonarFormacion.png>
 Package pdftex.def Info: fig/btnClonarFormacion.png  used on input line 251.
@@ -1588,7 +1596,7 @@ LaTeX Info: Redefining \% on input line 267.
 LaTeX Info: Redefining \. on input line 324.
 LaTeX Info: Redefining \% on input line 324.
  [30]
-<fig/ListadoPlanes.png, id=656, 898.85812pt x 432.86719pt>
+<fig/ListadoPlanes.png, id=659, 898.85812pt x 432.86719pt>
 File: fig/ListadoPlanes.png Graphic file (type png)
 <use fig/ListadoPlanes.png>
 Package pdftex.def Info: fig/ListadoPlanes.png  used on input line 330.
@@ -1599,13 +1607,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 334.
 LaTeX Info: Redefining \% on input line 334.
  [31]
-<fig/formularioPlanFormacion.png, id=663, 774.64406pt x 430.60875pt>
+<fig/formularioPlanFormacion.png, id=666, 774.64406pt x 430.60875pt>
 File: fig/formularioPlanFormacion.png Graphic file (type png)
 <use fig/formularioPlanFormacion.png>
 Package pdftex.def Info: fig/formularioPlanFormacion.png  used on input line 33
 7.
 (pdftex.def)             Requested size: 298.75262pt x 166.0707pt.
-<fig/pestanasPlanFormacion.png, id=665, 849.1725pt x 482.55281pt>
+<fig/pestanasPlanFormacion.png, id=668, 849.1725pt x 482.55281pt>
 File: fig/pestanasPlanFormacion.png Graphic file (type png)
 <use fig/pestanasPlanFormacion.png>
 Package pdftex.def Info: fig/pestanasPlanFormacion.png  used on input line 344.
@@ -1617,19 +1625,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 348.
 LaTeX Info: Redefining \% on input line 348.
  [32 <./fig/ListadoPlanes.png> <./fig/formularioPlanFormacion.png>]
-<fig/pestanaDepartamentosPlanFormacion.png, id=673, 687.31781pt x 363.60844pt>
+<fig/pestanaDepartamentosPlanFormacion.png, id=676, 687.31781pt x 363.60844pt>
 File: fig/pestanaDepartamentosPlanFormacion.png Graphic file (type png)
 <use fig/pestanaDepartamentosPlanFormacion.png>
 Package pdftex.def Info: fig/pestanaDepartamentosPlanFormacion.png  used on inp
 ut line 352.
 (pdftex.def)             Requested size: 298.75262pt x 158.04633pt.
-<fig/permisosUsuariosDepartamento.png, id=675, 677.53125pt x 66.2475pt>
+<fig/permisosUsuariosDepartamento.png, id=678, 677.53125pt x 66.2475pt>
 File: fig/permisosUsuariosDepartamento.png Graphic file (type png)
 <use fig/permisosUsuariosDepartamento.png>
 Package pdftex.def Info: fig/permisosUsuariosDepartamento.png  used on input li
 ne 359.
 (pdftex.def)             Requested size: 298.75262pt x 29.21165pt.
-<fig/pantallaListadoPropuestasPlanFormacion.png, id=677, 892.08281pt x 498.3618
+<fig/pantallaListadoPropuestasPlanFormacion.png, id=680, 892.08281pt x 498.3618
 8pt>
 File: fig/pantallaListadoPropuestasPlanFormacion.png Graphic file (type png)
 <use fig/pantallaListadoPropuestasPlanFormacion.png>
@@ -1640,7 +1648,7 @@ LaTeX Info: Redefining \. on input line 371.
 LaTeX Info: Redefining \% on input line 371.
  [33 <./fig/pestanasPlanFormacion.png> <./fig/pestanaDepartamentosPlanFormacion
 .png> <./fig/permisosUsuariosDepartamento.png>]
-<fig/formularioCrearPropuestaFormacion.png, id=687, 934.99312pt x 521.69907pt>
+<fig/formularioCrearPropuestaFormacion.png, id=690, 934.99312pt x 521.69907pt>
 File: fig/formularioCrearPropuestaFormacion.png Graphic file (type png)
 <use fig/formularioCrearPropuestaFormacion.png>
 Package pdftex.def Info: fig/formularioCrearPropuestaFormacion.png  used on inp
@@ -1650,28 +1658,28 @@ LaTeX Info: Redefining \. on input line 389.
 LaTeX Info: Redefining \% on input line 389.
  [34 <./fig/pantallaListadoPropuestasPlanFormacion.png> <./fig/formularioCrearP
 ropuestaFormacion.png>]
-<fig/listadoPropuestas1FilaSeleccionada.png, id=697, 953.06062pt x 306.39468pt>
+<fig/listadoPropuestas1FilaSeleccionada.png, id=700, 953.06062pt x 306.39468pt>
 
 File: fig/listadoPropuestas1FilaSeleccionada.png Graphic file (type png)
 <use fig/listadoPropuestas1FilaSeleccionada.png>
 Package pdftex.def Info: fig/listadoPropuestas1FilaSeleccionada.png  used on in
 put line 395.
 (pdftex.def)             Requested size: 298.75262pt x 96.04263pt.
-<fig/listadoPropuestas2FilasSeleccionadas.png, id=698, 943.27406pt x 335.75438p
+<fig/listadoPropuestas2FilasSeleccionadas.png, id=701, 943.27406pt x 335.75438p
 t>
 File: fig/listadoPropuestas2FilasSeleccionadas.png Graphic file (type png)
 <use fig/listadoPropuestas2FilasSeleccionadas.png>
 Package pdftex.def Info: fig/listadoPropuestas2FilasSeleccionadas.png  used on 
 input line 401.
 (pdftex.def)             Requested size: 298.75262pt x 106.3421pt.
-<fig/pestanaAsistentesDentroDePropuestas.png, id=702, 456.20438pt x 173.14688pt
+<fig/pestanaAsistentesDentroDePropuestas.png, id=705, 456.20438pt x 173.14688pt
 >
 File: fig/pestanaAsistentesDentroDePropuestas.png Graphic file (type png)
 <use fig/pestanaAsistentesDentroDePropuestas.png>
 Package pdftex.def Info: fig/pestanaAsistentesDentroDePropuestas.png  used on i
 nput line 415.
 (pdftex.def)             Requested size: 298.75262pt x 113.38957pt.
-<fig/pestanaPropuestasUnificadasDentroDePropuestas.png, id=703, 904.1278pt x 22
+<fig/pestanaPropuestasUnificadasDentroDePropuestas.png, id=706, 904.1278pt x 22
 7.34938pt>
 File: fig/pestanaPropuestasUnificadasDentroDePropuestas.png Graphic file (type 
 png)
@@ -1683,7 +1691,7 @@ LaTeX Info: Redefining \. on input line 424.
 LaTeX Info: Redefining \% on input line 424.
  [35 <./fig/listadoPropuestas1FilaSeleccionada.png> <./fig/listadoPropuestas2Fi
 lasSeleccionadas.png>]
-<fig/pestanaFormacionesDentroDePropuestas.png, id=710, 482.55281pt x 97.86563pt
+<fig/pestanaFormacionesDentroDePropuestas.png, id=713, 482.55281pt x 97.86563pt
 >
 File: fig/pestanaFormacionesDentroDePropuestas.png Graphic file (type png)
 <use fig/pestanaFormacionesDentroDePropuestas.png>
@@ -1709,48 +1717,54 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [37
 
 ]
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
 
 [38]
-LaTeX Info: Redefining \. on input line 86.
-LaTeX Info: Redefining \% on input line 86.
- [39]
-LaTeX Info: Redefining \. on input line 118.
-LaTeX Info: Redefining \% on input line 118.
- [40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 156.
-LaTeX Info: Redefining \% on input line 156.
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+ [39]
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+
+[40]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 151.
+LaTeX Info: Redefining \% on input line 151.
  [41]
-LaTeX Info: Redefining \. on input line 184.
-LaTeX Info: Redefining \% on input line 184.
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
 
 [42]
 LaTeX Info: Redefining \. on input line 220.
 LaTeX Info: Redefining \% on input line 220.
  [43]
-LaTeX Info: Redefining \. on input line 249.
-LaTeX Info: Redefining \% on input line 249.
+LaTeX Info: Redefining \. on input line 246.
+LaTeX Info: Redefining \% on input line 246.
  [44]
-LaTeX Info: Redefining \. on input line 282.
-LaTeX Info: Redefining \% on input line 282.
- [45]
-LaTeX Info: Redefining \. on input line 317.
-LaTeX Info: Redefining \% on input line 317.
- [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 354.
-LaTeX Info: Redefining \% on input line 354.
+LaTeX Info: Redefining \. on input line 278.
+LaTeX Info: Redefining \% on input line 278.
+ [45]
+LaTeX Info: Redefining \. on input line 315.
+LaTeX Info: Redefining \% on input line 315.
+
+[46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
  [47]
-LaTeX Info: Redefining \. on input line 386.
-LaTeX Info: Redefining \% on input line 386.
+LaTeX Info: Redefining \. on input line 378.
+LaTeX Info: Redefining \% on input line 378.
 
 [48])
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
  [49] [50
 
 ] (bibliography/bibliography.tex (Principal.bbl))
@@ -1763,19 +1777,19 @@ LaTeX Info: Redefining \% on input line 105.
 runsystem(makeindex Principal.idx)...executed safely (allowed).
 
  (Principal.ind)) (appendix/Appendix.tex
-<fig/mantenimientoModalidad.png, id=1071, 1265.47781pt x 538.26094pt>
+<fig/mantenimientoModalidad.png, id=1073, 1265.47781pt x 538.26094pt>
 File: fig/mantenimientoModalidad.png Graphic file (type png)
 <use fig/mantenimientoModalidad.png>
 Package pdftex.def Info: fig/mantenimientoModalidad.png  used on input line 14.
 
 (pdftex.def)             Requested size: 298.75262pt x 127.06625pt.
-<fig/mantenimientoTiposContenido.png, id=1072, 1256.44406pt x 641.39626pt>
+<fig/mantenimientoTiposContenido.png, id=1074, 1256.44406pt x 641.39626pt>
 File: fig/mantenimientoTiposContenido.png Graphic file (type png)
 <use fig/mantenimientoTiposContenido.png>
 Package pdftex.def Info: fig/mantenimientoTiposContenido.png  used on input lin
 e 21.
 (pdftex.def)             Requested size: 298.75262pt x 152.49956pt.
-<fig/mantenimientoMediosPedagogicos.png, id=1073, 1261.71375pt x 528.47438pt>
+<fig/mantenimientoMediosPedagogicos.png, id=1075, 1261.71375pt x 528.47438pt>
 File: fig/mantenimientoMediosPedagogicos.png Graphic file (type png)
 <use fig/mantenimientoMediosPedagogicos.png>
 Package pdftex.def Info: fig/mantenimientoMediosPedagogicos.png  used on input 
@@ -1786,19 +1800,19 @@ line 28.
 
 
  <./fig/mantenimientoModalidad.png> <./fig/mantenimientoTiposContenido.png>]
-<fig/datosGeneralesConfiguracion.png, id=1080, 1253.43282pt x 710.655pt>
+<fig/datosGeneralesConfiguracion.png, id=1082, 1253.43282pt x 710.655pt>
 File: fig/datosGeneralesConfiguracion.png Graphic file (type png)
 <use fig/datosGeneralesConfiguracion.png>
 Package pdftex.def Info: fig/datosGeneralesConfiguracion.png  used on input lin
 e 35.
 (pdftex.def)             Requested size: 298.75262pt x 169.37871pt.
-<fig/pestanacorreoConfiguracion.png, id=1081, 1250.42157pt x 698.61pt>
+<fig/pestanacorreoConfiguracion.png, id=1083, 1250.42157pt x 698.61pt>
 File: fig/pestanacorreoConfiguracion.png Graphic file (type png)
 <use fig/pestanacorreoConfiguracion.png>
 Package pdftex.def Info: fig/pestanacorreoConfiguracion.png  used on input line
  42.
 (pdftex.def)             Requested size: 298.75262pt x 166.91296pt.
-<fig/pestanaPlantillasCorreos.png, id=1082, 1251.17438pt x 706.89093pt>
+<fig/pestanaPlantillasCorreos.png, id=1084, 1251.17438pt x 706.89093pt>
 File: fig/pestanaPlantillasCorreos.png Graphic file (type png)
 <use fig/pestanaPlantillasCorreos.png>
 Package pdftex.def Info: fig/pestanaPlantillasCorreos.png  used on input line 4
@@ -1808,19 +1822,19 @@ LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
  [54 <./fig/mantenimientoMediosPedagogicos.png> <./fig/datosGeneralesConfigurac
 ion.png> <./fig/pestanacorreoConfiguracion.png>]
-<fig/ejemploPlantillaCorreo.png, id=1090, 1124.70187pt x 364.36125pt>
+<fig/ejemploPlantillaCorreo.png, id=1092, 1124.70187pt x 364.36125pt>
 File: fig/ejemploPlantillaCorreo.png Graphic file (type png)
 <use fig/ejemploPlantillaCorreo.png>
 Package pdftex.def Info: fig/ejemploPlantillaCorreo.png  used on input line 56.
 
 (pdftex.def)             Requested size: 298.75262pt x 96.78322pt.
-<fig/pestanaSharepointConfiguracion.png, id=1091, 1258.7025pt x 694.09312pt>
+<fig/pestanaSharepointConfiguracion.png, id=1093, 1258.7025pt x 694.09312pt>
 File: fig/pestanaSharepointConfiguracion.png Graphic file (type png)
 <use fig/pestanaSharepointConfiguracion.png>
 Package pdftex.def Info: fig/pestanaSharepointConfiguracion.png  used on input 
 line 63.
 (pdftex.def)             Requested size: 298.75262pt x 164.74292pt.
-<fig/pestanaAdminConfiguracion.png, id=1092, 1262.46657pt x 700.86844pt>
+<fig/pestanaAdminConfiguracion.png, id=1094, 1262.46657pt x 700.86844pt>
 File: fig/pestanaAdminConfiguracion.png Graphic file (type png)
 <use fig/pestanaAdminConfiguracion.png>
 Package pdftex.def Info: fig/pestanaAdminConfiguracion.png  used on input line 
@@ -1829,12 +1843,12 @@ Package pdftex.def Info: fig/pestanaAdminConfiguracion.png  used on input line
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
  [55 <./fig/pestanaPlantillasCorreos.png> <./fig/ejemploPlantillaCorreo.png> <.
 /fig/pestanaSharepointConfiguracion.png>]
-LaTeX Info: Redefining \. on input line 122.
-LaTeX Info: Redefining \% on input line 122.
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
  [56 <./fig/pestanaAdminConfiguracion.png>]
 (Principal.aux
 LaTeX Info: Redefining \. on input line 13.
@@ -1850,13 +1864,13 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `Principal.out' has not changed.
-(rerunfilecheck)             Checksum: 4BE68C11AEDAF9D408436C2008B19FE2;7658.
+(rerunfilecheck)             Checksum: D65EEE55E33AFC98982709B2268B7757;7524.
  ) 
 Here is how much of TeX's memory you used:
- 41141 strings out of 474486
- 866556 string characters out of 5753569
- 2019542 words of memory out of 5000000
- 62258 multiletter control sequences out of 15000+600000
+ 41123 strings out of 474486
+ 866248 string characters out of 5753569
+ 2034542 words of memory out of 5000000
+ 62252 multiletter control sequences out of 15000+600000
  578301 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,137p,1606b,2392s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1870,16 +1884,16 @@ ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecxc1200.pk> <C:\Users\yasin\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\yasin\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\yasin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\yasin\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\yasin\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\
 yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
 Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk
 > <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
 200.pk> <C:\Users\yasin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
 \ecrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Principal.pdf (68 pages, 4058245 bytes).
+Output written on Principal.pdf (68 pages, 4061062 bytes).
 PDF statistics:
- 1802 PDF objects out of 2073 (max. 8388607)
- 495 named destinations out of 1000 (max. 500000)
- 538 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1803 PDF objects out of 2073 (max. 8388607)
+ 486 named destinations out of 1000 (max. 500000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 
