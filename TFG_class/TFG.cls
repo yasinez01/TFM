@@ -204,7 +204,7 @@ morekeywords=[1]{,as,assert,nonlocal,with,yield,self,True,False,None,} % Python 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %figures
 \makeatletter
-\g@addto@macro\appendix{\renewcommand{\thefigure}{\appendixname.\arabic{figure}}\setcounter{figure}{0}}
+\g@addto@macro\appendix{\renewcommand{\thefigure}{A.\arabic{figure}}\setcounter{figure}{0}}
 \makeatother
 
 %tables
