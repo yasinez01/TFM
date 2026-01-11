@@ -4,6 +4,7 @@
 %%% agregar paquetes para figura carpetas
 \usepackage[edges]{forest}
 \usepackage{xcolor}
+\usepackage{pdfpages}
 \usepackage{tikz}
 \definecolor{folderbg}{RGB}{124,166,198}
 \definecolor{folderborder}{RGB}{110,144,169}
@@ -53,9 +54,16 @@
 %%%%%%%%%%%%
 % Portada %%
 %%%%%%%%%%%%
-\input{style/titlepage.tex}
+%\input{style/titlepage.tex}
+\includepdf[pages=1]{style/titlepage.pdf}
 % Una vez creada la portada en formato pdf con la platilla de la upna pegarla con esta instrucción 
 %\includepdf[scale=1]{portada.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dedicatoria + agradecimientos %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{style/Dedicatoria.tex}
+%\input{style/Thanks.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Autorización deposito de tesis (opcional)  %%
@@ -71,14 +79,8 @@
 % Abstract (resumen)  %%
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{style/abstract.tex}
+\input{style/abstract.tex}
 \input{style/resumen.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dedicatoria + agradecimientos %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{style/Dedicatoria.tex}
-%\input{style/Thanks.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Table of contents %%
@@ -107,7 +109,7 @@
 \input{chapter4/Chapter4.tex}
 \input{chapter5/Chapter5.tex}
 \input{chapter6/Chapter6.tex}
-%\input{chapter7/Chapter7.tex}
+\input{chapter7/Chapter7.tex}
 %\input{chapter7/Chapter8.tex}
 \backmatter
 
